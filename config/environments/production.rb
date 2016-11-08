@@ -83,12 +83,12 @@ Rails.application.configure do
 
   # SENDGRID DELIVERY: TO BE CONFIGURED WHEN READY TO LAUNCH
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => "mytempstaff.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => ENV["SENDGRID_HOST"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.sendgrid.net',
     port:                 587,
-    domain:               'teloarrendamos.herokuapp.com',
+    domain:               ENV["SENDGRID_HOST"],
     user_name:            ENV["SENDGRID_API_KEY"],
     password:             ENV["SENDGRID_API_SECRET"],
     authentication:       'plain',
