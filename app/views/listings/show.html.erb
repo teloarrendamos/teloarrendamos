@@ -1,0 +1,10 @@
+<h4><%= @listing.description %></h4>
+
+<p>Address: <%= @listing.address_detail %></p>
+
+<p>Daily Rate: <%= @listing.daily_rate %></p>
+<p>Hourly Rate: <%= @listing.hourly_rate %></p>
+<p>Weekly Rate: <%= @listing.weekly_rate %></p>
+<p>Monthly Rate: <%= @listing.monthly_rate %></p>
+
+<%= link_to "Edit Listing", edit_listing_path(@listing) %>

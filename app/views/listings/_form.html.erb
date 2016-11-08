@@ -1,0 +1,71 @@
+<%= form_for form_resources do |f| %>
+  <% if @listing.errors.any? %>
+    <h5 class="text-danger">Errors</h5>
+    <ul>
+      <% @listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <label>PickUp Location (Type or press on map)</label>
+      <div id="input">
+        <%= f.text_field :address_detail, id: "gmaps-input-address", placeholder: "Start typing a place name...", class: "form-control" %>
+        <div id="gmaps-error"></div>
+      </div>
+      <div id="gmaps-canvas"></div>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.text_field :latitude, class: "hidden" %>
+      <%= f.text_field :longitude, class: "hidden" %>
+      <%= f.text_field :address_title, class: "hidden" %>
+    </div>
+
+    <div class="col-sm-6 form-group">
+      <%= f.label :description, "Product Description" %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-6 form-group">
+      <%= f.label :category_id, "Category" %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, {}, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-12 form-group">
+      <%= f.label :details, "Additional Details" %>
+      <%= f.text_area :details, class: "form-control", rows: "5" %>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 form-group">
+      <%= f.label :hourly_rate %>
+      <%= f.number_field :hourly_rate, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 form-group">
+      <%= f.label :daily_rate %>
+      <%= f.number_field :daily_rate, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 form-group">
+      <%= f.label :weekly_rate %>
+      <%= f.number_field :weekly_rate, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 form-group">
+      <%= f.label :monthly_rate %>
+      <%= f.number_field :monthly_rate, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-6 col-sm-3 form-group">
+      <%= f.label :deposit %>
+      <%= f.number_field :deposit, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= f.submit nil, class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

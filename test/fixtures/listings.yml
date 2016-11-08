@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 1.5
+  longitude: 1.5
+  address_detail: MyString
+  address_title: MyString
+  description: MyString
+  details: MyText
+  category: one
+  hourly_rate: 1
+  daily_rate: 1
+  weekly_rate: 1
+  monthly_rate: 1
+  deposit: 1
+
+two:
+  latitude: 1.5
+  longitude: 1.5
+  address_detail: MyString
+  address_title: MyString
+  description: MyString
+  details: MyText
+  category: two
+  hourly_rate: 1
+  daily_rate: 1
+  weekly_rate: 1
+  monthly_rate: 1
+  deposit: 1
