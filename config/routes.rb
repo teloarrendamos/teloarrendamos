@@ -12,12 +12,16 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resource :dashboard, controller: 'users/dashboards', only: :show, as: :user_dashboard
+    resource :account, controller: 'users/accounts', only: [:edit, :update]
   end
 
   resources :company, only: [], shallow: true do
     resources :listings
   end
 
-  resources :listing, only: [:show]
+  resources :listing, only: [:show, :index, :edit, :update] do
+    resources :images, :only => [:create, :destroy]
+  end
+
 
 end

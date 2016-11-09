@@ -7,4 +7,23 @@
 <p>Weekly Rate: <%= @listing.weekly_rate %></p>
 <p>Monthly Rate: <%= @listing.monthly_rate %></p>
 
+<div>
+  <% @listing.images.each_with_index do |image, index| %>
+    <%= image_tag(image.url) %>
+    <%= link_to "Delete", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+  <% end %>
+</div>
+
 <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+
+<h1>Add more images</h1>
+
+<%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
+  <div class="field">
+    <%= f.file_field :images, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add More Images" %>
+  </div>
+<% end %>

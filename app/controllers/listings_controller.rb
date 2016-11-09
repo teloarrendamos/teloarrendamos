@@ -38,6 +38,6 @@ class ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(:latitude, :longitude, :address_detail, :address_title,
       :description, :details, :category_id, :hourly_rate, :daily_rate, :weekly_rate, :monthly_rate,
-      :deposit)
+      :deposit, {images: []})
   end
 end

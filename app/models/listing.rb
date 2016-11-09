@@ -18,6 +18,7 @@
 #  deposit        :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  images         :string           default([]), is an Array
 #
 # Indexes
 #
@@ -34,4 +35,5 @@ class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :company
   validates :description, presence: true
+  mount_uploaders :images, ListingImageUploader
 end
