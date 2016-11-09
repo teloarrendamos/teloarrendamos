@@ -36,4 +36,6 @@ class Listing < ApplicationRecord
   belongs_to :company
   validates :description, presence: true
   mount_uploaders :images, ListingImageUploader
+
+  searchkick word_start: [:description, :details]
 end

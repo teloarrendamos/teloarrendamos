@@ -16,3 +16,5 @@
 //= require turbolinks
 //= require gmaps
 //= require keyboard
+//= require typeahead
+//= require listings

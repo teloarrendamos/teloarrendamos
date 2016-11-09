@@ -21,7 +21,10 @@ Rails.application.routes.draw do
 
   resources :listing, only: [:show, :index, :edit, :update] do
     resources :images, :only => [:create, :destroy]
+    
   end
+
+  resource :autocomplete, only: :show
 
 
 end
