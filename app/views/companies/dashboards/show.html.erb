@@ -1,7 +1,9 @@
 <h4>Listings</h4>
 
-<% @listings.each do |listing| %>
-  <%= link_to listing.address_detail, listing %>
-<% end %>
+<ul>
+  <% @listings.each do |listing| %>
+    <li><%= link_to listing.description, listing %></li>
+  <% end %>
+</ul>
 
 <%= link_to "New Listing", new_company_listing_path(current_company) %>
