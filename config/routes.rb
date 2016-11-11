@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   resource :autocomplete, only: :show
+  resource :search, only: :show
 
 
 end

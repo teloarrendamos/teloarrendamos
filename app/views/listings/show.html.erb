@@ -14,16 +14,19 @@
   <% end %>
 </div>
 
-<%= link_to "Edit Listing", edit_listing_path(@listing) %>
+<% if @listing.company == current_company %>
 
-<h1>Add more images</h1>
+  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
 
-<%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
-  <div class="field">
-    <%= f.file_field :images, multiple: true %>
-  </div>
+  <h1>Add more images</h1>
 
-  <div class="actions">
-    <%= f.submit "Add More Images" %>
-  </div>
+  <%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
+    <div class="field">
+      <%= f.file_field :images, multiple: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Add More Images" %>
+    </div>
+  <% end %>
 <% end %>

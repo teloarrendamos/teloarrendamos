@@ -2,3 +2,11 @@
   <%= text_field_tag :query, params[:query], class: 'form-control typeahead', id: "article_search" %>
   <%= submit_tag 'Search' %>
 <% end %>
+
+<% @listings.each do |listing| %>
+  <div>
+    <p><%= link_to listing.description, listing %></p>
+  </div>
+<% end %>
+
+<%= paginate @listings %>
