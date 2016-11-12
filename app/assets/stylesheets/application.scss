@@ -2,3 +2,72 @@
 @import "bootstrap";
 @import "gmaps";
 @import "typeahead";
+@import 'bourbon';
+@import 'neat';
+
+// COLORES
+
+$blue: blue;
+$white: white;
+
+body {
+	header {
+		div.upper-blue-margin {
+			height: 10px;
+			background: $blue;
+			width: 100%;
+		}
+
+		div.login-nav {
+			margin-bottom: 25px;
+		 	ul {
+		 		@include outer-container(100%);
+		// 		padding-left: 64%;
+		// 		padding-right: 6%;
+		 		list-style-type: none;
+
+		 		li.login {
+		 			@include shift(8);
+		 			@include span-columns(1.5);
+		 			padding: 5px 10px 10px 10px;
+		 			background: $blue;
+		 			margin-right: 0;
+		 		}
+
+		 		li.sign-up {
+		 			@include span-columns(1.5);
+		 			padding: 5px 10px 10px 10px;
+		 			background: $blue;
+		 			a {
+		 				border-left: 1px solid white;
+		// 				padding-left: 5%;
+		// 				padding: 4px 10px 4px 0;
+		 			}
+		 		}
+		 	}
+		}
+
+		nav {
+			@include outer-container();
+
+			div.logo {
+				@include span-columns(4);
+			}
+
+			ul {
+				@include span-columns(8);
+				padding-left: 0;
+				color: $blue;
+				
+				li.que-es {
+					width: 15%;
+				}
+
+				li {
+					@include span-columns(3);
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
