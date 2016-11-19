@@ -13,133 +13,49 @@
       <div class="upper-blue-margin"></div>
       <div class="login-nav">
         <ul>
-          <li class="login">
+          <li class="login" id="login-dropdown-button">
             <a href="#" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INICIAR SESIÓN</a>
- <!--            <ul class="">
+            <ul id="login-dropdown">
               <li>
-                <%#= link_to "Company", new_company_session_path %>
+                <%= link_to "Company", new_company_session_path %>
               </li>
               <li>
-                <%#= link_to "User", new_user_session_path %>
+                <%= link_to "User", new_user_session_path %>
               </li>
-            </ul> -->
+            </ul>
           </li>
-          <li class="sign-up">
+          <li class="sign-up" id="sign-up-dropdown-button">
             <a href="#" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REGISTRARSE</a>
-<!--             <ul class="">
+            <ul id="sign-up-dropdown">
               <li>
-                <%#= link_to "Company", new_company_registration_path %>
+                <%= link_to "Company", new_company_registration_path %>
               </li>
               <li>
-                <%#= link_to "User", new_user_registration_path %>
+                <%= link_to "User", new_user_registration_path %>
               </li>
-            </ul> -->
+            </ul>
           </li>
         </ul>
       </div>
 
       <nav>
-        <div class="logo"><img src="" alt="logo">Arriendalo y Punto</div>
+        <div class="logo">
+          <%= link_to root_path do %>
+            <img src="" alt="logo">Arriendalo y Punto
+          <% end %>
+        </div>
         <ul>
           <li class="que-es">QUÉ ES</li>
           <li>CÓMO FUNCIONA</li>
           <li>GARANTÍA</li>
-          <li>PREGUNTAS FRECUENTES</li>
+          <%= link_to pages_faq_path do %>
+            <li>PREGUNTAS FRECUENTES</li>
+          <% end %>
         </ul>
       </nav>
-      
-      <div class="title-and-search">
-        <%= flash_messages %>
-        <div class="callout">
-          <h2>Deja que tus cosas trabajen por ti</h2>
-          <h3>En arriendalo podrás arrendar productos y también ponerlos en arriendo en forma simple y segura.</h3>
-        </div>
-        <%= yield %>
-      </div>
     </header>
-
-    <section class="target-customers">
-      <div class="client">
-        <h2>Quiero arrendar un producto</h2>
-        <p>Busca por las categorias o a través de nuestro buscador. Sólo debes elegir el producto y el tiempo en que deseas arrendarlo</p>
-        <button>Buscar por categorias</button>  
-      </div>
-      <div class="renter">
-        <h2>Quiero poner en arriendo</h2>
-        <p>Crea tu cuenta y sube tus productos para que otras personas los arrienden. Sube dfotos y descripciones de tus productos</p>
-        <button>Buscar por categorias</button>  
-      </div>
-    </section>
-
-    <section class="categories">
-      <h2>Categorías</h2>
-      <div class="products-container">
-        <div class="product bicycles">
-          <img src="" alt="">
-          <p>BICICLETAS</p>
-        </div>
-        <div class="product surf">
-          <img src="" alt="">
-          <p>TABLAS DE SURF Y BODY</p>
-        </div>
-        <div class="product tools">
-          <img src="" alt="">
-          <p>HERRAMIENTAS</p>
-        </div>
-        <div class="product motorbikes">
-          <img src="" alt="">
-          <p>MOTOS, CUADRIMOTOS Y DE AGUA</p>
-        </div>
-        <div class="product music-instruments">
-          <img src="" alt="">
-          <p>INSTRUMENTOS MUSICALES</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="highlight-products">
-      <h2>Productos destacados</h2>
-      <div class="products-container">
-        <div class="product">
-          <img src="" alt="">  
-          <p class="title">Bicicleta pistera profesional</p>
-          <p class="description">Aro 26. Marca: Oxford</p>
-          <p class="price">$10.000 diarios</p>
-          <p class="renter-name">Juanpablo16 - V región</p>
-        </div>
-        <div class="product">
-          <img src="" alt="">  
-          <p class="title">Tabla Snowboard</p>
-          <p class="description">Color rosado. Marca: Rip Curl</p>
-          <p class="price">$9.000 diarios</p>
-          <p class="renter-name">Maripepa - Las Condes</p>
-        </div>
-        <div class="product">
-          <img src="" alt="">  
-          <p class="title">Bicicleta pistera profesional</p>
-          <p class="description">Aro 26. Marca: Oxford</p>
-          <p class="price">$10.000 diarios</p>
-          <p class="renter-name">Juanpablo16 - V región</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="activity">
-      <h2>Actividad en Arriendalo y Punto</h2>
-      <div class="stats users-per-week">
-        <p class="number">312</p>
-        <p class="text">Usuarios creados la semana pasada</p>
-      </div>
-      <div class="stats rents-per-month">
-        <p class="number">827</p>
-        <p class="text">productos arrendados el mes pasado</p>
-      </div>
-      <div class="stats transactions">
-        <p class="number">$3M</p>
-        <p class="text">en transacciones realizadas el mes de Octubre</p>
-      </div>
-    </section>
-
+    <%= yield %>
+    
     <div class="footer-image">
       <img src="" alt="footer-image">
     </div>

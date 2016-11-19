@@ -27,5 +27,5 @@ Rails.application.routes.draw do
   resource :autocomplete, only: :show
   resource :search, only: :show
 
-
+  get 'pages/faq' => 'pages#faq'
 end

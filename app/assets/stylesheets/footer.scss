@@ -1,0 +1,43 @@
+footer {
+	@include outer-container(100%);
+	background: $blue;
+	color: $white;
+	padding: 70px;
+
+	div.column {
+		@include span-columns(3);
+	}
+
+	div.logo-and-social {
+		div.social-icons {
+			img {
+				@include span-columns(2.4);
+			}
+		}
+	}
+
+	div.nav-list {
+		ul {
+		    list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	div.contact {
+		div.politics {
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}	
+		}
+		div.contact-info {
+			//padding-left: 20px;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

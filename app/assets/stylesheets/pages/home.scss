@@ -1,0 +1,65 @@
+section.title-and-search {
+		text-align: center;
+		margin-bottom: 50px;
+
+		div.callout {
+			padding: 5% 26% 3% 26%;
+		}
+	}
+
+	section.target-customers {
+		@include outer-container;
+		text-align: center;
+
+		div.client {
+			@include span-columns(6);	
+			padding: 50px;
+		}
+		div.renter {
+			@include span-columns(6);
+			padding: 50px;
+			border-left: 1px solid black;
+		}
+	}
+
+	section.categories {
+		@include outer-container;
+		text-align: center;
+		h2 {
+
+		}
+
+		div.products-container {
+			@include outer-container;
+
+			div.product {
+				@include span-columns(2.4);
+			}
+		}
+	}
+
+	section.highlight-products {
+		@include outer-container;
+		text-align: center;
+
+		h2 {
+
+		}
+
+		div.products-container {
+			@include outer-container;
+
+			div.product {
+				@include span-columns(4);
+			}
+		}
+	}
+
+	section.activity {
+		@include outer-container;
+		text-align: center;
+
+		div.stats {
+			@include span-columns(4);
+		}
+	}
