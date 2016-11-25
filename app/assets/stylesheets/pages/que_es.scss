@@ -1,0 +1,21 @@
+section.que-es {
+	@include outer-container;
+	div.que-es-texto {
+		@include span-columns(6);
+	}
+
+	div.que-es-img {
+    	@include span-columns(6);
+	}
+}
+
+section.payment-explained {
+	@include outer-container;
+	div.payment-text {
+		@include span-columns(6);
+	}
+
+	div.payment-img {
+		@include span-columns(6);
+	}
+}

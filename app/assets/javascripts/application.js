@@ -20,38 +20,36 @@
 //= require listings
 
 
-// Toggle for show/hide login nav buttons
 $(document).on('turbolinks:load', function(){
 	var loginDropdownButton = document.getElementById("login-dropdown-button");
 	var loginDropdown = document.getElementById("login-dropdown");
 	var signUpDropdownButton = document.getElementById("sign-up-dropdown-button");
 	var signUpDropdown = document.getElementById("sign-up-dropdown");
 		
-	loginDropdownButton.addEventListener('click', function (event) {
-	    var next = loginDropdown;
-
-	    if (next.style.display == "") {
-	        next.style.display = "block";
-
-	    } else {
-	        next.style.display = "";
-	    }
+	loginDropdownButton.addEventListener('mouseover', function (event) {
+	    loginDropdown.style.display = "block";
 	});
 
-	signUpDropdownButton.addEventListener('click', function (event) {
-	    var next = signUpDropdown;
+	loginDropdownButton.addEventListener('mouseleave', function (event) {
+	    loginDropdown.style.display = "";
+	});
 
-	    if (next.style.display == "") {
-	        next.style.display = "block";
+	signUpDropdownButton.addEventListener('mouseover', function (event) {
+		signUpDropdown.style.display = "block";
+	});
 
-	    } else {
-	        next.style.display = "";
-	    }
+	signUpDropdownButton.addEventListener('mouseleave', function (event) {
+	    signUpDropdown.style.display = "";
 	});
 });
 
 
 // Toggle for FAQ page answers
-// $(document).on('turbolinks:load', function(){
-	
-// });
+$(document).on('turbolinks:load', function(){
+	var question = document.getElementById('question');
+	var answer = document.getElementById('answer');
+
+	question.addEventListener('click', function (event) {
+	    answer.style.color = "red";
+	});
+});

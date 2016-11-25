@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resource :search, only: :show
 
   get 'pages/faq' => 'pages#faq'
+  get 'pages/que_es' => 'pages#que_es'
 end

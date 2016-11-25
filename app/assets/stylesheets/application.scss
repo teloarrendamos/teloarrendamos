@@ -9,11 +9,17 @@
 
 $blue: blue;
 $white: white;
+$grey: rgba(183, 183, 183, 1);
 
 body {
+	height: 100%;
+	
 	@import 'header';
 	@import 'pages/home';
+	@import 'pages/que_es';
+	@import 'pages/faq';
 	@import 'users/login';
+	@import 'companies/login';
 	@import 'footer';
 
 }

@@ -41,11 +41,11 @@
       <nav>
         <div class="logo">
           <%= link_to root_path do %>
-            <img src="" alt="logo">Arriendalo y Punto
+            <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/logos/logo-transparente.png" alt="logo-arriendalo-y-punto">
           <% end %>
         </div>
         <ul>
-          <li class="que-es">QUÉ ES</li>
+          <li class="que-es"><%= link_to "QUÉ ES", pages_que_es_path %></li>
           <li>CÓMO FUNCIONA</li>
           <li>GARANTÍA</li>
           <%= link_to pages_faq_path do %>

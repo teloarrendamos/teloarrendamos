@@ -1,65 +1,111 @@
 section.title-and-search {
-		text-align: center;
-		margin-bottom: 50px;
+	background-image: url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/backgrounds/imagen-retocada-final-aprobada.jpg');
+	background-size: 100% 100%;
+	text-align: center;
+	/* Set the height to match that of the viewport. */
+    height: 100vh;
 
-		div.callout {
-			padding: 5% 26% 3% 26%;
-		}
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+
+    /* Remove any browser-default margins. */
+    margin: 0 0 0 0;
+
+    div.overlay {
+	   	position: absolute;
+	    width: 100%;
+	    height: 100%;
+		background: rgb(35,83,138); /* Old browsers */
+		background: -moz-linear-gradient(top,  $grey 20%, transparent 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  $grey 20%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  $grey 20%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr=transparent,GradientType=0 ); /* IE6-9 */
+
+    }
+
+	div.callout {
+		padding: 5% 26% 3% 26%;
 	}
 
-	section.target-customers {
-		@include outer-container;
-		text-align: center;
-
-		div.client {
-			@include span-columns(6);	
-			padding: 50px;
+	form {
+		span.twitter-typeahead {
+			width: 500px;
 		}
-		div.renter {
-			@include span-columns(6);
-			padding: 50px;
-			border-left: 1px solid black;
+
+		input[type='submit'] {
+			background: $blue;
+			border: 0;
+			padding: 6px 30px;
+			color: $white;
 		}
 	}
+}
 
-	section.categories {
-		@include outer-container;
-		text-align: center;
-		h2 {
+section.target-customers {
+	@include outer-container;
+	text-align: center;
 
-		}
+	div.client {
+		@include span-columns(6);	
+		padding: 50px;
 
-		div.products-container {
-			@include outer-container;
-
-			div.product {
-				@include span-columns(2.4);
-			}
-		}
-	}
-
-	section.highlight-products {
-		@include outer-container;
-		text-align: center;
-
-		h2 {
-
-		}
-
-		div.products-container {
-			@include outer-container;
-
-			div.product {
-				@include span-columns(4);
-			}
+		button {
+			background: $blue;
+			border: 0;
+			padding: 8px 19px;
 		}
 	}
+	div.renter {
+		@include span-columns(6);
+		padding: 50px;
+		border-left: 1px solid black;
 
-	section.activity {
+		button {
+			background: $blue;
+			border: 0;
+			padding: 8px 19px;
+		}	
+	}
+}
+
+section.categories {
+	@include outer-container;
+	text-align: center;
+	h2 {
+
+	}
+
+	div.products-container {
 		@include outer-container;
-		text-align: center;
 
-		div.stats {
+		div.product {
+			@include span-columns(2.4);
+		}
+	}
+}
+
+section.highlight-products {
+	@include outer-container;
+	text-align: center;
+
+	h2 {
+
+	}
+
+	div.products-container {
+		@include outer-container;
+
+		div.product {
 			@include span-columns(4);
 		}
 	}
+}
+
+section.activity {
+	@include outer-container;
+	text-align: center;
+
+	div.stats {
+		@include span-columns(4);
+	}
+}

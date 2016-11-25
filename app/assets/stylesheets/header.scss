@@ -1,4 +1,6 @@
 header {
+	background: $grey;
+
 	div.upper-blue-margin {
 		height: 10px;
 		background: $blue;
@@ -6,7 +8,6 @@ header {
 	}
 
 	div.login-nav {
-		margin-bottom: 25px;
 	 	ul {
 	 		@include outer-container(100%);
 	 		list-style-type: none;
@@ -19,7 +20,6 @@ header {
 	 			margin-right: 0;
 
 	 			ul {
-	 				margin-top: 14px;
 	 				width: 146px;
 				    padding: 10px 0px;
 				    position: absolute;
@@ -41,7 +41,6 @@ header {
 	 			}
 
 	 			ul {
-	 				margin-top: 14px;
 	 				padding:0;
 	 				position: absolute;
 	 				background: $blue;
@@ -62,12 +61,19 @@ header {
 
 		div.logo {
 			@include span-columns(4);
+
+			a {
+				img {
+					width: 85%;
+				}
+			}
 		}
 
 		ul {
 			@include span-columns(8);
 			padding-left: 0;
 			color: $blue;
+			margin-top: 30px;
 			
 			li.que-es {
 				width: 15%;
