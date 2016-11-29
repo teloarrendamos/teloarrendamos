@@ -1,0 +1,15 @@
+@mixin target-customers-index {
+	@include span-columns(6);
+	padding: 50px;
+	border-left: 1px solid black;
+
+	p {
+		margin: 25px 0;
+	}
+	
+	button {
+		background: $blue;
+		border: 0;
+		padding: 8px 19px;
+	}	
+}

@@ -4,14 +4,27 @@
 @import "typeahead";
 @import 'bourbon';
 @import 'neat';
+//@import 'fonts';
+
+@font-face {
+  font-family: 'neosans';
+  src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Bold.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+// FONTS
+$primary-font: 'NeoSansPro-Regular';
+
 
 // COLORES
-
-$blue: blue;
+$blue: #1191B9;
+$light-blue: #00C0FF;
+$green: #00D16D;
 $white: white;
 $grey: rgba(183, 183, 183, 1);
 
 body {
+	margin: 0;
 	height: 100%;
 	
 	@import 'header';

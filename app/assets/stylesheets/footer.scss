@@ -9,6 +9,11 @@ footer {
 	}
 
 	div.logo-and-social {
+		div.logo {
+			img {
+				width: 85%;
+			}
+		}
 		div.social-icons {
 			img {
 				@include span-columns(2.4);

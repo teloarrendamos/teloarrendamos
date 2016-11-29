@@ -11,6 +11,7 @@ header {
 	 	ul {
 	 		@include outer-container(100%);
 	 		list-style-type: none;
+	 		margin-top: 0;
 
 	 		li.login {
 	 			@include shift(8);
@@ -18,6 +19,11 @@ header {
 	 			padding: 5px 10px 10px 10px;
 	 			background: $blue;
 	 			margin-right: 0;
+	 			font-family: 'neosans';
+
+	 			a {
+	 				color: white;
+	 			}
 
 	 			ul {
 	 				width: 146px;
@@ -38,6 +44,7 @@ header {
 	 			background: $blue;
 	 			a {
 	 				border-left: 1px solid white;
+	 				color: white;
 	 			}
 
 	 			ul {
