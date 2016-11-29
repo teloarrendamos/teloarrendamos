@@ -2,7 +2,11 @@ footer {
 	@include outer-container(100%);
 	background: $blue;
 	color: $white;
-	padding: 70px;
+	padding: 50px 70px;
+
+	p {
+		color: $white;
+	}
 
 	div.column {
 		@include span-columns(3);
@@ -22,19 +26,29 @@ footer {
 	}
 
 	div.nav-list {
+		padding-left: 30px;
 		ul {
 		    list-style-type: none;
 			margin: 0;
 			padding: 0;
+
+			 li {
+			 	margin: 15px 0;
+			 }
 		}
 	}
 
 	div.contact {
+		padding-left: 30px;
 		div.politics {
 			ul {
 				margin: 0;
 				padding: 0;
 				list-style-type: none;
+
+				li {
+					margin: 15px 0;
+				}
 			}	
 		}
 		div.contact-info {
@@ -42,6 +56,7 @@ footer {
 
 			p {
 				margin-bottom: 0;
+				margin: 15px 0;
 			}
 		}
 	}

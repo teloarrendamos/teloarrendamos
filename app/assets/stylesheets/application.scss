@@ -21,11 +21,22 @@ $blue: #1191B9;
 $light-blue: #00C0FF;
 $green: #00D16D;
 $white: white;
-$grey: rgba(183, 183, 183, 1);
+$grey: rgba(235, 228, 228, 1);
+$letters-grey: grey;
+$titles-grey: #636060;
 
 body {
 	margin: 0;
 	height: 100%;
+
+	p {
+		color: $letters-grey;	
+	}
+
+	h2, h3 {
+		color: $titles-grey;
+	}
+	
 	
 	@import 'header';
 	@import 'pages/home';
