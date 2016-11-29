@@ -46,10 +46,27 @@ $(document).on('turbolinks:load', function(){
 
 // Toggle for FAQ page answers
 $(document).on('turbolinks:load', function(){
-	var question = document.getElementById('question');
-	var answer = document.getElementById('answer');
+	var questions = document.getElementsByClassName('question');
 
-	question.addEventListener('click', function (event) {
-	    answer.style.color = "red";
+	Array.prototype.forEach.call(questions, function(question) {
+		var originalColor = question.style.color;
+
+		question.addEventListener('click', function() {
+			var answer = this.nextElementSibling;
+			var plusSign = this.childNodes[1];
+			var minusSign = this.childNodes[2];
+
+			if(answer.style.display === "") {
+				answer.style.display = "block"
+				plusSign.style.display = "none";
+				minusSign.style.display = 'inline';
+				this.style.color = 'grey';
+			} else {
+				answer.style.display = "";
+				minusSign.style.display = ""
+				plusSign.style.display = "inline";
+				this.style.color = originalColor;
+			}
+		});
 	});
 });

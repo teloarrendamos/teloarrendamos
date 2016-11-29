@@ -57,7 +57,7 @@
     <%= yield %>
     
     <div class="footer-image">
-      <img src="" alt="footer-image">
+      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" alt="footer-image">
     </div>
 
     <footer>
@@ -69,21 +69,21 @@
           <p>Deja que tus cosas trabajen por ti.</p>
         </div>
         <div class="social-icons">
-          <img src="" alt="icon">
-          <img src="" alt="icon">
-          <img src="" alt="icon">
-          <img src="" alt="icon">
-          <img src="" alt="icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/facebook-logo.png" alt="facebook-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/twitter-logo.png" alt="twitter-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/instagram-logo.png" alt="instagram-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/youtube-logo.png" alt="youtube-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/google-logo.png" alt="google-icon">
         </div>
       </div>
 
       <div class="column nav-list">
         <ul>
-          <li>QUÉ ES</li>
-          <li>CÓMO FUNCIONA</li>
-          <li>GARANTÍA</li>
-          <li>PREGUNTAS FRECUENTES</li>
-          <li>CONTACTO</li>
+          <li><%= link_to "QUÉ ES" %></li>
+          <li><%= link_to "CÓMO FUNCIONA" %></li>
+          <li><%= link_to "GARANTÍA" %></li>
+          <li><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
+          <li><%= link_to "CONTACTO" %></li>
         </ul>  
       </div>
 

@@ -15,12 +15,18 @@ footer {
 	div.logo-and-social {
 		div.logo {
 			img {
-				width: 85%;
+				width: 100%;
 			}
 		}
+
+		div.slogan {
+			margin: 5px 0 20px 0;
+		}
+
 		div.social-icons {
 			img {
 				@include span-columns(2.4);
+				width: 16%
 			}
 		}
 	}
@@ -34,6 +40,15 @@ footer {
 
 			 li {
 			 	margin: 15px 0;
+
+			 	a {
+			 		color: $white;
+			 	}
+
+			 	a:hover {
+			 		color: $green;
+			 		text-decoration: none;
+			 	}
 			 }
 		}
 	}

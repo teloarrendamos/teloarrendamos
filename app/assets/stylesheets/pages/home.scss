@@ -12,15 +12,10 @@ section.title-and-search {
     margin: 0 0 0 0;
 
     div.overlay {
+    	@include grey-gradient;
 	   	position: absolute;
 	    width: 100%;
 	    height: 100%;
-		background: rgb(35,83,138); /* Old browsers */
-		background: -moz-linear-gradient(top,  $grey 20%, transparent 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top,  $grey 20%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom,  $grey 20%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr=transparent,GradientType=0 ); /* IE6-9 */
-
     }
 
 	div.callout {
@@ -184,4 +179,8 @@ section.activity {
 			color: $letters-grey;
 		}
 	}
+}
+
+div.footer-image {
+	margin: 0px 0 -10px 10%;
 }
