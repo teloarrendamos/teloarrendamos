@@ -4,17 +4,17 @@
 @import "typeahead";
 @import 'bourbon';
 @import 'neat';
-//@import 'fonts';
+@import 'fonts';
 @import 'mixins';
 
-@font-face {
-  font-family: 'neosans';
-  src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Bold.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
 // FONTS
-$primary-font: 'NeoSansPro-Regular';
+$regular: 'NeoSansPro-Regular', 'Arial Black';
+$light: 'NeoSansPro-Light', 'Arial Black';
+$ultra: 'NeoSansPro-Ultra', 'Arial Black';
+$std-light: 'NeoSansStd-Light', 'Arial Black';
+$std-medium: 'NeoSansPro-Medium', 'Arial Black';
+$std-regular: 'NeoSansPro-Regular', 'Arial Black';
 
 
 // COLORES
@@ -41,10 +41,11 @@ body {
 	
 	@import 'header';
 	@import 'pages/home';
-	@import 'pages/que_es';
+	@import 'pages/what_is';
+	@import 'pages/how_it_works';
 	@import 'pages/faq';
 	@import 'users/login';
+	@import 'users/sign-up';
 	@import 'companies/login';
 	@import 'footer';
-
 }

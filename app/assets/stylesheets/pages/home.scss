@@ -20,18 +20,40 @@ section.title-and-search {
 
 	div.callout {
 		padding: 5% 26% 3% 26%;
+		font-family: $regular;
 	}
 
 	form {
+		@include outer-container;
 		span.twitter-typeahead {
 			width: 500px;
 		}
 
+		input[type="text"] {
+			@include span-columns(5);
+			@include shift(3)
+		}
+
+		input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			color: rgba(153, 153, 153, 0.4);
+		}
+		input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+			color: rgba(153, 153, 153, 0.4);
+		}
+		input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+			color: rgba(153, 153, 153, 0.4);
+		}
+		input[type="text"]:-moz-placeholder { /* Firefox 18- */
+			color: rgba(153, 153, 153, 0.4);
+		}
+
 		input[type='submit'] {
-			background: $blue;
+			@include span-columns(1.5);
+			background: $light-blue;
 			border: 0;
 			padding: 6px 30px;
 			color: $white;
+			font-family: $regular;
 		}
 	}
 }
@@ -39,16 +61,19 @@ section.title-and-search {
 section.target-customers {
 	@include outer-container;
 	text-align: center;
-
+	font-family: $light;
 	margin: 30px auto;
 
 	div {
 		p {
 			margin: 40px 0;
+			padding: 0 95px;
+    		font-size: 1.2em;
+
 		}
 
 		button {
-			background: $blue;
+			background: $light-blue;
 			border: 0;
 			padding: 12px 60px;
 			color: $white;
@@ -58,20 +83,22 @@ section.target-customers {
 	div.client {
 		@include span-columns(6);	
 		padding: 50px;
-		font-family: $primary-font;
 	}
 	div.renter {
 		@include span-columns(6);
 		padding: 50px;
-		border-left: 1px solid black;	
+		border-left: 1.7px solid rgba(153, 153, 153, 0.4);	
 	}
 }
 
 section.categories {
 	@include outer-container;
 	text-align: center;
+	font-family: $light;
+
 	h2 {
 		margin: 60px 0;
+
 	}
 
 	div.products-container {
@@ -91,9 +118,11 @@ section.categories {
 section.highlight-products {
 	@include outer-container;
 	text-align: center;
+	font-family: $light;
 
 	h2 {
-		margin: 66px 0;
+		margin: 100px 0;
+
 	}
 
 	div.products-container {
@@ -160,6 +189,7 @@ section.activity {
 	@include outer-container;
 	text-align: center;
 	margin-bottom: 60px;
+	font-family: $light;
 
 	h2 {
 		margin: 66px 0 30px 0;

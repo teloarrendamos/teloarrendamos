@@ -21,6 +21,7 @@ footer {
 
 		div.slogan {
 			margin: 5px 0 20px 0;
+			font-family: $std-light;
 		}
 
 		div.social-icons {
@@ -37,6 +38,7 @@ footer {
 		    list-style-type: none;
 			margin: 0;
 			padding: 0;
+			font-family: $regular;
 
 			 li {
 			 	margin: 15px 0;
@@ -60,6 +62,7 @@ footer {
 				margin: 0;
 				padding: 0;
 				list-style-type: none;
+				font-family: $regular;
 
 				li {
 					margin: 15px 0;
@@ -67,11 +70,12 @@ footer {
 			}	
 		}
 		div.contact-info {
-			//padding-left: 20px;
+			padding-top: 32px;
 
 			p {
 				margin-bottom: 0;
-				margin: 15px 0;
+				margin: 0;
+				font-family: $std-light;
 			}
 		}
 	}

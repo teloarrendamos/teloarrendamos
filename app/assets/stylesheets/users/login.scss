@@ -1,63 +1,8 @@
 section.user-login {
-	@include grey-gradient;
-	padding-bottom: 70px;
-	padding-top: 25px;
+	@include session-registration-layout;
+	font-family: $light;
 
 	div.inner-container {
-		height: 100%;
-		margin: 0 25%;
-
-		h2, p {
-			text-align: center;
-			margin-top: 0;
-		}
-		
-		form {
-			input {
-				height: 35px;
-			}
-			div.field {
-				margin: 20px 25%;
-				input {
-					width: 100%;
-				}
-			}
-
-			div.actions {
-				margin: 0 25%;
-				input {
-					width: 100%;
-					background: $light-blue;
-					border: 0;
-				}	
-			}
-		}
-
-		div.login-options {
-			padding: 20px 25%;
-			text-align: center;
-
-			div.forgot-pass {
-				text-align: left;
-
-				a {
-					color: $light-blue;
-				}
-			}
-			
-			a {
-				div.facebook-login {
-					background: #3b5998;
-					height: 35px;
-					padding-top: 7px;
-
-					p {
-						color: $white;
-					}
-				}	
-			}
-		}
-
 		div.sign-up-callout {
 			text-align: center;
 			padding: 20px 87px;
@@ -79,6 +24,6 @@ section.user-login {
 					color: $white;
 				}	
 			}
-		}	
+		}
 	}
 }

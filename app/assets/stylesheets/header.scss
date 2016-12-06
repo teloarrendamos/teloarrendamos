@@ -8,59 +8,73 @@ header {
 	}
 
 	div.login-nav {
-	 	ul {
-	 		@include outer-container(100%);
-	 		list-style-type: none;
-	 		margin-top: 0;
+		div.container {
+			@include shift(8);
+			@include span-columns(3.5);
 
-	 		li.login {
-	 			@include shift(8);
-	 			@include span-columns(1.5);
-	 			padding: 5px 10px 10px 10px;
-	 			background: $blue;
-	 			margin-right: 0;
-	 			font-family: 'neosans';
+			div.inner-container {
+				@include outer-container(100%);
+				
+				div.login {
+					@include span-columns(6);
+					background-color: $blue;
+					color: $white;
+					margin-right: 0;
+					font-family: $regular;
+					position: relative;
 
-	 			a {
-	 				color: white;
-	 			}
+					div.p-container {
+						padding: 0px 0 5px 0;
 
-	 			ul {
-	 				width: 146px;
-				    padding: 10px 0px;
-				    position: absolute;
-	 				background: $blue;
-	 				left: 69.2%;
-	 				display: none;
-	 				li {
+						p {
+							margin: 0;
+							color: $white;
+							text-align: center;
+	    					padding: 5px 0 5px 0;
+						}	
+					}
 
-	 				}
-	 			}
-	 		}
+					ul {
+						background: $blue;
+						padding-left: 0;
+						list-style-type: none;
+						display: none;
+						position: absolute;
+    					width: 100%;
+					}	
+				}
 
-	 		li.sign-up {
-	 			@include span-columns(1.5);
-	 			padding: 5px 10px 10px 10px;
-	 			background: $blue;
-	 			a {
-	 				border-left: 1px solid white;
-	 				color: white;
-	 			}
+				div.sign-up {
+					@include span-columns(6);
+					background-color: $blue;
+					color: $white;
+					font-family: $regular;
+					position: relative;
 
-	 			ul {
-	 				padding:0;
-	 				position: absolute;
-	 				background: $blue;
-	 				display: block;
-				    width: 119px;
-				    padding: 10px 0px;
-	 				display: none;
-	 				li {
+					div.p-container {
+						padding: 0px 0 5px 0;
+						
+						p {
+							margin: 0;
+							text-align: center;
+							color: $white;
+							border-left: 2px solid white;
+	    					padding: 5px 0 5px 0;
+						}	
+					}
+					
+					ul {
+						background: $blue;
+						padding-left: 0;
+						list-style-type: none;
+						display: none;
+						position: absolute;
+    					width: 100%;
 
-	 				}
-	 			}
-	 		}
-	 	}
+					}	
+				}
+			}
+		}
 	}
 
 	nav {
@@ -81,6 +95,7 @@ header {
 			padding-left: 0;
 			color: $blue;
 			margin-top: 30px;
+			font-family: $light;
 			
 			li.que-es {
 				width: 15%;

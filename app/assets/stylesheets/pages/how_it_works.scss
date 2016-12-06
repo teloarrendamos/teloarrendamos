@@ -1,0 +1,43 @@
+section.how-it-works {
+	@include grey-gradient;
+	div.titles {
+		@include outer-container;
+		text-align: center;
+		h2.renter {
+			@include span-columns(6);
+		}
+		h2.client {
+			@include span-columns(6);
+		}
+	}
+
+	div.explain-users-plan {
+		@include outer-container;
+		text-align: center;
+
+		button#renter-tutorial-btn {
+			@include span-columns(3);
+			@include explain-button;
+		}
+
+		div.shake-hands-how-it-works {
+			@include span-columns(6);
+		}
+
+		button#client-tutorial-btn {
+			@include span-columns(3);
+			@include explain-button;
+		}
+	}
+
+	div.overlay {
+		@include overlay;
+	}
+}
+
+
+
+
+
+
+			

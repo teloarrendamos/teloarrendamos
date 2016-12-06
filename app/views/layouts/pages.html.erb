@@ -6,37 +6,44 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="/assets/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/slick-theme.css"/>
   </head>
 
   <body>
     <header class="home-index">
       <div class="upper-blue-margin"></div>
+
       <div class="login-nav">
-        <ul>
-          <li class="login" id="login-dropdown-button">
-            <a href="#" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INICIAR SESIÓN</a>
-            <ul id="login-dropdown">
-              <li>
-                <%= link_to "Company", new_company_session_path %>
-              </li>
-              <li>
-                <%= link_to "User", new_user_session_path %>
-              </li>
-            </ul>
-          </li>
-          <li class="sign-up" id="sign-up-dropdown-button">
-            <a href="#" class="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REGISTRARSE</a>
-            <ul id="sign-up-dropdown">
-              <li>
-                <%= link_to "Company", new_company_registration_path %>
-              </li>
-              <li>
-                <%= link_to "User", new_user_registration_path %>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="container">
+          <div class="inner-container">
+            <div class="login">
+              <div class="p-container">
+                <p>INICIAR SESIÓN</p>  
+              </div>
+              <ul>
+                <%= link_to new_company_session_path do %>
+                  <li>Company</li>
+                <% end %>
+                <%= link_to new_user_session_path do %>
+                  <li>User</li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="sign-up">
+              <div class="p-container">
+                <p>REGISTRARSE</p>
+              </div>
+              
+              <ul>
+                <li>Company</li>
+                <li>User</li>
+              </ul>
+            </div>  
+          </div>
+        </div>
       </div>
+
 
       <nav>
         <div class="logo">
@@ -45,8 +52,8 @@
           <% end %>
         </div>
         <ul>
-          <li class="que-es"><%= link_to "QUÉ ES", pages_que_es_path %></li>
-          <li>CÓMO FUNCIONA</li>
+          <li class="que-es"><%= link_to "QUÉ ES", pages_what_is_path %></li>
+          <li><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
           <li>GARANTÍA</li>
           <%= link_to pages_faq_path do %>
             <li>PREGUNTAS FRECUENTES</li>
@@ -106,5 +113,11 @@
         <img src="" alt="credit-cards-icons">
       </div>
     </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/assets/slick.min.js"></script>
+
+
   </body>
 </html>

@@ -1,21 +1,59 @@
 // @font-face {
 //   font-family: 'NeoSansPro-Regular';
-//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Regular.TTF') format('TTF');
+//   src: 	url('/assets/fonts/NeoSansPro+Regular.TTF') format('TTF');
 //   font-weight: normal;
 //   font-style: normal;
 // }
 // @font-face {
 //   font-family: 'NeoSansPro-Bold';
-//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Bold.TTF') format('TTF');
+//   src: 	url('/assets/fonts/NeoSansPro+Bold.TTF') format('TTF');
 //   font-weight: normal;
 //   font-style: normal;
 // }
-// @font-face {
-//   font-family: 'NeoSansPro-Italic';
-//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Italic.TTF') format('TTF');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+
+@font-face {
+  font-family: 'NeoSansPro-Regular';
+  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeoSansPro-Light';
+  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansPro-Ultra';
+  src: 	url('/assets/NeoSansPro-Ultra') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Light';
+  src: 	url('/assets/NeoSansStd-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Medium';
+  src: 	url('/assets/NeoSansStd-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Regular';
+  src: 	url('/assets/NeoSansStd-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 // @font-face {
 //   font-family: 'NeoSansPro-Light';
 //   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Light.TTF') format('TTF');
