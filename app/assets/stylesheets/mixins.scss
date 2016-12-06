@@ -29,6 +29,7 @@
 	padding: 12px 0;
 	font-size: 1.5em;
 	color: $white;
+	border-radius: 10px;
 }
 
 @mixin overlay {
@@ -225,5 +226,50 @@
 				}	
 			}
 		}	
+	}
+}
+
+@mixin login-nav {
+	@include span-columns(6);
+	background-color: $blue;
+	color: $white;
+	font-family: $regular;
+	position: relative;
+
+	div.p-container {
+		padding: 0px 0 5px 0;
+
+		p {
+			margin: 0;
+			color: $white;
+			text-align: center;
+			padding: 5px 0 5px 0;
+		}	
+	}
+
+	ul {
+		background: $blue;
+		padding-left: 0;
+		list-style-type: none;
+		display: none;
+		position: absolute;
+		width: 100%;
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		a {
+			color: $white;
+
+			li {
+				text-align: center;
+				padding: 5px 0;
+			}
+
+			li:hover {
+				background-color: $light-blue;
+			}
+		}
 	}
 }

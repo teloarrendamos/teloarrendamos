@@ -16,62 +16,17 @@ header {
 				@include outer-container(100%);
 				
 				div.login {
-					@include span-columns(6);
-					background-color: $blue;
-					color: $white;
-					margin-right: 0;
-					font-family: $regular;
-					position: relative;
-
-					div.p-container {
-						padding: 0px 0 5px 0;
-
-						p {
-							margin: 0;
-							color: $white;
-							text-align: center;
-	    					padding: 5px 0 5px 0;
-						}	
-					}
-
-					ul {
-						background: $blue;
-						padding-left: 0;
-						list-style-type: none;
-						display: none;
-						position: absolute;
-    					width: 100%;
-					}	
+					@include login-nav;
+					margin-right: 0;	
 				}
 
 				div.sign-up {
-					@include span-columns(6);
-					background-color: $blue;
-					color: $white;
-					font-family: $regular;
-					position: relative;
-
+					@include login-nav;
 					div.p-container {
-						padding: 0px 0 5px 0;
-						
-						p {
-							margin: 0;
-							text-align: center;
-							color: $white;
+						p {					
 							border-left: 2px solid white;
-	    					padding: 5px 0 5px 0;
 						}	
 					}
-					
-					ul {
-						background: $blue;
-						padding-left: 0;
-						list-style-type: none;
-						display: none;
-						position: absolute;
-    					width: 100%;
-
-					}	
 				}
 			}
 		}

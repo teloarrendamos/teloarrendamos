@@ -17,27 +17,31 @@
       <div class="login-nav">
         <div class="container">
           <div class="inner-container">
-            <div class="login">
+            <div class="login" id="login-dropdown-button">
               <div class="p-container">
                 <p>INICIAR SESIÓN</p>  
               </div>
-              <ul>
+              <ul id="login-dropdown">
                 <%= link_to new_company_session_path do %>
                   <li>Company</li>
                 <% end %>
                 <%= link_to new_user_session_path do %>
-                  <li>User</li>
+                  <li>User</li>  
                 <% end %>
               </ul>
             </div>
-            <div class="sign-up">
+            <div class="sign-up" id="sign-up-dropdown-button">
               <div class="p-container">
                 <p>REGISTRARSE</p>
               </div>
               
-              <ul>
-                <li>Company</li>
-                <li>User</li>
+              <ul id="sign-up-dropdown">
+                <%= link_to new_company_registration_path do %>
+                  <li>Company</li>
+                <% end %>
+                <%= link_to new_user_registration_path do %>
+                  <li>User</li>  
+                <% end %>
               </ul>
             </div>  
           </div>
@@ -86,8 +90,8 @@
 
       <div class="column nav-list">
         <ul>
-          <li><%= link_to "QUÉ ES" %></li>
-          <li><%= link_to "CÓMO FUNCIONA" %></li>
+          <li><%= link_to "QUÉ ES", pages_what_is_path %></li>
+          <li><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
           <li><%= link_to "GARANTÍA" %></li>
           <li><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
           <li><%= link_to "CONTACTO" %></li>

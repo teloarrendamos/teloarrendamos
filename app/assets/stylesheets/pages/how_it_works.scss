@@ -1,5 +1,7 @@
 section.how-it-works {
 	@include grey-gradient;
+	font-family: $regular;
+	
 	div.titles {
 		@include outer-container;
 		text-align: center;

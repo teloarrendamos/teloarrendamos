@@ -19,7 +19,7 @@
 //= require typeahead
 //= require listings
 
-
+// Login Nav Dropdown
 $(document).on('turbolinks:load', function(){
 	var loginDropdownButton = document.getElementById("login-dropdown-button");
 	var loginDropdown = document.getElementById("login-dropdown");

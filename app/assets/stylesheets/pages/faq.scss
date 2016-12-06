@@ -1,5 +1,7 @@
 section.faq {
 	@include grey-gradient;
+	font-family: $regular;
+	
 	h1 {
 		text-align: center;
 		margin-top: 0;
