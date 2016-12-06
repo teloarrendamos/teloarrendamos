@@ -1,5 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
 @import "gmaps";
 @import "typeahead";
 @import 'bourbon';
@@ -33,11 +33,18 @@ body {
 	p {
 		color: $letters-grey;	
 	}
+	
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
 
 	h2, h3 {
 		color: $titles-grey;
 	}
-	
 	
 	@import 'header';
 	@import 'pages/home';

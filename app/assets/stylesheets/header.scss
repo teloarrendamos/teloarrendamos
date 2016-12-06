@@ -8,8 +8,9 @@ header {
 	}
 
 	div.login-nav {
+		@include outer-container;
 		div.container {
-			@include shift(8);
+			@include shift(8.5);
 			@include span-columns(3.5);
 
 			div.inner-container {
@@ -17,7 +18,7 @@ header {
 				
 				div.login {
 					@include login-nav;
-					margin-right: 0;	
+					margin-right: 0;
 				}
 
 				div.sign-up {
@@ -45,20 +46,27 @@ header {
 			}
 		}
 
-		ul {
+		div.nav-div {
 			@include span-columns(8);
-			padding-left: 0;
-			color: $blue;
-			margin-top: 30px;
-			font-family: $light;
-			
-			li.que-es {
-				width: 15%;
-			}
 
-			li {
-				@include span-columns(3);
-				margin-right: 0;
+			ul {
+				@include outer-container(100%);
+				padding-left: 0;
+				margin-top: 30px;
+				font-family: $light;				
+
+				li {
+					@include span-columns(3);
+					text-align: center;
+					a {
+						text-decoration: none;
+						color: $blue;
+					}
+
+					a:hover {
+						color: $light-blue;
+					}
+				}
 			}
 		}
 	}
