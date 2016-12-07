@@ -2,58 +2,127 @@
 <html>
   <head>
     <title>RentalApp</title>
+    <link rel="stylesheet" href="/assets/normalize.css">
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="/assets/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/slick-theme.css"/>
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Brand</a>
-        </div>
+    <header class="home-index">
+      <div class="upper-blue-margin"></div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "Company", new_company_session_path %>
-                </li>
-                <li>
-                  <%= link_to "User", new_user_session_path %>
-                </li>
+      <div class="login-nav">
+        <div class="container">
+          <div class="inner-container">
+            <div class="login" id="login-dropdown-button">
+              <div class="p-container">
+                <p>INICIAR SESIÓN</p>  
+              </div>
+              <ul id="login-dropdown">
+                <%= link_to new_company_session_path do %>
+                  <li>Company</li>
+                <% end %>
+                <%= link_to new_user_session_path do %>
+                  <li>User</li>  
+                <% end %>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "Company", new_company_registration_path %>
-                </li>
-                <li>
-                  <%= link_to "User", new_user_registration_path %>
-                </li>
+            </div>
+            <div class="sign-up" id="sign-up-dropdown-button">
+              <div class="p-container">
+                <p>REGISTRARSE</p>
+              </div>
+              
+              <ul id="sign-up-dropdown">
+                <%= link_to new_company_registration_path do %>
+                  <li>Company</li>
+                <% end %>
+                <%= link_to new_user_registration_path do %>
+                  <li>User</li>  
+                <% end %>
               </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div class="container-fluid">
-      <%= flash_messages %>
-      <%= yield %>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+
+      <nav>
+        <div class="logo">
+          <%= link_to root_path do %>
+            <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/logos/logo-transparente.png" alt="logo-arriendalo-y-punto">
+          <% end %>
+        </div>
+        <div class="nav-div">
+          <ul>
+            <li class="que-es"><%= link_to "QUÉ ES", pages_what_is_path %></li>
+            <li class="como-funciona"><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
+            <li class="garantia"><%= link_to "GARANTÍA" %></li>
+            <li class="preguntas"><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
+          </ul>  
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
+    
+    <div class="footer-image">
+      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" alt="footer-image">
     </div>
+
+    <footer>
+      <div class="column logo-and-social">
+        <div class="logo">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/logos/logo-blanco-transparente.png" alt="logo-arriendalo">
+        </div>
+        <div class="slogan">
+          <p>Deja que tus cosas trabajen por ti.</p>
+        </div>
+        <div class="social-icons">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/facebook-logo.png" alt="facebook-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/twitter-logo.png" alt="twitter-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/instagram-logo.png" alt="instagram-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/youtube-logo.png" alt="youtube-icon">
+          <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/google-logo.png" alt="google-icon">
+        </div>
+      </div>
+
+      <div class="column nav-list">
+        <ul>
+          <li><%= link_to "QUÉ ES", pages_what_is_path %></li>
+          <li><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
+          <li><%= link_to "GARANTÍA" %></li>
+          <li><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
+          <li><%= link_to "CONTACTO" %></li>
+        </ul>  
+      </div>
+
+      <div class="column contact">
+        <div class="politics">
+          <ul>
+            <li>MEDIOS DE PAGO</li>
+            <li>POLITÍCAS DE DEVOLUCIÓN</li>
+          </ul>
+        </div>
+        <div class="contact-info">
+          <p>Mail: contacto@arriendalo.cl</p>
+          <p>Tel. 2 24567890</p>
+          <p>Cel: +56 8 9876 7663</p>
+        </div>
+      </div>
+
+      <div class="column payment-logos">
+        <img src="" alt="WebPay-icon">
+        <img src="" alt="credit-cards-icons">
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/assets/slick.min.js"></script>
+
+
   </body>
 </html>

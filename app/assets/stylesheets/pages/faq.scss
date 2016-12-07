@@ -1,0 +1,45 @@
+section.faq {
+	@include grey-gradient;
+	font-family: $regular;
+	
+	h1 {
+		text-align: center;
+		margin-top: 0;
+		padding-top: 30px;
+		color: $letters-grey;
+	}
+
+	div.faq-chat {
+		@include outer-container;
+		margin-top: 70px;
+	    margin-bottom: 90px;
+		
+		p.question {
+			color: $blue;
+			font-size: 1.1em;
+
+			span:hover {
+				cursor: pointer;
+			}
+
+			span.span-question {
+				margin-right: 10px;
+			}
+
+			span.plus {
+				font-size: 1.6em;
+    			font-weight: bold;
+			}
+
+			span.minus {
+				display: none;
+				font-size: 1.6em;
+    			font-weight: bold;
+			}
+		}
+
+		p.answer {
+			display: none;	
+		}	
+	}
+}

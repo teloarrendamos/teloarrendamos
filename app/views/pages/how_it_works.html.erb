@@ -1,0 +1,89 @@
+<section class="how-it-works">
+	<div class="titles">
+		<h2 class="renter">EL QUE ARRIENDA</h2>
+		<h2 class="client">EL QUE QUIERE ARRENDAR</h2>
+	</div>	
+	<div class="explain-users-plan">
+		<button id="renter-tutorial-btn">Quiero Ganar Dinero!</button>
+		<div class="shake-hands-how-it-works"><img src="/assets/ilustracion-arriendalo.png" alt="Shake-Hands"></div>
+		<button id="client-tutorial-btn">Quiero Arrendar!</button>	
+	</div>
+	<div class="overlay">
+		<div id="slider">
+			<span id="close-btn">X</span>
+			<div id="slider-wrapper">
+				<div class="slide">
+					<img src="/assets/slider-1.png" alt="" />
+					<p class="caption">Sube tu articulo y ponle un precio por día</p>
+				</div>
+				<div class="slide">
+					<img src="/assets/slider-2.png" alt="" />
+					<p class="caption">Te llegará un SMS/Email para confirmar la solicitud</p>
+				</div>
+				<div class="slide">
+					<img src="/assets/slider-3.png" alt="" />
+					<p class="caption">Recibe tu dinero</p>
+				</div>
+			</div>
+			<div id="slider-nav">
+				<a href="" data-slide="0">1</a>
+				<a href="" data-slide="1">2</a>
+				<a href="" data-slide="2">3</a>
+			</div>
+		</div>	
+	</div>
+
+	<script>
+		var renterSlides =	'<div class="slide">' +
+								'<img src="/assets/slider-1.png" alt="" />' +
+								'<p class="caption visible">Sube tu articulo y ponle un precio por día</p>' +
+							'</div>' +
+							'<div class="slide">' +
+								'<img src="/assets/slider-2.png" alt="" />' +
+								'<p class="caption">Te llegará un SMS/Email para confirmar la solicitud</p>' +
+							'</div>' +
+							'<div class="slide">' +
+								'<img src="/assets/slider-3.png" alt="" />' +
+								'<p class="caption">Recibe tu dinero</p>' +
+							'</div>';
+						
+
+		var clientSlides = '<div class="slide">' +
+								'<img src="/assets/slider-1.png" alt="" />' +
+								'<p class="caption visible">Elige lo que andas buscando</p>' +
+							'</div>' +
+							'<div class="slide">' +
+								'<img src="/assets/slider-2.png" alt="" />' +
+								'<p class="caption">Confirma fechas y pagos</p>' +
+							'</div>' +
+							'<div class="slide">' +
+								'<img src="/assets/slider-1.png" alt="" />' +
+								'<p class="caption">Accede al producto!</p>' +
+							'</div>';
+
+		var sliderWrapper = document.getElementById('slider-wrapper'); 
+		var renterButton = document.getElementById('renter-tutorial-btn');
+		var clientButton = document.getElementById('client-tutorial-btn');
+		var closeButton = document.getElementById('close-btn');
+		var overlay = document.getElementsByClassName('overlay')[0];
+
+		renterButton.addEventListener('click', function() {
+			sliderWrapper.insertAdjacentHTML('afterbegin', renterSlides);
+			sliderWrapper.style.left = '0';
+			overlay.style.display = 'block';	
+		});
+
+		clientButton.addEventListener('click', function() {
+			sliderWrapper.insertAdjacentHTML('afterbegin', clientSlides);
+			sliderWrapper.style.left = '0';
+			overlay.style.display = 'block';	
+		});
+
+		closeButton.onclick = function() {
+			while (sliderWrapper.firstChild) {
+			    sliderWrapper.removeChild(sliderWrapper.firstChild);
+			}
+			overlay.style.display = 'none';		
+		}
+	</script>
+</section>

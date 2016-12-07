@@ -1,4 +1,58 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
 @import "gmaps";
 @import "typeahead";
+@import 'bourbon';
+@import 'neat';
+@import 'fonts';
+@import 'mixins';
+
+
+// FONTS
+$regular: 'NeoSansPro-Regular', 'Arial Black';
+$light: 'NeoSansPro-Light', 'Arial Black';
+$ultra: 'NeoSansPro-Ultra', 'Arial Black';
+$std-light: 'NeoSansStd-Light', 'Arial Black';
+$std-medium: 'NeoSansPro-Medium', 'Arial Black';
+$std-regular: 'NeoSansPro-Regular', 'Arial Black';
+
+
+// COLORES
+$blue: #1191B9;
+$light-blue: #00C0FF;
+$green: #00D16D;
+$white: white;
+$grey: rgba(235, 228, 228, 1);
+$letters-grey: grey;
+$titles-grey: #636060;
+
+body {
+	margin: 0;
+	height: 100%;
+
+	p {
+		color: $letters-grey;	
+	}
+	
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	h2, h3 {
+		color: $titles-grey;
+	}
+	
+	@import 'header';
+	@import 'pages/home';
+	@import 'pages/what_is';
+	@import 'pages/how_it_works';
+	@import 'pages/faq';
+	@import 'users/login';
+	@import 'users/sign-up';
+	@import 'companies/login';
+	@import 'footer';
+}

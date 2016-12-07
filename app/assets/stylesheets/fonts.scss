@@ -1,0 +1,153 @@
+// @font-face {
+//   font-family: 'NeoSansPro-Regular';
+//   src: 	url('/assets/fonts/NeoSansPro+Regular.TTF') format('TTF');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansPro-Bold';
+//   src: 	url('/assets/fonts/NeoSansPro+Bold.TTF') format('TTF');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'NeoSansPro-Regular';
+  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeoSansPro-Light';
+  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansPro-Ultra';
+  src: 	url('/assets/NeoSansPro-Ultra') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Light';
+  src: 	url('/assets/NeoSansStd-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Medium';
+  src: 	url('/assets/NeoSansStd-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeoSansStd-Regular';
+  src: 	url('/assets/NeoSansStd-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+// @font-face {
+//   font-family: 'NeoSansPro-Light';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Light.TTF') format('TTF');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansPro-Regular';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansPro+Medium.TTF') format('TTF');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'NeoSansStd-Black';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Black.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-BlackItalic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+BlackItalic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Bold';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Bold.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-BoldItalic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+BoldItalic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Light';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Light.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Medium';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Medium.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-MediumItalic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+MediumItalic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Regular';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Regular.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Black';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd-Black.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Italic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd-Italic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Light';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd+Bold.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-LightItalic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd-LightItalic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-Ultra';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd-Ultra.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'NeoSansStd-UltraItalic';
+//   src: 	url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/fonts/NeoSansStd-UltraItalic.otf') format('otf');
+//   font-weight: normal;
+//   font-style: normal;
+// }

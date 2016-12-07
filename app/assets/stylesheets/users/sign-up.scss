@@ -1,0 +1,4 @@
+section.user-sign-up {
+	@include session-registration-layout;
+	font-family: $light;
+}

@@ -1,0 +1,73 @@
+header {
+	background: $grey;
+
+	div.upper-blue-margin {
+		height: 10px;
+		background: $blue;
+		width: 100%;
+	}
+
+	div.login-nav {
+		@include outer-container;
+		div.container {
+			@include shift(8.5);
+			@include span-columns(3.5);
+
+			div.inner-container {
+				@include outer-container(100%);
+				
+				div.login {
+					@include login-nav;
+					margin-right: 0;
+				}
+
+				div.sign-up {
+					@include login-nav;
+					div.p-container {
+						p {					
+							border-left: 2px solid white;
+						}	
+					}
+				}
+			}
+		}
+	}
+
+	nav {
+		@include outer-container();
+
+		div.logo {
+			@include span-columns(4);
+
+			a {
+				img {
+					width: 85%;
+				}
+			}
+		}
+
+		div.nav-div {
+			@include span-columns(8);
+
+			ul {
+				@include outer-container(100%);
+				padding-left: 0;
+				margin-top: 30px;
+				font-family: $light;				
+
+				li {
+					@include span-columns(3);
+					text-align: center;
+					a {
+						text-decoration: none;
+						color: $blue;
+					}
+
+					a:hover {
+						color: $light-blue;
+					}
+				}
+			}
+		}
+	}
+}

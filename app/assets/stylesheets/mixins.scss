@@ -1,0 +1,276 @@
+@mixin target-customers-index {
+	@include span-columns(6);
+	padding: 50px;
+	border-left: 1px solid black;
+
+	p {
+		margin: 25px 0;
+	}
+	
+	button {
+		background: $blue;
+		border: 0;
+		padding: 8px 19px;
+	}	
+}
+
+@mixin grey-gradient {
+	background: rgb(35,83,138); /* Old browsers */
+	background: -moz-linear-gradient(top,  $grey 20%, transparent 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  $grey 20%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  $grey 20%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr=transparent,GradientType=0 ); /* IE6-9 */
+}
+
+@mixin explain-button {
+	background: $light-blue;
+	border: 0;
+	margin-top: 20%;
+	padding: 12px 0;
+	font-size: 1.5em;
+	color: $white;
+	border-radius: 10px;
+}
+
+@mixin overlay {
+	background: rgba(16, 35, 42, 0.7);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+   	-moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
+
+	#slider {
+		margin: 2em auto;
+		width: 960px;
+		overflow: hidden;
+		margin-top: 10%;
+
+		span#close-btn {
+			border: 0;
+			border-radius: 100%;
+			background: red;
+			color: $white;
+		    margin-left: 755px;
+		    position: absolute;
+		    margin-top: -45px;
+		    font-size: 1.5em;
+			padding: 7px 17px;
+		}
+
+		span#close-btn:hover {
+			cursor: pointer;
+		}
+	}
+
+	#slider-wrapper {
+		width: 9999px;
+		height: 382px;
+		position: relative;
+		transition: left 400ms linear;
+	}
+
+	.slide {
+		float: left;
+		width: 960px;
+		height: 383px;
+		position: relative;
+		overflow: hidden;
+		
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 84%;
+			padding-left: 21%;
+		}
+	}
+
+	.caption {
+		margin: 0 0 0 21%;
+		position: absolute;
+		z-index: 100;
+		bottom: -2em;
+		left: 0;
+		width: 57%;
+		height: 2em;
+		line-height: 2;
+		text-align: center;
+		background: $light-blue;
+		color: $white;
+		transition: bottom 500ms ease-in;
+		font-weight: bold;
+		font-size: 2em;
+
+		&.visible {
+			bottom: 0;	
+		}
+	}
+
+	#slider-nav {
+		margin: 1em 0;
+		text-align: center;
+		
+		a {
+			width: 2em;
+			height: 2em;
+			text-align: center;
+			text-decoration: none;
+			color: $white;
+			display: inline-block;
+			line-height: 2;
+			margin-right: 0.5em;
+			border: 0;
+			border-radius: 100%;
+			background: $light-blue;
+			font-size: 1.5em;
+		
+			&.current {
+				border-color: #000;
+			}
+		}
+	}
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@mixin session-registration-layout {
+	@include grey-gradient;
+	padding-bottom: 70px;
+	padding-top: 25px;
+
+	div.inner-container {
+		height: 100%;
+		margin: 0 25%;
+
+		h2, p {
+			text-align: center;
+			margin-top: 0;
+		}
+		
+		form {
+			input {
+				height: 35px;
+			}
+			div.field {
+				margin: 20px 25%;
+				input {
+					width: 100%;
+				}
+			}
+
+			div.actions {
+				margin: 0 25%;
+				input {
+					width: 100%;
+					background: $light-blue;
+					border: 0;
+				}	
+			}
+		}
+
+		div.login-options {
+			padding: 20px 25%;
+			text-align: center;
+
+			div.forgot-pass {
+				text-align: left;
+
+				a {
+					color: $light-blue;
+				}
+			}
+			
+			a {
+				div.facebook-login {
+					background: #3b5998;
+					height: 35px;
+					padding-top: 7px;
+
+					p {
+						color: $white;
+					}
+				}	
+			}
+		}	
+	}
+}
+
+@mixin login-nav {
+	@include span-columns(6);
+	background-color: $blue;
+	color: $white;
+	font-family: $regular;
+	position: relative;
+
+	div.p-container {
+		padding: 0px 0 5px 0;
+
+		p {
+			margin: 0;
+			color: $white;
+			text-align: center;
+			padding: 5px 0 0 0;
+		}	
+	}
+
+	ul {
+		background: $blue;
+		padding-left: 0;
+		list-style-type: none;
+		display: none;
+		position: absolute;
+		width: 100%;
+		margin: 0;
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		a {
+			color: $white;
+			text-decoration: none;
+			li {
+				text-align: center;
+				padding: 5px 0;
+			}
+
+			li:hover {
+				background-color: $light-blue;
+			}
+		}
+	}
+}

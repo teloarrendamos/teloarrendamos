@@ -1,0 +1,600 @@
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/gmaps.scss */
+#gmaps-canvas {
+  height: 300px;
+  border: 1px solid #999;
+  -moz-box-shadow: 0px 0px 5px #ccc;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+/* line 10, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/gmaps.scss */
+#gmaps-error {
+  color: #cc0000;
+}
+
+/* line 14, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/gmaps.scss */
+#results {
+  color: #000;
+  padding-top: 10px;
+}
+
+/* line 19, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/gmaps.scss */
+.download {
+  float: right;
+}
+
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+/* line 7, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-hint {
+  color: #999;
+}
+
+/* line 11, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-menu {
+  /* used to be tt-dropdown-menu in older versions */
+  width: 422px;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* line 26, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+}
+
+/* line 31, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-suggestion.tt-cursor, .tt-suggestion:hover {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+/* line 37, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/typeahead.scss */
+.tt-suggestion p {
+  margin: 0;
+}
+
+/* line 4, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 12, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/application.scss */
+body {
+  height: 100%;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header {
+  background: #b7b7b7;
+}
+/* line 4, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.upper-blue-margin {
+  height: 10px;
+  background: blue;
+  width: 100%;
+}
+/* line 11, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body header div.login-nav ul::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 15, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul li.login {
+  margin-left: 68.23843%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 10.43705%;
+  padding: 5px 10px 10px 10px;
+  background: blue;
+  margin-right: 0;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body header div.login-nav ul li.login:last-child {
+  margin-right: 0;
+}
+/* line 22, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul li.login ul {
+  width: 146px;
+  padding: 10px 0px;
+  position: absolute;
+  background: blue;
+  left: 69.2%;
+  display: none;
+}
+/* line 35, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul li.sign-up {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 10.43705%;
+  padding: 5px 10px 10px 10px;
+  background: blue;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body header div.login-nav ul li.sign-up:last-child {
+  margin-right: 0;
+}
+/* line 39, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul li.sign-up a {
+  border-left: 1px solid white;
+}
+/* line 43, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header div.login-nav ul li.sign-up ul {
+  padding: 0;
+  position: absolute;
+  background: blue;
+  display: block;
+  width: 119px;
+  padding: 10px 0px;
+  display: none;
+}
+/* line 59, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body header nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 62, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav div.logo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body header nav div.logo:last-child {
+  margin-right: 0;
+}
+/* line 66, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav div.logo a img {
+  width: 85%;
+}
+/* line 72, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav ul {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  padding-left: 0;
+  color: blue;
+  margin-top: 30px;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body header nav ul:last-child {
+  margin-right: 0;
+}
+/* line 78, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav ul li.que-es {
+  width: 15%;
+}
+/* line 82, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/header.scss */
+body header nav ul li {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  margin-right: 0;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body header nav ul li:last-child {
+  margin-right: 0;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.title-and-search {
+  background-image: url("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/backgrounds/imagen-retocada-final-aprobada.jpg");
+  background-size: 100% 100%;
+  text-align: center;
+  /* Set the height to match that of the viewport. */
+  height: 100vh;
+  /* Set the width to match that of the viewport. */
+  width: 100vw;
+  /* Remove any browser-default margins. */
+  margin: 0 0 0 0;
+}
+/* line 14, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.title-and-search div.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #23538a;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #b7b7b7 20%, transparent 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #b7b7b7 20%, transparent 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #b7b7b7 20%, transparent 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr=transparent,GradientType=0 );
+  /* IE6-9 */
+}
+/* line 26, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.title-and-search div.callout {
+  padding: 5% 26% 3% 26%;
+}
+/* line 31, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.title-and-search form span.twitter-typeahead {
+  width: 500px;
+}
+/* line 35, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.title-and-search form input[type='submit'] {
+  background: blue;
+  border: 0;
+  padding: 6px 30px;
+  color: white;
+}
+/* line 44, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.target-customers {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.target-customers::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 48, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.target-customers div.client {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 50px;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.target-customers div.client:last-child {
+  margin-right: 0;
+}
+/* line 52, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.target-customers div.client button {
+  background: blue;
+  border: 0;
+  padding: 8px 19px;
+}
+/* line 58, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.target-customers div.renter {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 50px;
+  border-left: 1px solid black;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.target-customers div.renter:last-child {
+  margin-right: 0;
+}
+/* line 63, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.target-customers div.renter button {
+  background: blue;
+  border: 0;
+  padding: 8px 19px;
+}
+/* line 71, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.categories {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.categories::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 78, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.categories div.products-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.categories div.products-container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 81, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.categories div.products-container div.product {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 18.11388%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.categories div.products-container div.product:last-child {
+  margin-right: 0;
+}
+/* line 87, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.highlight-products {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.highlight-products::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 95, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.highlight-products div.products-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.highlight-products div.products-container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 98, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.highlight-products div.products-container div.product {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.highlight-products div.products-container div.product:last-child {
+  margin-right: 0;
+}
+/* line 104, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.activity {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.activity::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 108, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/home.scss */
+body section.activity div.stats {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.activity div.stats:last-child {
+  margin-right: 0;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.que-es {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.que-es::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 3, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.que-es div.que-es-texto {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.que-es div.que-es-texto:last-child {
+  margin-right: 0;
+}
+/* line 7, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.que-es div.que-es-img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.que-es div.que-es-img:last-child {
+  margin-right: 0;
+}
+/* line 12, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.payment-explained {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body section.payment-explained::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 14, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.payment-explained div.payment-text {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.payment-explained div.payment-text:last-child {
+  margin-right: 0;
+}
+/* line 18, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/que_es.scss */
+body section.payment-explained div.payment-img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body section.payment-explained div.payment-img:last-child {
+  margin-right: 0;
+}
+/* line 2, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/pages/faq.scss */
+body section.faq h1 {
+  text-align: center;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login {
+  height: 100%;
+  margin: 0 25%;
+}
+/* line 5, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login h2, body section.user-login p {
+  text-align: center;
+}
+/* line 10, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login form div.field {
+  margin: 0 25%;
+}
+/* line 12, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login form div.field input {
+  width: 100%;
+}
+/* line 17, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login form div.actions {
+  margin: 0 25%;
+}
+/* line 19, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login form div.actions input {
+  width: 100%;
+}
+/* line 25, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login div.login-options {
+  padding: 20px 87px;
+  text-align: center;
+}
+/* line 30, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/users/login.scss */
+body section.user-login div.sign-up-callout {
+  text-align: center;
+  padding: 20px 87px;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login {
+  height: 100%;
+  margin: 0 25%;
+}
+/* line 5, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login h2, body section.company-login p {
+  text-align: center;
+}
+/* line 10, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login form div.field {
+  margin: 0 25%;
+}
+/* line 12, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login form div.field input {
+  width: 100%;
+}
+/* line 17, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login form div.actions {
+  margin: 0 25%;
+}
+/* line 19, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login form div.actions input {
+  width: 100%;
+}
+/* line 25, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login div.login-options {
+  padding: 20px 87px;
+  text-align: center;
+}
+/* line 30, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/companies/login.scss */
+body section.company-login div.sign-up-callout {
+  text-align: center;
+  padding: 20px 87px;
+}
+/* line 1, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: blue;
+  color: white;
+  padding: 70px;
+}
+/* line 20, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+body footer::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 7, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer div.column {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body footer div.column:last-child {
+  margin-right: 0;
+}
+/* line 13, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer div.logo-and-social div.social-icons img {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 18.11388%;
+}
+/* line 89, /Users/ignaciopalma/.rvm/gems/ruby-2.3.0/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+body footer div.logo-and-social div.social-icons img:last-child {
+  margin-right: 0;
+}
+/* line 20, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer div.nav-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 29, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer div.contact div.politics ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 38, /Users/ignaciopalma/Desktop/my-rails-projects/teloarrendamos/app/assets/stylesheets/footer.scss */
+body footer div.contact div.contact-info p {
+  margin-bottom: 0;
+}
