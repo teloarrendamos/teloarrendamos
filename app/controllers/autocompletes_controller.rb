@@ -1,13 +1,13 @@
 class AutocompletesController < ApplicationController
   def show
     @listings = Listing.search(params[:query], {
-      fields: ["details", "description"],
+      fields: ["title", "description"],
       match: :word_start,
       limit: 10,
       load: false,
       misspellings: {below: 2}
     }).map do |listing|
-      { description: listing.description }
+      { description: listing.title }
     end
 
     render json: @listings

@@ -29,11 +29,11 @@
   <h2>Categorías</h2>
   <div class="products-container">
     <div class="product bicycles">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/04-bicicletas.png" alt="bike-icon">
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/04-bicicletas.png", alt: "bike-icon"), category_path("Bicycles") %>
       <p>BICICLETAS</p>
     </div>
     <div class="product surf">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/07-surf.png" alt="surf-icon">
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/07-surf.png", alt: "surf-icon"), category_path("Surf Boards") %>
       <p>TABLAS DE SURF Y BODY</p>
     </div>
     <div class="product tools">

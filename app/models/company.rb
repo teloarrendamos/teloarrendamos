@@ -35,5 +35,6 @@ class Company < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   validates :company_name, presence: true
-  has_many :listings
+  has_many :listings, as: :postable
+  has_many :orders, as: :orderable
 end

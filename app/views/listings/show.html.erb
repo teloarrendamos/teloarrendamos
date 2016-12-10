@@ -1,11 +1,8 @@
-<h4><%= @listing.description %></h4>
+<h4><%= @listing.title %></h4>
 
-<p>Address: <%= @listing.address_detail %></p>
-
+<p>Description: <%= @listing.description %></p>
+<p>Category: <%= @listing.category.name %></p>
 <p>Daily Rate: <%= @listing.daily_rate %></p>
-<p>Hourly Rate: <%= @listing.hourly_rate %></p>
-<p>Weekly Rate: <%= @listing.weekly_rate %></p>
-<p>Monthly Rate: <%= @listing.monthly_rate %></p>
 
 <div>
   <% @listing.images.each_with_index do |image, index| %>
@@ -14,7 +11,7 @@
   <% end %>
 </div>
 
-<% if @listing.company == current_company %>
+<% if @listing.postable == current_person %>
 
   <%= link_to "Edit Listing", edit_listing_path(@listing) %>
 

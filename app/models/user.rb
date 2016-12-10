@@ -41,6 +41,8 @@ class User < ApplicationRecord
          :confirmable, :omniauthable, omniauth_providers: [:facebook]
 
   mount_uploader :profile_picture, ProfilePictureUploader
+  has_many :listings, as: :postable
+  has_many :orders, as: :orderable
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

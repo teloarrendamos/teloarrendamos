@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing: one
+  order: one
+  start_date: 2016-12-11
+  end_date: 2016-12-11
+
+two:
+  listing: two
+  order: two
+  start_date: 2016-12-11
+  end_date: 2016-12-11

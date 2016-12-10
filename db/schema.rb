@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109124919) do
+ActiveRecord::Schema.define(version: 20161208150732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,24 +45,25 @@ ActiveRecord::Schema.define(version: 20161109124919) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "address_detail"
-    t.string   "address_title"
     t.string   "description"
-    t.text     "details"
     t.integer  "category_id"
-    t.integer  "company_id"
-    t.integer  "hourly_rate"
     t.integer  "daily_rate"
-    t.integer  "weekly_rate"
-    t.integer  "monthly_rate"
-    t.integer  "deposit"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "images",         default: [],              array: true
+    t.integer  "postable_id"
+    t.string   "postable_type"
+    t.integer  "deposit"
+    t.integer  "monthly_rate"
+    t.integer  "weekly_rate"
+    t.integer  "hourly_rate"
+    t.string   "details"
+    t.string   "address_title"
+    t.string   "address_detail"
+    t.float    "longitude"
+    t.float    "latitude"
     t.index ["category_id"], name: "index_listings_on_category_id", using: :btree
-    t.index ["company_id"], name: "index_listings_on_company_id", using: :btree
+    t.index ["postable_type", "postable_id"], name: "index_listings_on_postable_type_and_postable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,5 +95,4 @@ ActiveRecord::Schema.define(version: 20161109124919) do
   end
 
   add_foreign_key "listings", "categories"
-  add_foreign_key "listings", "companies"
 end

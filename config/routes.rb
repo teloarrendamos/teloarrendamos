@@ -15,14 +15,11 @@ Rails.application.routes.draw do
     resource :account, controller: 'users/accounts', only: [:edit, :update]
   end
 
-  resources :company, only: [], shallow: true do
-    resources :listings
+  resources :listings, only: [:new, :create, :show, :index, :edit, :update] do
+    resources :images, :only => [:create, :destroy]    
   end
 
-  resources :listing, only: [:show, :index, :edit, :update] do
-    resources :images, :only => [:create, :destroy]
-    
-  end
+  resources :categories, only: :show
 
   resource :autocomplete, only: :show
   resource :search, only: :show

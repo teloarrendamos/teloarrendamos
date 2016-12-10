@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
-//= require gmaps
 //= require keyboard
 //= require typeahead
 //= require listings
