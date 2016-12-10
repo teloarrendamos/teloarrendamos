@@ -2,24 +2,17 @@
 #
 # Table name: listings
 #
-#  id             :integer          not null, primary key
-#  description    :string
-#  category_id    :integer
-#  daily_rate     :integer
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  images         :string           default([]), is an Array
-#  postable_id    :integer
-#  postable_type  :string
-#  deposit        :integer
-#  monthly_rate   :integer
-#  weekly_rate    :integer
-#  hourly_rate    :integer
-#  details        :string
-#  address_title  :string
-#  address_detail :string
-#  longitude      :float
-#  latitude       :float
+#  id            :integer          not null, primary key
+#  description   :string
+#  category_id   :integer
+#  daily_rate    :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  images        :string           default([]), is an Array
+#  postable_id   :integer
+#  postable_type :string
+#  title         :string
+#  region        :string
 #
 # Indexes
 #

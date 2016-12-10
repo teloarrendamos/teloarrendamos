@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208150732) do
+ActiveRecord::Schema.define(version: 20161210162550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.integer  "order_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "subtotal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
+    t.index ["order_id"], name: "index_bookings_on_order_id", using: :btree
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -48,22 +60,24 @@ ActiveRecord::Schema.define(version: 20161208150732) do
     t.string   "description"
     t.integer  "category_id"
     t.integer  "daily_rate"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "images",         default: [],              array: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "images",        default: [],              array: true
     t.integer  "postable_id"
     t.string   "postable_type"
-    t.integer  "deposit"
-    t.integer  "monthly_rate"
-    t.integer  "weekly_rate"
-    t.integer  "hourly_rate"
-    t.string   "details"
-    t.string   "address_title"
-    t.string   "address_detail"
-    t.float    "longitude"
-    t.float    "latitude"
+    t.string   "title"
+    t.string   "region"
     t.index ["category_id"], name: "index_listings_on_category_id", using: :btree
     t.index ["postable_type", "postable_id"], name: "index_listings_on_postable_type_and_postable_id", using: :btree
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "orderable_type"
+    t.integer  "orderable_id"
+    t.integer  "total"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["orderable_type", "orderable_id"], name: "index_orders_on_orderable_type_and_orderable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,5 +108,6 @@ ActiveRecord::Schema.define(version: 20161208150732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "listings"
   add_foreign_key "listings", "categories"
 end
