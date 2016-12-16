@@ -21,7 +21,7 @@
   <div class="renter">
     <h2>Quiero poner en arriendo</h2>
     <p>Crea tu cuenta y sube tus productos para que otras personas los arrienden. Sube dfotos y descripciones de tus productos</p>
-    <%= link_to button_tag("Buscar por categorias"), categories_path %>
+    <%= link_to button_tag("REGISTRARSE"), new_user_registration_path %>
   </div>
 </section>
 
@@ -37,15 +37,15 @@
       <p>TABLAS DE SURF Y BODY</p>
     </div>
     <div class="product tools">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/06-herramientas.png" alt="tools-icon">
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/06-herramientas.png", alt: "tools-icon"), category_path("Hardware") %>
       <p>HERRAMIENTAS</p>
     </div>
     <div class="product motorbikes">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/02-motos-agua.png" alt="motorbikes-icon">
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/02-motos-agua.png", alt: "motorbikes-icon"), category_path("Motorcycles") %>
       <p>MOTOS, CUADRIMOTOS Y DE AGUA</p>
     </div>
     <div class="product music-instruments">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/09-instrumentos.png" alt="music-icon">
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/09-instrumentos.png", alt: "music-icon"), category_path("Instruments") %>
       <p>INSTRUMENTOS MUSICALES</p>
     </div>
   </div>

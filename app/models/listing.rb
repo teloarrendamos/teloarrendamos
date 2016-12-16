@@ -25,13 +25,20 @@
 #
 
 class Listing < ApplicationRecord
+  CHILE_REGIONS = %w(Tarapacá Antofagasta Atacama Coquimbo Valparaíso O'Higgins Maule Bío\ Bío Araucanía
+                    Los\ Lagos Aisén Magallanes Los\ Ríos Arica\ and\ Parinacota Santiago)
+
   belongs_to :category
   belongs_to :postable, polymorphic: true
   validates :description, presence: true
+  validates :region, inclusion: { in: CHILE_REGIONS }
   mount_uploaders :images, ListingImageUploader
 
-  searchkick word_start: [:description, :title]
+  searchkick word_start: [:description, :title, :category_name]
 
-  CHILE_REGIONS = %w(Tarapacá Antofagasta Atacama Coquimbo Valparaíso O'Higgins Maule Bío\ Bío Araucanía
-                    Los\ Lagos Aisén Magallanes Los\ Ríos Arica\ and\ Parinacota Santiago)
+  def search_data
+    attributes.merge(
+      category_name: self.category.name
+    )
+  end
 end

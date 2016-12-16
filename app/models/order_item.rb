@@ -41,7 +41,7 @@ class OrderItem < ApplicationRecord
   end
 
   def duration
-    (start_date - end_date).to_i
+    (end_date - start_date).to_i
   end
 
   def discount

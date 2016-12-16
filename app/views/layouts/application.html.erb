@@ -15,17 +15,23 @@
         <div class="">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           </button>
-          <a class="" href="/">Brand</a>
+          <a class="" href="/">Home</a>
+
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="" id="">
           <ul class="">
-            <li>
-              <%= link_to "Account", edit_account_path %>
+            <li class="cart-text">
+              <%= render 'layouts/cart_text' %>
             </li>
-            <li>
-              <%= link_to "Sign Out", destroy_company_session_path, method: :delete %>
-            </li>
+            <% if current_person %>
+              <li>
+                <%= link_to "Account", edit_account_path %>
+              </li>
+              <li>
+                <%= link_to "Sign Out", destroy_company_session_path, method: :delete %>
+              </li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
