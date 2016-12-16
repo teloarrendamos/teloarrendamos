@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210162550) do
+ActiveRecord::Schema.define(version: 20161215134824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(version: 20161210162550) do
   create_table "listings", force: :cascade do |t|
     t.string   "description"
     t.integer  "category_id"
-    t.integer  "daily_rate"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "images",        default: [],              array: true
+    t.decimal  "daily_rate",    precision: 12, scale: 2
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.string   "images",                                 default: [],              array: true
     t.integer  "postable_id"
     t.string   "postable_type"
     t.string   "title"
@@ -71,12 +71,26 @@ ActiveRecord::Schema.define(version: 20161210162550) do
     t.index ["postable_type", "postable_id"], name: "index_listings_on_postable_type_and_postable_id", using: :btree
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.integer  "order_id"
+    t.decimal  "unit_price",  precision: 12, scale: 3
+    t.decimal  "total_price", precision: 12, scale: 3
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["listing_id"], name: "index_order_items_on_listing_id", using: :btree
+    t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string   "orderable_type"
     t.integer  "orderable_id"
-    t.integer  "total"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.decimal  "total",          precision: 12, scale: 2
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.integer  "status",                                  default: 0
     t.index ["orderable_type", "orderable_id"], name: "index_orders_on_orderable_type_and_orderable_id", using: :btree
   end
 
@@ -110,4 +124,6 @@ ActiveRecord::Schema.define(version: 20161210162550) do
 
   add_foreign_key "bookings", "listings"
   add_foreign_key "listings", "categories"
+  add_foreign_key "order_items", "listings"
+  add_foreign_key "order_items", "orders"
 end

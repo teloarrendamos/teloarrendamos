@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
   devise_for :users, controllers: { sessions: 'users/sessions', 
                                     registrations: 'users/registrations',
                                     omniauth_callbacks: "users/omniauth_callbacks" }
@@ -19,9 +25,14 @@ Rails.application.routes.draw do
     resources :images, :only => [:create, :destroy]    
   end
 
-  resources :categories, only: :show
+  resources :categories, only: [:index, :show]
+
+  resource :cart, only: [:show]
+
+  resources :order_items, only: [:create, :update, :destroy]
 
   resource :autocomplete, only: :show
+  
   resource :search, only: :show
 
   get 'pages/faq' => 'pages#faq'

@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/typeahead.min
 //= require keyboard
-//= require typeahead
 //= require listings
 
 // Login Nav Dropdown
@@ -134,7 +134,11 @@ $(document).on('turbolinks:load', function(){
 		}	
 	};
 
-	var aSlider = new Slider( "#slider" );
+	if (true) {}$("")
+		if($(".pages.how_it_works").length > 0) {
+			var aSlider = new Slider( "#slider" );		
+		}
+		
 });
 	
 

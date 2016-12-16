@@ -5,7 +5,7 @@
 #  id            :integer          not null, primary key
 #  description   :string
 #  category_id   :integer
-#  daily_rate    :integer
+#  daily_rate    :decimal(12, 2)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  images        :string           default([]), is an Array

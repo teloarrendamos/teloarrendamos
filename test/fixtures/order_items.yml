@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing: one
+  order: one
+  unit_price: 9.99
+  total_price: 9.99
+  start_date: 2016-12-15
+  end_date: 2016-12-15
+
+two:
+  listing: two
+  order: two
+  unit_price: 9.99
+  total_price: 9.99
+  start_date: 2016-12-15
+  end_date: 2016-12-15
