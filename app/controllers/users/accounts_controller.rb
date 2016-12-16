@@ -9,7 +9,7 @@ class Users::AccountsController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash[:notice] = "Profile updated"
-      redirect_to dashboard_path
+      redirect_to user_dashboard_path
     else
       render "edit"
     end
