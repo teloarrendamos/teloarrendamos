@@ -3,7 +3,7 @@
 <%= form_for @user, url: account_path do |f| %>
   <div class="row">
     <div class="col-xs-12">
-      <%= image_tag @user.profile_picture, class: "center-block" %>
+      <%= image_tag @user.profile_picture.url, class: "center-block" %>
     </div>
 
     <div class="col-xs-12 text-center">
