@@ -16,6 +16,7 @@
 //= require twitter/typeahead.min
 //= require keyboard
 //= require listings
+//= require slick.min
 
 // Login Nav Dropdown
 $(document).on('turbolinks:load', function(){
