@@ -1,5 +1,6 @@
-@import "gmaps";
-@import "typeahead";
+@import 'normalize.min';
+@import 'gmaps';
+@import 'typeahead';
 @import 'bourbon';
 @import 'neat';
 @import 'fonts';
@@ -54,3 +55,6 @@ body {
 	@import 'companies/login';
 	@import 'footer';
 }
+
+@import 'slick';
+@import 'slick-theme';
