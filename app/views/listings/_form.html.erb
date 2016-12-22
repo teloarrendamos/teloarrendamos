@@ -8,41 +8,48 @@
     </ul>
   <% end %>
 
-  <div>
-    <div>
-      <%= f.label :title, "Product Title" %>
-      <%= f.text_field :title %>
+  <div class="form-container">
+    <div class="first-row">
+      <div class="title">
+        <%= f.label :title, "Titulo del Producto" %>
+        <%= f.text_field :title %>
+      </div>  
+
+      <div class="rate">
+        <%= f.label :daily_rate, "Tarifa Diaria" %>
+        <%= f.number_field :daily_rate %>
+      </div>  
+      
+    </div>
+    
+    <div class="second-row">
+      <div class="description">
+        <%= f.label :description, "Descripción" %>
+        <%= f.text_area :description %>
+      </div>
+
+      <div class="dropdowns">
+        <div class="region">
+          <%= f.label :region, "Region" %>
+          <%= f.select :region,  options_for_select(Listing::CHILE_REGIONS) %>
+        </div>
+
+        <div class="category">
+          <%= f.label :category_id, "Category" %>
+          <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
+        </div>  
+      </div>
     </div>
 
-    <div>
-      <%= f.label :description, "Product Description" %>
-      <%= f.text_area :description %>
+    <div class="third-row">
+      <div class="images">
+        <%= f.label :Subir_fotos %>
+        <%= f.file_field :images, multiple: true %>
+      </div>  
     </div>
 
-    <div>
-      <%= f.label :region, "Region" %>
-      <%= f.select :region,  options_for_select(Listing::CHILE_REGIONS) %>
-    </div>
-
-    <div>
-      <%= f.label :category_id, "Category" %>
-      <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
-    </div>
-
-    <div">
-      <%= f.label :daily_rate %>
-      <%= f.number_field :daily_rate %>
-    </div>
-
-    <div>
-      <%= f.label :images %>
-      <%= f.file_field :images, multiple: true %>
-    </div>
-
-
-
-    <div>
-      <%= f.submit nil %>
+    <div class="submit-listing">
+      <%= f.submit "Subir Producto" %>
     </div>
   </div>
 <% end %>
@@ -50,4 +57,5 @@
 <% @listing.images.each_with_index do |image, index| %>
   <%= image_tag(image.url) %>
   <%= link_to "Delete", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
-<% end %>
+<% end %>  
+

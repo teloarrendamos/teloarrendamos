@@ -17,7 +17,16 @@ Rails.application.routes.draw do
   end
 
   authenticated :user do
-    resource :dashboard, controller: 'users/dashboards', only: :show, as: :user_dashboard
+    resource :dashboard, controller: 'users/dashboards', only: :show, as: :user_dashboard do
+      collection do
+        get :profile
+        get :my_products
+        get :upload_new_product
+        get :history
+        get :messages
+        get :valuation
+      end
+    end
     resource :account, controller: 'users/accounts', only: [:edit, :update]
   end
 
@@ -25,7 +34,7 @@ Rails.application.routes.draw do
     resources :images, :only => [:create, :destroy]    
   end
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show, :new, :create]
 
   resource :cart, only: [:show]
 

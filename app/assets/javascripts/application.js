@@ -11,12 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/typeahead.min
 //= require keyboard
 //= require listings
-//= require slick.min
+//= require slick.min.js
+//= require picker
+//= require picker.date
+
+
+
 
 // Login Nav Dropdown
 $(document).on('turbolinks:load', function(){
@@ -141,6 +147,10 @@ $(document).on('turbolinks:load', function(){
 		}
 		
 });
-	
 
-
+$(document).on('turbolinks:load', function(){
+    // $('.datepicker').pickadate({
+    //   selectMonths: true, // Creates a dropdown to control month
+    //   selectYears: 15 // Creates a dropdown of 15 years to control year
+    // });
+});

@@ -17,11 +17,13 @@ header {
 				@include outer-container(100%);
 				
 				div.login {
+					@include span-columns(6);
 					@include login-nav;
 					margin-right: 0;
 				}
 
 				div.sign-up {
+					@include span-columns(6);
 					@include login-nav;
 					div.p-container {
 						p {					
@@ -32,6 +34,34 @@ header {
 			}
 		}
 	}
+	
+	div.login-nav-user {
+		@include outer-container;
+		div.container {
+			@include shift(5);
+			@include span-columns(7);
+
+			div.inner-container {
+				@include outer-container(100%);
+				
+				div.hello-user {
+					@include span-columns(4);
+					@include login-nav;
+				}
+
+				div.account {
+					@include span-columns(4);
+					@include login-nav;
+				}
+
+				div.sign-out {
+					@include span-columns(4);
+					@include login-nav;
+				}
+			}
+		}
+	}
+
 
 	nav {
 		@include outer-container();

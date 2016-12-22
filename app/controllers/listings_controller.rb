@@ -24,6 +24,12 @@ class ListingsController < ApplicationController
 
   def show
     @order_item = current_order.order_items.new
+    @secondary_images = []
+    i = 1
+    while i < @listing.images.length do 
+      @secondary_images.push(@listing.images[i])
+      i += 1 
+    end
   end
 
   def edit

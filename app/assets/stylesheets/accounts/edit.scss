@@ -1,0 +1,53 @@
+section.accounts-edit {
+	@include grey-gradient;
+	div.wrapper {
+		@include outer-container;
+		padding-top: 90px;
+
+		div.info-column {
+			@include span-columns(7);
+			div.account-info {
+				@include outer-container;
+				margin-bottom: 40px;
+				img {
+					@include span-columns(3);
+					background-color: white;
+					margin-top: 8px;
+    				margin-right: 65px;
+					width: 90px;
+					height: 90px;
+					border-radius: 100%;
+					border: 1px solid $letters-grey;
+					padding: 5px;
+				}
+
+				div.info-text {
+					@include span-columns(9);
+					font-family: $regular;
+
+					p, h3 {
+						font-size: 1.5em;
+						margin: 0;
+					}
+				}
+			}
+
+			div.edit-account {
+				display: none;
+			}
+		}
+
+		button {
+			background: $light-blue;
+			border: 0;
+			padding: 8px 30px;
+			color: $white;
+			font-size: 1.2em;
+			width: 60%;
+		}
+
+		div.map-column {
+			@include span-columns(5);
+		}	
+	}
+}

@@ -1,32 +1,58 @@
-<h4>Edit Account</h4>
+<section class="accounts-edit">
+  <div class="wrapper">
+    <div class="info-column">
+      <div class="account-info">
+        <%= image_tag(@user.profile_picture) %>
+        <div class="info-text">
+          <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+          <p>+56 9 95773432</p>
+          <p><%= @user.email %></p>
+          <p>Miembro desde el 2016</p>    
+        </div>
+      </div>
+      
+      <button id="show-edit-form">Editar Perfil</button>  
 
-<%= form_for @user, url: account_path do |f| %>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= image_tag @user.profile_picture.url, class: "center-block" %>
+      <div class="edit-account">
+        <%= form_for @user, url: account_path do |f| %>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              Change Picture
+              <%= f.file_field :profile_picture, class: "center-block" %>
+            </div>
+
+            <div class="col-xs-6 text-center form-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+
+            <div class="col-xs-6 text-center form-group">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+
+            <div class="col-xs-12">
+              <%= f.submit nil, class: "btn btn-default" %>
+            </div>
+          </div>
+
+        <% end %>
+
+        <%= link_to button_tag("Cambiar Contraseña", class: "btn btn-default"), edit_user_registration_path %>  
+      </div>
     </div>
 
-    <div class="col-xs-12 text-center">
-      Change Picture
-      <%= f.file_field :profile_picture, class: "center-block" %>
-    </div>
-
-    <div class="col-xs-6 text-center form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: "form-control" %>
-    </div>
-
-    <div class="col-xs-6 text-center form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
-
-    <div class="col-xs-12">
-      <%= f.submit nil, class: "btn btn-default" %>
-    </div>
+    <div class="map-column">
+      <div class="map">
+        <img src="/assets/map-image.png" alt="map">
+      </div>
+    </div>  
   </div>
 
-<% end %>
-
-
-<%= link_to button_tag("Change your password", class: "btn btn-default"), edit_user_registration_path %>
+  <script>
+    editButton = document.getElementById('show-edit-form');
+    editButton.addEventListener('click', function() {
+      document.getElementsByClassName('edit-account')[0].style.display = 'block';
+    })
+  </script>
+</section>

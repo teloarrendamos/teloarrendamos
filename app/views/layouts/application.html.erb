@@ -7,40 +7,35 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>
-    <div class="upper-blue-margin"></div>
-    <nav class="">
-      <div class="">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          </button>
-          <a class="" href="/">Home</a>
-
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="" id="">
-          <ul class="">
-            <li class="cart-text">
-              <%= render 'layouts/cart_text' %>
-            </li>
-            <% if current_person %>
-              <li>
-                <%= link_to "Account", edit_account_path %>
-              </li>
-              <li>
-                <%= link_to "Sign Out", destroy_company_session_path, method: :delete %>
-              </li>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  </header>
   <body>
-    <div class="container">
-      <%= flash_messages %>
-      <%= yield %>
+    <%= render 'layouts/header' %>
+    <% unless controller_name == "pages" %>
+      <% if current_person %>
+      <section class="user-header">
+        <div class="user-header">
+          <h3>Mi Cuenta</h3>
+          <ul class="user-nav">
+            <li><%= link_to "Perfil", edit_account_path %></li>
+            <li><%= link_to "Mis Productos", user_dashboard_path %></li>
+            <li><%= link_to "Subir Producto", new_listing_path %></li>
+            <li><%= link_to "Historial", history_user_dashboard_path %></li>
+            <li><%= link_to "Mensajes", messages_user_dashboard_path %></li>
+            <li><%= link_to "Valoraciones", valuation_user_dashboard_path %></li>
+          </ul>
+        </div>
+      </section>
+      <% end %>
+    <% end %>
+   
+     <%= yield %>
+    
+    <div class="footer-image">
+      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" alt="footer-image">
     </div>
+
+    <%= render 'layouts/footer' %>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </body>
 </html>

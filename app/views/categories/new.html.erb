@@ -1,0 +1,20 @@
+<%= form_for @category do |f| %>
+	
+	<div class="name">
+		<%= f.label :id %>
+		<%= f.number_field :id%>
+	</div>  
+	<div class="name">
+		<%= f.label :name %>
+		<%= f.text_field :name%>
+	</div>  
+
+	<div class="image">
+		<%= f.label :imagen %>
+		<%= f.file_field :category_image %>
+	</div>  
+
+    <div class="submit-listing">
+      <%= f.submit "Crear Categoria" %>
+    </div>
+<% end %>

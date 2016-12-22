@@ -1,0 +1,79 @@
+@mixin labels {
+	label {
+		@include span-columns(12);
+		margin: 1em 0;
+	}
+	input {
+		@include span-columns(12);
+		margin: 1em 0;
+		height: 3em;
+		border: 2px solid $letters-grey;
+	}
+	select {
+		@include span-columns(12);
+		background-color: $blue;
+		border: 2px solid $letters-grey;
+	}
+	textarea {
+		@include span-columns(12);
+		height: 100px;
+		border: 2px solid $letters-grey;
+	}
+}
+
+section.new-listing {
+	@include grey-gradient;
+	padding-top: 3em;
+
+	h4 {
+		margin: 0;
+		padding: 50px 0;
+	}
+
+	div.form-container {
+		font-family: $regular;
+		div.first-row {
+			@include outer-container;
+			
+			div.title {
+				@include span-columns(6);
+				@include labels;
+			}
+
+			div.rate {
+				@include span-columns(6);
+				@include labels;
+			}
+		}
+
+		div.second-row {
+			@include outer-container;
+			div.description {
+				@include span-columns(6);
+				@include labels;
+			}
+			
+			div.dropdowns {
+				@include span-columns(6);
+				div.region {
+					@include labels;
+				}
+
+				div.category {
+					@include labels;
+				}	
+			}
+		}
+
+		div.third-row {
+			@include outer-container;
+			div.images {
+				@include labels;
+			}
+		}
+
+		div.submit-listing {
+			@include outer-container;
+		}
+	}
+}

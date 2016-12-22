@@ -1,9 +1,26 @@
-<h4>Listings</h4>
+<section class="user-dashboard">
+	<table>
+		<thead>
+			<tr>
+				<th>Imagen Destacada</th>
+				<th>Titulo de Producto</th>
+				<th>Tarifa Diaria</th>
+				<th>Descripcion</th>
+				<th>Acciones</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<% @listings.each do |listing| %>
+			<tr>
+				<td><%= image_tag(listing.images[0]) %></td>
+				<td><%= listing.title %></td>
+				<td><%= listing.description %></td>
+				<td><%= listing.daily_rate %></td>
+				<td>Ver, Editar, Borrar</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<ul>
-  <% @listings.each do |listing| %>
-    <li><%= link_to listing.description, listing %></li>
-  <% end %>
-</ul>
-
-<%= link_to "New Listing", new_listing_path %>
+	<%= link_to "Crear Nuevo Producto", new_listing_path %>
+</section>

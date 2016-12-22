@@ -1,0 +1,12 @@
+section.categories {
+	@include grey-gradient;
+	div.wrapper {
+		padding: 60px;
+		@include outer-container;
+		div.category-frame {
+			@include span-columns(3);
+			height: 230px;
+			@include omega();
+		}	
+	}
+}

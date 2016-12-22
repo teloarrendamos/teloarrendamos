@@ -230,7 +230,6 @@
 }
 
 @mixin login-nav {
-	@include span-columns(6);
 	background-color: $blue;
 	color: $white;
 	font-family: $regular;
@@ -244,6 +243,11 @@
 			color: $white;
 			text-align: center;
 			padding: 5px 0 0 0;
+
+			a {
+				color: $white;
+				text-decoration: none;
+			}
 		}	
 	}
 

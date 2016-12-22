@@ -1,40 +1,92 @@
-<h4><%= @listing.title %></h4>
-
-<p>Description: <%= @listing.description %></p>
-<p>Category: <%= @listing.category.name %></p>
-<p>Daily Rate: <%= @listing.daily_rate %></p>
-
-<div>
-  <% @listing.images.each_with_index do |image, index| %>
-    <%= image_tag(image.url) %>
-  <% end %>
-</div>
-
-<% if @listing.postable == current_person %>
-  <%= link_to "Edit Listing", edit_listing_path(@listing) %>
-
-  <h1>Add more images</h1>
-
-  <%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
-    <div class="field">
-      <%= f.file_field :images, multiple: true %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Add More Images" %>
-    </div>
-  <% end %>
-<% else %>
-  <%= form_for @order_item, remote: true do |f| %>
-    <h4 class="text-right">Daily Rate: <span style="color: green"><%= number_to_currency @listing.daily_rate %></span></h4>
-    <div class="input-group">
-      <%= f.date_field :start_date, value: Date.today %>
-      <%= f.date_field :end_date, value: Date.tomorrow %>
-      <div class="input-group-btn">
-        <%= f.hidden_field :listing_id, value: @listing.id %>
-        <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+<section class="listing-show">
+  <div class="inner-container">
+    <div class="listing-product-column">
+      <div class="slider slider-for">
+        <%= image_tag(@listing.images[0]) %>
+        <% @secondary_images.each do |image| %>  
+          <%= image_tag(image.url) %>
+        <% end %>   
       </div>
+      
+      <div class="slider slider-nav">
+      <%= image_tag(@listing.images[0]) %>
+      <% @secondary_images.each do |image| %>
+          <%= image_tag(image.url) %>
+      <% end %>        
+      </div> 
     </div>
-  <% end %>
-<% end %>
 
+    <div class="listing-deal-column">
+      <div class="postable-profile">
+        <%= image_tag(@listing.postable.profile_picture) %>  
+        <div class="postable-info">
+          <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - V Region</p>
+          <p class="postable-phone">+56 9 9392 8382</p>
+          <p>Miembro desde 2006</p>  
+        </div>
+      </div>
+      
+      <div class="product-info">
+        <h4><%= @listing.title %></h4>
+        <p>Description:</p>
+        <p><%= @listing.description %></p>
+        <br>
+        <p>Valor Diario:</p>  
+        <p class="product-rate"><%= @listing.daily_rate %></p>  
+      </div>
+      
+      <button class="rent-action">Arrendar</button>
+
+      <% if @listing.postable == current_person %>
+        <%= link_to "Edit Listing", edit_listing_path(@listing) %>
+
+        <h1>Add more images</h1>
+
+        <%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
+          <div class="field">
+            <%= f.file_field :images, multiple: true %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Add More Images" %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= form_for @order_item, remote: true do |f| %>
+          <div class="input-group">
+            <p>Selecciona la fecha en que deseas arrendarlo y devolverlo</p>
+            <%= f.date_field :start_date, class: "datepicker", placeholder: "Fecha de Inicio" %>
+            <%= f.date_field :end_date, class: "datepicker", placeholder: "Fecha de Devolución" %>
+          </div>
+          <div class="input-group-btn">
+            <%= f.hidden_field :listing_id, value: @listing.id %>
+            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      <% end %>  
+    </div>
+  </div>
+  
+
+  <script>
+    $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15 // Creates a dropdown of 15 years to control year
+    });  
+
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      centerMode: true,
+      focusOnSelect: true
+    });
+  </script>
+</section>

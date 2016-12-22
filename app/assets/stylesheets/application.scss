@@ -5,6 +5,9 @@
 @import 'neat';
 @import 'fonts';
 @import 'mixins';
+@import 'slick';
+@import 'slick-theme';
+
 
 
 // FONTS
@@ -44,6 +47,43 @@ body {
 	h2, h3 {
 		color: $titles-grey;
 	}
+
+	section.user-header {
+		background-color: $grey;
+
+		div.user-header {
+			@include outer-container;
+			font-family: $regular;	
+			
+			h3 {
+				color: $letters-grey;
+				margin: 0;
+				padding: 1em 0;
+				font-size: 2em;
+			}
+
+			ul.user-nav {
+		
+				padding-left: 0;
+				li {
+					@include span-columns(2);
+					font-size: 1.5em;
+
+					a {
+						text-decoration: none;
+						color: $blue;
+					}
+
+					a:hover {
+						color: $green;
+					}
+				}		
+			}	
+		}	
+	}
+	@import '_default.date.scss';
+	@import '_default.scss';
+	@import '_default.time.scss';
 	
 	@import 'header';
 	@import 'pages/home';
@@ -52,9 +92,14 @@ body {
 	@import 'pages/faq';
 	@import 'users/login';
 	@import 'users/sign-up';
+	@import 'users/dashboards/profile';
+	@import 'users/dashboards/my-products';
+	@import 'accounts/edit';
+	@import 'listings/new_listing';
+	@import 'listings/show';
+	@import 'searches/show';
 	@import 'companies/login';
+	@import 'categories';
 	@import 'footer';
 }
 
-@import 'slick';
-@import 'slick-theme';
