@@ -7,4 +7,8 @@ class SearchesController < ApplicationController
       @listings = Listing.search(search, page: params[:page], per_page: 10)
     end
   end
+
+  def listing_category
+  	@listing_category = Listing.where(category_id: params[:id])
+  end
 end

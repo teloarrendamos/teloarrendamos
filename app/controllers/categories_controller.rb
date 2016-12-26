@@ -36,6 +36,10 @@ class CategoriesController < ApplicationController
     #@listings = @category.listings
   end
 
+  def category_index
+    @category_index = Listing.where(category_id: params[:id])
+  end
+
     private
   def category_params
     params.require(:category).permit(:id, :name, :category_image)

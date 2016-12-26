@@ -148,9 +148,129 @@ $(document).on('turbolinks:load', function(){
 		
 });
 
+
+//Close Deal Calculations
 $(document).on('turbolinks:load', function(){
-    // $('.datepicker').pickadate({
-    //   selectMonths: true, // Creates a dropdown to control month
-    //   selectYears: 15 // Creates a dropdown of 15 years to control year
-    // });
+  function switchDayMonth(stringDate) {
+    var dayMonth = stringDate.split(",");
+    var newFormat = dayMonth[0].split(" ").reverse().join(" ");
+    dayMonth.splice(0, 1, newFormat);
+
+    return dayMonth.join(",");
+  }
+
+  function makeItEnglish(stringDate) {
+    var month = stringDate.split(" ")[0];
+    if(month.toUpperCase() === "ENERO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Jan");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "FEBRERO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Feb");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "MARZO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Mar");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "ABRIL") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Apr");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "MAYO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "May");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "JUNIO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Jun");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "JULIO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Jul");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "AGOSTO") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Aug");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "SEPTIEMBRE") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Sep");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "OCTUBRE") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Oct");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "NOVIEMBRE") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Nov");
+      return wordsArray.join(" ");
+    } else if(month.toUpperCase() === "DICIEMBRE") {
+      var wordsArray = stringDate.split(" ");
+      wordsArray.splice(0, 1, "Dec");
+      return wordsArray.join(" ");
+    }
+  }
+  
+  function getAmountOfDays() {
+    var endDate = document.getElementById('order_item_end_date');
+    var startDate = document.getElementById('order_item_start_date');
+
+    return Math.floor( (Date.parse(makeItEnglish(switchDayMonth(endDate.value))) - Date.parse(makeItEnglish(switchDayMonth(startDate.value)))) / 86400000);
+  }
+
+  var endDate = document.getElementById('order_item_end_date');
+  var startDate = document.getElementById('order_item_start_date'); 
+
+  function calculateNetCost() {
+  	var dailyRate = parseInt(document.getElementById('daily-rate-value').innerText);
+  	var amountOfDays = parseInt(document.getElementById('amountOfDays').innerText);
+  	return dailyRate * amountOfDays;
+  }
+
+  function calculateComision() {
+	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
+	return netTotal * 0.1
+  }
+
+  function calculateTotalCost() {
+  	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
+  	var comisionValue = parseInt(document.getElementById('comisionValue').innerText);
+  	return netTotal + comisionValue;
+  }
+
+  startDate.onchange = function() {
+    var amountOfDays = document.getElementById('amountOfDays');
+    var netTotal = document.getElementById('net-total-cost');
+    var comisionValue = document.getElementById('comisionValue');
+    var totalCost = document.getElementById('total-cost');
+    if(Number.isNaN(getAmountOfDays())) {
+    	amountOfDays.innerHTML = '--';
+    	netTotal.innerHTML = '--';
+    } else {
+	    amountOfDays.innerHTML = getAmountOfDays();
+	    netTotal.innerHTML = calculateNetCost();	
+	    comisionValue.innerHTML = calculateComision();
+	    totalCost.innerHTML = calculateTotalCost();
+    }
+  }
+
+  endDate.onchange = function() {
+    var amountOfDays = document.getElementById('amountOfDays');
+    var netTotal = document.getElementById('net-total-cost');
+    var totalCost = document.getElementById('total-cost');
+    if(Number.isNaN(getAmountOfDays())) {
+    	amountOfDays.innerHTML = '--';
+    	netTotal.innerHTML = '--';
+    } else {
+	    amountOfDays.innerHTML = getAmountOfDays();
+	    netTotal.innerHTML = calculateNetCost();	
+	    comisionValue.innerHTML = calculateComision();
+	    totalCost.innerHTML = calculateTotalCost();
+    }
+  }
+  
+
+
+
 });

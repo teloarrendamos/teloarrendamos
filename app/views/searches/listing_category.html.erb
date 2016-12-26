@@ -19,7 +19,7 @@
 
 	<div class="results-and-map">
 			<div class="products-column">
-				<% @listings.each do |listing| %>
+				<% @listing_category.each do |listing| %>
 				<div class="frame-container">
 					<%= link_to listing do %>
 					  <div class="product-frame">
@@ -44,7 +44,7 @@
 				</div>
 				<% end %>
 
-				<%= paginate @listings %>		
+				<%#= paginate @listings_category %>		
 			</div>
 			
 			<div class="result-map">

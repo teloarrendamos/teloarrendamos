@@ -16,23 +16,23 @@
       <div class="edit-account">
         <%= form_for @user, url: account_path do |f| %>
           <div class="row">
-            <div class="col-xs-12 text-center">
-              Change Picture
+            <div class="form-group">
+              Cambiar Foto de Perfil
               <%= f.file_field :profile_picture, class: "center-block" %>
             </div>
 
-            <div class="col-xs-6 text-center form-group">
-              <%= f.label :first_name %>
+            <div class="form-group">
+              <%= f.label :Nombre %>
               <%= f.text_field :first_name, class: "form-control" %>
             </div>
 
-            <div class="col-xs-6 text-center form-group">
-              <%= f.label :last_name %>
+            <div class="form-group">
+              <%= f.label :Apellido %>
               <%= f.text_field :last_name, class: "form-control" %>
             </div>
 
-            <div class="col-xs-12">
-              <%= f.submit nil, class: "btn btn-default" %>
+            <div class="form-group">
+              <%= f.submit "Actualizar Perfil" %>
             </div>
           </div>
 
@@ -44,7 +44,7 @@
 
     <div class="map-column">
       <div class="map">
-        <img src="/assets/map-image.png" alt="map">
+        <%= image_tag "map-image.png" %>
       </div>
     </div>  
   </div>

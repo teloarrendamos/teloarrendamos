@@ -1,0 +1,26 @@
+section.categories-index {
+	@include grey-gradient;
+	div.wrapper {
+		padding: 60px 0;
+		@include outer-container;
+		div.category-frame {
+			@include span-columns(3);
+			@include omega();
+			text-align: center;
+			height: 230px;
+			margin: 30px 0;
+
+			div.image {
+				
+			}
+
+			div.name {
+				margin: 18px 0;
+				a {
+					text-decoration: none;
+					color: $light-blue;
+				}
+			}
+		}	
+	}
+}

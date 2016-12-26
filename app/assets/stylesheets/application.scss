@@ -1,10 +1,10 @@
 @import 'normalize.min';
 @import 'gmaps';
-@import 'typeahead';
 @import 'bourbon';
 @import 'neat';
 @import 'fonts';
 @import 'mixins';
+@import 'typeahead';
 @import 'slick';
 @import 'slick-theme';
 
@@ -99,7 +99,7 @@ body {
 	@import 'listings/show';
 	@import 'searches/show';
 	@import 'companies/login';
-	@import 'categories';
+	@import 'categories/index';
 	@import 'footer';
 }
 

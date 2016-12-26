@@ -31,9 +31,11 @@ Rails.application.routes.draw do
   end
 
   resources :listings, only: [:new, :create, :show, :index, :edit, :update] do
-    resources :images, :only => [:create, :destroy]    
+    resources :images, :only => [:create, :destroy]  
   end
 
+  get 'searches/listing_category/:id' => 'searches#listing_category', as: :listing_category
+  
   resources :categories, only: [:index, :show, :new, :create]
 
   resource :cart, only: [:show]
@@ -47,4 +49,5 @@ Rails.application.routes.draw do
   get 'pages/faq' => 'pages#faq'
   get 'pages/what_is' => 'pages#what_is'
   get 'pages/how_it_works' => 'pages#how_it_works'
+
 end

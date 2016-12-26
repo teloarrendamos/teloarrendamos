@@ -9,7 +9,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <% unless controller_name == "pages" %>
+    <% unless controller_name == "pages" || controller_name == "searches" %>
       <% if current_person %>
       <section class="user-header">
         <div class="user-header">
@@ -30,12 +30,10 @@
      <%= yield %>
     
     <div class="footer-image">
-      <img src="https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" alt="footer-image">
+      <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" %>
     </div>
 
     <%= render 'layouts/footer' %>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </body>
 </html>

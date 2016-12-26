@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update]
 
   def index
-    
+    @listing_category = Listing.where(category_id: params[:id])
   end
 
   def new
@@ -30,6 +30,8 @@ class ListingsController < ApplicationController
       @secondary_images.push(@listing.images[i])
       i += 1 
     end
+
+    @other_user_products = @listing.postable.listings.all
   end
 
   def edit
