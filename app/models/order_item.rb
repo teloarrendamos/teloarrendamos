@@ -24,6 +24,7 @@
 #
 
 class OrderItem < ApplicationRecord
+  include I18n::Alchemy
   belongs_to :listing
   belongs_to :order
 

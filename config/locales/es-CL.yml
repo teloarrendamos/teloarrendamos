@@ -1,0 +1,4 @@
+es-CL:
+  date:
+    formats:
+      default: "%d %B, %Y"

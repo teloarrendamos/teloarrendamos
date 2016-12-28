@@ -30,7 +30,7 @@ class ListingsController < ApplicationController
       @secondary_images.push(@listing.images[i])
       i += 1 
     end
-    @other_user_products = @listing.postable.listings.all
+    @other_user_products = @listing.postable.listings.includes(:postable)
   end
 
   def edit

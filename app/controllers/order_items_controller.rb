@@ -19,11 +19,11 @@ class OrderItemsController < ApplicationController
     @order_item.destroy
     @order_items = @order.order_items
   end
-private
+
+  private
+
   def order_item_params
     values = params.require(:order_item).permit(:start_date, :end_date, :listing_id)
-    values[:start_date] = Date.parse(values[:start_date])
-    values[:end_date] = Date.parse(values[:end_date])
     values
   end
 end

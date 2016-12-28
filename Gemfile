@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'i18n_alchemy'
 
 gem 'figaro'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
