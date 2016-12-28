@@ -16,7 +16,7 @@ module RentalApp
     
     config.i18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
  
-    config.i18n.available_locales = ['es-CL']
+    config.i18n.available_locales = ['es-CL', 'en']
     config.i18n.default_locale = :"es-CL"
     config.i18n.fallbacks = [:en]
     
