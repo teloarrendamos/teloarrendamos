@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   end
 
   resources :listings, only: [:new, :create, :show, :index, :edit, :update] do
-    resources :images, :only => [:create, :destroy]  
+    resources :images, :only => [:create, :update, :destroy]
   end
 
   get 'searches/listing_category/:id' => 'searches#listing_category', as: :listing_category

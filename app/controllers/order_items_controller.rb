@@ -21,6 +21,9 @@ class OrderItemsController < ApplicationController
   end
 private
   def order_item_params
-    params.require(:order_item).permit(:start_date, :end_date, :listing_id)
+    values = params.require(:order_item).permit(:start_date, :end_date, :listing_id)
+    values[:start_date] = Date.parse(values[:start_date])
+    values[:end_date] = Date.parse(values[:end_date])
+    values
   end
 end

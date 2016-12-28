@@ -32,6 +32,7 @@ class Listing < ApplicationRecord
   belongs_to :postable, polymorphic: true
   validates :description, presence: true
   validates :region, inclusion: { in: CHILE_REGIONS }
+  validates :images, presence: true
   mount_uploaders :images, ListingImageUploader
 
   searchkick word_start: [:description, :title, :category_name]

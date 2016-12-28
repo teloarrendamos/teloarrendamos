@@ -7,10 +7,23 @@ class ImagesController < ApplicationController
     redirect_to :back
   end
 
-  def destroy
-    remove_image_at_index(params[:id].to_i)
-    flash[:error] = "Failed deleting image" unless @listing.save
+  def update
+    images = @listing.images
+    primary_image = images.delete_at(params[:id].to_i)
+    images.insert(0, primary_image)
+    @listing.images = images
+    flash[:error] = "Something went wrong" unless @listing.save
     redirect_to :back
+  end
+
+  def destroy
+    if @listing.images.count > 1
+      remove_image_at_index(params[:id].to_i)
+      flash[:error] = "Failed deleting image" unless @listing.save
+    else
+      flash[:error] = "Cannot delete last image, you may want to upload another one first"
+    end
+      redirect_to :back
   end
 
   private

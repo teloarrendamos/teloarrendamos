@@ -1,7 +1,7 @@
 <section class="search-results">
 	<div class="header-container">
 		<div class="search-results-title">
-			<h2>Resultados de la Busqueda (22)</h2>
+			<h2>Resultados de la Busqueda (<%= @listings.count %>)</h2>
 		</div>
 		<div class="search-results-form">
 			<%= form_tag search_path, method: :get do %>
@@ -13,42 +13,41 @@
 			<% end %>	
 		</div>
 		<div class="result-line">
-			<p class="result-span">Resultados 1-22</p>
+			<p class="result-span">Resultados <%= @listings.offset_value + 1 %>-<%= [@listings.offset_value + @listings.limit_value, @listings.total_count].min %></p>
 		</div>
 	</div>
 
 	<div class="results-and-map">
 			<div class="products-column">
 				<% @listings.each do |listing| %>
-				<div class="frame-container">
-					<%= link_to listing do %>
-					  <div class="product-frame">
-					  	<div class="frame-image">
-					  		<%= image_tag(listing.images[0]) %>
-					  	</div>
-					  	<div class="frame-second-row">
-					  		<div class="frame-title-desc">
-						  		<p><%= listing.title %></p>	
-						  		<p><%= listing.description %></p>	
-					  		</div>
-					  		<div class="frame-postable-img">
-					  			<%= image_tag(listing.postable.profile_picture) %>	
-					  		</div>
-					  	</div>
-					  	<div class="frame-third-row">
-						  	<p class="frame-rate">$ <%= listing.daily_rate %></p>
-						    <p class="frame-location">Iquique, V Region</p>	
-					  	</div>
-					  </div>
-					<% end %>	
-				</div>
+					<div class="frame-container">
+						<%= link_to listing do %>
+						  <div class="product-frame">
+						  	<div class="frame-image">
+						  		<%= image_tag(listing.images[0]) %>
+						  	</div>
+						  	<div class="frame-second-row">
+						  		<div class="frame-title-desc">
+							  		<p><%= listing.title %></p>	
+							  		<p><%= listing.description %></p>	
+						  		</div>
+						  		<div class="frame-postable-img">
+						  			<%= image_tag(listing.postable.profile_picture) %>	
+						  		</div>
+						  	</div>
+						  	<div class="frame-third-row">
+							  	<p class="frame-rate">$ <%= listing.daily_rate %></p>
+							    <p class="frame-location">Iquique, V Region</p>	
+						  	</div>
+						  </div>
+						<% end %>	
+					</div>
 				<% end %>
-
-				<%= paginate @listings %>		
 			</div>
 			
 			<div class="result-map">
 				<%= image_tag "map-image.png" %>
 			</div>		
 	</div>
+	<div><%= paginate @listings %></div>
 </section>

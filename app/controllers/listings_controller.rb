@@ -30,7 +30,6 @@ class ListingsController < ApplicationController
       @secondary_images.push(@listing.images[i])
       i += 1 
     end
-
     @other_user_products = @listing.postable.listings.all
   end
 
@@ -38,7 +37,10 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing.update(listing_params)
+    @listing.update(update_listing_params)
+    images = @listing.images # copy the old images 
+    images += params[:listing][:images] # concat old images with new ones
+    @listing.images = images # assign back
     if @listing.save
       flash[:notice] = "Listing updated"
       redirect_to @listing
@@ -48,6 +50,11 @@ class ListingsController < ApplicationController
   end
 
   private
+
+  def update_listing_params
+    params.require(:listing).permit(:title, :description, :region, :category_id, :daily_rate)
+  end
+
   def listing_params
     params.require(:listing).permit(:title, :description, :region, :category_id, :daily_rate, {images: []})
   end
