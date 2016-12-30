@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: { sessions: 'admins/sessions' }
   get 'order_items/create'
 
   get 'order_items/update'
@@ -11,6 +12,13 @@ Rails.application.routes.draw do
   devise_for :companies, controllers: { sessions: 'companies/sessions', 
                                         registrations: 'companies/registrations'}
   root 'pages#home'
+
+  authenticated :admin do
+    resource :dashboard, controller: 'admins/dashboards', only: :show, as: :admin_dashboard
+    namespace :admins do
+      resources :categories
+    end
+  end
 
   authenticated :company do
     resource :dashboard, controller: 'companies/dashboards', only: :show, as: :company_dashboard
@@ -36,7 +44,7 @@ Rails.application.routes.draw do
 
   get 'searches/listing_category/:id' => 'searches#listing_category', as: :listing_category
   
-  resources :categories, only: [:index, :show, :new, :create]
+  resources :categories, only: [:index, :show]
 
   resource :cart, only: [:show]
 

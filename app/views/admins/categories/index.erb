@@ -1,0 +1,10 @@
+<%= link_to "Add a new category", new_admins_category_path %>
+
+<% @categories.each do |category| %>
+  <p>
+    <%= category.name %>
+    <%= image_tag category.category_image.url %>
+    <%= link_to "Edit Category", edit_admins_category_path(category) %>
+    <%= link_to "Delete Category", admins_category_path(category), method: :delete, data: { confirm: "Are you sure?" } %>
+  </p>
+<% end %>

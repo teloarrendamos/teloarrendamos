@@ -1,0 +1,16 @@
+<%= form_for [:admins, @category] do |f| %>
+  
+  <div class="name">
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+  </div>  
+
+  <div class="image">
+    <%= f.label :imagen %>
+    <%= f.file_field :category_image %>
+  </div>  
+
+    <div class="submit-listing">
+      <%= f.submit %>
+    </div>
+<% end %>

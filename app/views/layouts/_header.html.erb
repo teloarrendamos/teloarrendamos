@@ -2,63 +2,85 @@
   <div class="upper-blue-margin"></div>
 
   <% if current_user %>
-   <div class="login-nav-user">
-    <div class="container">
-      <div class="inner-container">
-        <% if current_person %>
+    <div class="login-nav-user">
+      <div class="container">
+        <div class="inner-container">
+          <% if current_person %>
+            <div class="hello-user">
+              <div class="p-container">
+                <p>Hola <%= current_person.email %>!</p>
+              </div>
+            </div>
+            <div class="account" id="login-dropdown-button">
+              <div class="p-container">
+                <p><%= link_to "Mi Cuenta", edit_account_path %></p>  
+              </div>
+            </div>
+            <div class="sign-out" id="sign-up-dropdown-button">
+              <div class="p-container">
+                <p><%= link_to "Cerrar Sesión", destroy_company_session_path, method: :delete %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% elsif current_admin %>
+    <div class="login-nav-user">
+      <div class="container">
+        <div class="inner-container">
           <div class="hello-user">
             <div class="p-container">
-              <p>Hola <%= current_person.email %>!</p>
+              <p>Hola <%= current_admin.email %>!</p>
             </div>
           </div>
           <div class="account" id="login-dropdown-button">
             <div class="p-container">
-              <p><%= link_to "Mi Cuenta", edit_account_path %></p>  
+              <p><%= link_to "Dashboard", admin_dashboard_path %></p>  
             </div>
           </div>
           <div class="sign-out" id="sign-up-dropdown-button">
             <div class="p-container">
-              <p><%= link_to "Cerrar Sesión", destroy_company_session_path, method: :delete %></p>
+              <p><%= link_to "Cerrar Sesión", destroy_admin_session_path, method: :delete %></p>
             </div>
           </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <% else %>
-  <div class="login-nav">
-    <div class="container">
-      <div class="inner-container">
-        <div class="login" id="login-dropdown-button">
-          <div class="p-container">
-            <p>INICIAR SESIÓN</p>  
-          </div>
-          <ul id="login-dropdown">
-            <%= link_to new_company_session_path do %>
-              <li>Company</li>
-            <% end %>
-            <%= link_to new_user_session_path do %>
-              <li>User</li>  
-            <% end %>
-          </ul>
         </div>
-        <div class="sign-up" id="sign-up-dropdown-button">
-          <div class="p-container">
-            <p>REGISTRARSE</p>
-          </div>
-          
-          <ul id="sign-up-dropdown">
-            <%= link_to new_company_registration_path do %>
-              <li>Company</li>
-            <% end %>
-            <%= link_to new_user_registration_path do %>
-              <li>User</li>  
-            <% end %>
-          </ul>
-        </div>  
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="login-nav">
+      <div class="container">
+        <div class="inner-container">
+          <div class="login" id="login-dropdown-button">
+            <div class="p-container">
+              <p>INICIAR SESIÓN</p>  
+            </div>
+            <ul id="login-dropdown">
+              <%= link_to new_company_session_path do %>
+                <li>Company</li>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <li>User</li>  
+              <% end %>
+            </ul>
+          </div>
+          <div class="sign-up" id="sign-up-dropdown-button">
+            <div class="p-container">
+              <p>REGISTRARSE</p>
+            </div>
+            
+            <ul id="sign-up-dropdown">
+              <%= link_to new_company_registration_path do %>
+                <li>Company</li>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <li>User</li>  
+              <% end %>
+            </ul>
+          </div>  
+        </div>
+      </div>
+    </div>
   <% end %>
 
   <nav>
