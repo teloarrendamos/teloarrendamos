@@ -211,6 +211,45 @@ section.listing-show {
 						width: 100%;
 					}
 				}
+
+				div.cart-text {
+					@include outer-container;	
+				    border: 2px solid $light-blue;
+				    border-bottom-left-radius: 10px;
+				    border-bottom-right-radius: 10px;
+				    padding-bottom: 12px;
+				    height: 120px;		
+
+				    a {
+						div.items-size {
+							@include span-columns(6);
+							p.items {
+							    font-size: 4em;
+							    margin: 0;
+							    text-align: center;
+							}
+
+							p.items-word {
+								margin-top: 0;
+	    						text-align: center;
+							}
+						}
+
+						div.cart {
+							margin-top: 1em;
+							text-align: center;
+							@include span-columns(6);
+
+							img {
+								width: 39%;
+							}
+
+							// div.icon-cart {
+							// 	@include shopping-cart;
+							// }
+						}
+				    }							
+				}
 			}
 		}
 	}

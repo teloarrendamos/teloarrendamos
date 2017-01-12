@@ -13,6 +13,9 @@
 #  postable_type :string
 #  title         :string
 #  region        :string
+#  address       :string
+#  latitude      :decimal(10, 6)
+#  longitude     :decimal(10, 6)
 #
 # Indexes
 #

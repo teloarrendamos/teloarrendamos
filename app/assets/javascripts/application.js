@@ -76,6 +76,11 @@ $(document).on('turbolinks:load', function(){
 	});
 });
 
+// Toggle for Shopping cart items details
+$(document).on('turbolinks:load', function(){
+
+});
+
 
 //Slider Mechanism ----------------------------
 $(document).on('turbolinks:load', function(){

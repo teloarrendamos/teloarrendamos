@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229053245) do
+ActiveRecord::Schema.define(version: 20170108015532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 20161229053245) do
     t.string   "postable_type"
     t.string   "title"
     t.string   "region"
+    t.string   "address"
+    t.decimal  "latitude",      precision: 10, scale: 6
+    t.decimal  "longitude",     precision: 10, scale: 6
     t.index ["category_id"], name: "index_listings_on_category_id", using: :btree
     t.index ["postable_type", "postable_id"], name: "index_listings_on_postable_type_and_postable_id", using: :btree
   end

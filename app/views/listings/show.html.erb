@@ -1,4 +1,8 @@
 <section class="listing-show">
+  <div class="cart-text">
+  <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
+  </div>
+  
   <div class="inner-container">
     <div class="listing-product-column">
       <div class="slider slider-for">
@@ -111,7 +115,23 @@
 
           <div class="input-group-btn">
             <%= f.hidden_field :listing_id, value: @listing.id %>
-            <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+            <%= f.submit "Añadir al carrito", id: "add-item-button" %>
+          </div>
+
+          <div class="cart-text">
+            <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path %>
+            <%= link_to cart_path do %>
+              <div class="items-size">
+                <p class="items"><%= current_order.order_items.size %></p>
+                <p class="items-word">Items en el carro</p>   
+              </div>
+              <div class="cart">
+                <%= image_tag('cart.png') %>
+              </div>           
+            <% end %>
+          </div>
+          <div class="cart-notice">
+            
           </div>
         <% end %>
       <% end %>  
@@ -120,6 +140,7 @@
   
 
   <script>
+
 
     $('.datepicker').pickadate({
       selectMonths: true, // Creates a dropdown to control month

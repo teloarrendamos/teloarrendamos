@@ -134,9 +134,9 @@ section.search-results {
 			}
 		}	
 
-		div.result-map {
+		div#map {
 			@include span-columns(4);
-			//@include omega();
+			height: 500px;
 		}
 	}
 }

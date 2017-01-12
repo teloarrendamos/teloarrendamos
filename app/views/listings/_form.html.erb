@@ -48,6 +48,15 @@
       </div>  
     </div>
 
+    <div class="map-container">
+      <%= f.label :direccion %>
+      <%= f.text_field :address, id: "pac-input", class: "controls", placeholder: "Donde esta ubicado el producto?" %>
+      <%= f.hidden_field :latitude, id: "lat-input" %>
+      <%= f.hidden_field :longitude, id: "lng-input" %>
+      <div id="map"></div>    
+    </div>
+    
+
     <div class="submit-listing">
       <%= f.submit "Subir Producto" %>
     </div>

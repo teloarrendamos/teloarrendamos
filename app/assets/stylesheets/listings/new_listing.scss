@@ -68,8 +68,20 @@ section.new-listing {
 		div.third-row {
 			@include outer-container;
 			div.images {
-				@include labels;
+				@include span-columns(12);
+				margin: 1em 0;
 			}
+		}
+
+		div.map-container {
+			@include outer-container;
+			input {
+				width: 100%
+			}
+			div#map {
+				height: 500px;
+				width: 100%;
+			}	
 		}
 
 		div.submit-listing {

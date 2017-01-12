@@ -1,5 +1,14 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
   alert("not valid.")
 <% else %>
-  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+  $(".items").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+  // $(".cart-notice").html("<%= escape_javascript(notice) %>")
+  $(".items, .items-word").css('color', '#00C0FF');
+  $(".items").css('font-size', '5em');
+  setTimeout(function(){
+    $('.cart-notice').remove();
+    $(".items, .items-word").css('color', 'grey');
+    $(".items").css('font-size', '4em');
+  }, 500);
+  // alert("Añadido al carro exitosamente!")
 <% end %>

@@ -1,3 +1,20 @@
-<div class="shopping-cart">
+<section class="shopping-cart">
   <%= render "shopping_cart" %>
-</div>
+</section>
+
+<script>
+  var cartTitles = document.getElementsByClassName('cart-titles');
+
+  Array.prototype.forEach.call(cartTitles, function(title) {
+
+    title.addEventListener('click', function() {
+      var orderDetails = this.nextElementSibling;
+
+      if(orderDetails.style.display === "") {
+        orderDetails.style.display = "block"
+      } else {
+        orderDetails.style.display = "";
+      }
+    });
+  });
+</script>

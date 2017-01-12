@@ -4,6 +4,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
+    flash[:notice] = "Añadido al Carro Flash"
   end
 
   def update

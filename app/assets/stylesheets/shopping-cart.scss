@@ -1,0 +1,19 @@
+section.shopping-cart {
+	@include grey-gradient;
+	div.cart-row {
+		// border-bottom: 1px solid grey;
+		// padding: 5px 0;
+		div.container {
+			padding: 0 50px;
+			div.cart-titles {
+				h4 {
+					margin: 0 0;
+				}
+			}
+
+			div.order-item-details {
+				display: none;
+			}
+		}
+	}
+}

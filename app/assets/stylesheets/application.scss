@@ -8,8 +8,6 @@
 @import 'slick';
 @import 'slick-theme';
 
-
-
 // FONTS
 $regular: 'NeoSansPro-Regular', 'Arial Black';
 $light: 'NeoSansPro-Light', 'Arial Black';
@@ -17,7 +15,6 @@ $ultra: 'NeoSansPro-Ultra', 'Arial Black';
 $std-light: 'NeoSansStd-Light', 'Arial Black';
 $std-medium: 'NeoSansPro-Medium', 'Arial Black';
 $std-regular: 'NeoSansPro-Regular', 'Arial Black';
-
 
 // COLORES
 $blue: #1191B9;
@@ -63,7 +60,6 @@ body {
 			}
 
 			ul.user-nav {
-		
 				padding-left: 0;
 				li {
 					@include span-columns(2);
@@ -81,6 +77,7 @@ body {
 			}	
 		}	
 	}
+
 	@import '_default.date.scss';
 	@import '_default.scss';
 	@import '_default.time.scss';
@@ -100,6 +97,7 @@ body {
 	@import 'searches/show';
 	@import 'companies/login';
 	@import 'categories/index';
+	@import 'shopping-cart';
 	@import 'footer';
 }
 
