@@ -1,8 +1,8 @@
 section.listing-show {
-	@include grey-gradient;
+	@include light-grey-gradient;
 	div.inner-container {
 		@include outer-container;
-		padding-top: 100px;
+		padding-top: 20px;
 
 		div.listing-product-column {
 			@include span-columns(7);
@@ -112,15 +112,35 @@ section.listing-show {
 			}
 
 			div.product-info {
+				@include outer-container;
 				margin: 50px 0;
-				font-size: 1.3em;
-				p {
-					margin: 0;
-				}
+				font-size: 1.1em;
 
-				p.product-rate {
-					color: $green;
-				}
+				div.left-wrap {
+					@include span-columns(6);
+					p {
+						margin: 0;
+					}
+				}	
+				
+				div.right-wrap {
+					@include span-columns(6);
+					p {
+						margin: 0;
+					}
+					p.product-rate {
+						color: $green;
+					}
+				}										
+			}
+
+			div.edit-listing {
+				a {
+					text-decoration: none;
+				    background: $light-blue;
+				    padding: 10px 54px;
+				    color: white;
+				}			    
 			}
 
 			button.rent-action {
@@ -135,7 +155,7 @@ section.listing-show {
 			form {
 				div.input-group {
 					@include outer-container;
-					margin: 50px 0;
+					margin: 20px 0;
 
 					p {
 						font-size: 1.2em;
@@ -170,6 +190,8 @@ section.listing-show {
 				}
 
 				div.close-deal-details {
+					margin-top: 30px;
+
 					div.details-text {
 						p {
 							margin:0;
@@ -202,14 +224,27 @@ section.listing-show {
 				}
 
 				div.input-group-btn {
+					@include outer-container;
 					input[type="submit"] {
+						@include span-columns(6);
 						background: $light-blue;
 						border: 0;
 						padding: 8px 30px;
 						color: $white;
-						font-size: 1.2em;
-						width: 100%;
+						font-size: 1.2em;	
+
 					}
+
+					a {
+						button.checkout {
+							@include span-columns(6);
+							background: $light-blue;
+						    border: 0;
+						    height: 38px;
+						    color: white;
+						    font-size: 1.2em;
+						}	
+					}					
 				}
 
 				div.cart-text {

@@ -76,206 +76,199 @@ $(document).on('turbolinks:load', function(){
 	});
 });
 
-// Toggle for Shopping cart items details
-$(document).on('turbolinks:load', function(){
-
-});
-
 
 //Slider Mechanism ----------------------------
-$(document).on('turbolinks:load', function(){
-	function Slider( element ) {
-		this.el = document.querySelector( element );
-		this.init();
-	}	
+// $(document).on('turbolinks:load', function(){
+// 	function Slider( element ) {
+// 		this.el = document.querySelector( element );
+// 		this.init();
+// 	}	
 
-	Slider.prototype = {
-		init: function() {
-			this.links = this.el.querySelectorAll( "#slider-nav a" );
-			this.wrapper = this.el.querySelector( "#slider-wrapper" );
-			this.navigate();
-		},
-		navigate: function() {
+// 	Slider.prototype = {
+// 		init: function() {
+// 			this.links = this.el.querySelectorAll( "#slider-nav a" );
+// 			this.wrapper = this.el.querySelector( "#slider-wrapper" );
+// 			this.navigate();
+// 		},
+// 		navigate: function() {
 		
-			for( var i = 0; i < this.links.length; ++i ) {
-				var link = this.links[i];
-				this.slide( link );	
-			}
-		},
+// 			for( var i = 0; i < this.links.length; ++i ) {
+// 				var link = this.links[i];
+// 				this.slide( link );	
+// 			}
+// 		},
 		
-		animate: function( slide ) {
-			var parent = slide.parentNode;
-			var caption = slide.querySelector( ".caption" );
-			var captions = parent.querySelectorAll( ".caption" );
-			for( var k = 0; k < captions.length; ++k ) {
-				var cap = captions[k];
-				if( cap !== caption ) {
-					cap.classList.remove( "visible" );
-				}
-			}
-			caption.classList.add( "visible" );	
-		},
+// 		animate: function( slide ) {
+// 			var parent = slide.parentNode;
+// 			var caption = slide.querySelector( ".caption" );
+// 			var captions = parent.querySelectorAll( ".caption" );
+// 			for( var k = 0; k < captions.length; ++k ) {
+// 				var cap = captions[k];
+// 				if( cap !== caption ) {
+// 					cap.classList.remove( "visible" );
+// 				}
+// 			}
+// 			caption.classList.add( "visible" );	
+// 		},
 		
-		slide: function( element ) {
-			var self = this;
-			element.addEventListener( "click", function( e ) {
-				e.preventDefault();
-				var a = this;
-				self.setCurrentLink( a );
-				var index = parseInt( a.getAttribute( "data-slide" ), 10 ) + 1;
-				var currentSlide = self.el.querySelector( ".slide:nth-child(" + index + ")" );
+// 		slide: function( element ) {
+// 			var self = this;
+// 			element.addEventListener( "click", function( e ) {
+// 				e.preventDefault();
+// 				var a = this;
+// 				self.setCurrentLink( a );
+// 				var index = parseInt( a.getAttribute( "data-slide" ), 10 ) + 1;
+// 				var currentSlide = self.el.querySelector( ".slide:nth-child(" + index + ")" );
 				
-				self.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
-				self.animate( currentSlide );
+// 				self.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
+// 				self.animate( currentSlide );
 				
-			}, false);
-		},
+// 			}, false);
+// 		},
 
-		setCurrentLink: function( link ) {
-			var parent = link.parentNode;
-			var a = parent.querySelectorAll( "a" );
+// 		setCurrentLink: function( link ) {
+// 			var parent = link.parentNode;
+// 			var a = parent.querySelectorAll( "a" );
 			
-			link.className = "current";
+// 			link.className = "current";
 			
-			for( var j = 0; j < a.length; ++j ) {
-				var cur = a[j];
-				if( cur !== link ) {
-					cur.className = "";
-				}
-			}
-		}	
-	};
+// 			for( var j = 0; j < a.length; ++j ) {
+// 				var cur = a[j];
+// 				if( cur !== link ) {
+// 					cur.className = "";
+// 				}
+// 			}
+// 		}	
+// 	};
 
-	if (true) {}$("")
-		if($(".pages.how_it_works").length > 0) {
-			var aSlider = new Slider( "#slider" );		
-		}
+// 	if (true) {}$("")
+// 		if($(".pages.how_it_works").length > 0) {
+// 			var aSlider = new Slider( "#slider" );		
+// 		}
 		
-});
+// });
 
 
 //Close Deal Calculations
 $(document).on('turbolinks:load', function(){
-  function switchDayMonth(stringDate) {
-    var dayMonth = stringDate.split(",");
-    var newFormat = dayMonth[0].split(" ").reverse().join(" ");
-    dayMonth.splice(0, 1, newFormat);
+	if($('.listings.show').length > 0) {
+		function switchDayMonth(stringDate) {
+		    var dayMonth = stringDate.split(",");
+		    var newFormat = dayMonth[0].split(" ").reverse().join(" ");
+		    dayMonth.splice(0, 1, newFormat);
 
-    return dayMonth.join(",");
-  }
+		    return dayMonth.join(",");
+		  }
 
-  function makeItEnglish(stringDate) {
-    var month = stringDate.split(" ")[0];
-    if(month.toUpperCase() === "ENERO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Jan");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "FEBRERO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Feb");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "MARZO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Mar");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "ABRIL") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Apr");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "MAYO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "May");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "JUNIO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Jun");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "JULIO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Jul");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "AGOSTO") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Aug");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "SEPTIEMBRE") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Sep");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "OCTUBRE") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Oct");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "NOVIEMBRE") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Nov");
-      return wordsArray.join(" ");
-    } else if(month.toUpperCase() === "DICIEMBRE") {
-      var wordsArray = stringDate.split(" ");
-      wordsArray.splice(0, 1, "Dec");
-      return wordsArray.join(" ");
-    }
-  }
-  
-  function getAmountOfDays() {
-    var endDate = document.getElementById('order_item_end_date');
-    var startDate = document.getElementById('order_item_start_date');
+		  function makeItEnglish(stringDate) {
+		    var month = stringDate.split(" ")[0];
+		    if(month.toUpperCase() === "ENERO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Jan");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "FEBRERO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Feb");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "MARZO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Mar");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "ABRIL") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Apr");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "MAYO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "May");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "JUNIO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Jun");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "JULIO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Jul");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "AGOSTO") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Aug");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "SEPTIEMBRE") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Sep");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "OCTUBRE") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Oct");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "NOVIEMBRE") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Nov");
+		      return wordsArray.join(" ");
+		    } else if(month.toUpperCase() === "DICIEMBRE") {
+		      var wordsArray = stringDate.split(" ");
+		      wordsArray.splice(0, 1, "Dec");
+		      return wordsArray.join(" ");
+		    }
+		  }
+		  
+		  function getAmountOfDays() {
+		    var endDate = document.getElementById('order_item_end_date');
+		    var startDate = document.getElementById('order_item_start_date');
 
-    return Math.floor( (Date.parse(makeItEnglish(switchDayMonth(endDate.value))) - Date.parse(makeItEnglish(switchDayMonth(startDate.value)))) / 86400000);
-  }
+		    return Math.floor( (Date.parse(makeItEnglish(switchDayMonth(endDate.value))) - Date.parse(makeItEnglish(switchDayMonth(startDate.value)))) / 86400000);
+		  }
 
-  var endDate = document.getElementById('order_item_end_date');
-  var startDate = document.getElementById('order_item_start_date'); 
+		  var endDate = document.getElementById('order_item_end_date');
+		  var startDate = document.getElementById('order_item_start_date'); 
 
-  function calculateNetCost() {
-  	var dailyRate = parseInt(document.getElementById('daily-rate-value').innerText);
-  	var amountOfDays = parseInt(document.getElementById('amountOfDays').innerText);
-  	return dailyRate * amountOfDays;
-  }
+		  function calculateNetCost() {
+		  	var dailyRate = parseInt(document.getElementById('daily-rate-value').innerText);
+		  	var amountOfDays = parseInt(document.getElementById('amountOfDays').innerText);
+		  	return dailyRate * amountOfDays;
+		  }
 
-  function calculateComision() {
-	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
-	return netTotal * 0.1
-  }
+		  function calculateComision() {
+			var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
+			return netTotal * 0.1
+		  }
 
-  function calculateTotalCost() {
-  	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
-  	var comisionValue = parseInt(document.getElementById('comisionValue').innerText);
-  	return netTotal + comisionValue;
-  }
+		  function calculateTotalCost() {
+		  	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
+		  	var comisionValue = parseInt(document.getElementById('comisionValue').innerText);
+		  	return netTotal + comisionValue;
+		  }
 
-  startDate.onchange = function() {
-    var amountOfDays = document.getElementById('amountOfDays');
-    var netTotal = document.getElementById('net-total-cost');
-    var comisionValue = document.getElementById('comisionValue');
-    var totalCost = document.getElementById('total-cost');
-    if(Number.isNaN(getAmountOfDays())) {
-    	amountOfDays.innerHTML = '--';
-    	netTotal.innerHTML = '--';
-    } else {
-	    amountOfDays.innerHTML = getAmountOfDays();
-	    netTotal.innerHTML = calculateNetCost();	
-	    comisionValue.innerHTML = calculateComision();
-	    totalCost.innerHTML = calculateTotalCost();
-    }
-  }
+		  startDate.onchange = function() {
+		    var amountOfDays = document.getElementById('amountOfDays');
+		    var netTotal = document.getElementById('net-total-cost');
+		    var comisionValue = document.getElementById('comisionValue');
+		    var totalCost = document.getElementById('total-cost');
+		    if(Number.isNaN(getAmountOfDays())) {
+		    	amountOfDays.innerHTML = '--';
+		    	netTotal.innerHTML = '--';
+		    } else {
+			    amountOfDays.innerHTML = getAmountOfDays();
+			    netTotal.innerHTML = calculateNetCost();	
+			    comisionValue.innerHTML = calculateComision();
+			    totalCost.innerHTML = calculateTotalCost();
+		    }
+		  }
 
-  endDate.onchange = function() {
-    var amountOfDays = document.getElementById('amountOfDays');
-    var netTotal = document.getElementById('net-total-cost');
-    var totalCost = document.getElementById('total-cost');
-    if(Number.isNaN(getAmountOfDays())) {
-    	amountOfDays.innerHTML = '--';
-    	netTotal.innerHTML = '--';
-    } else {
-	    amountOfDays.innerHTML = getAmountOfDays();
-	    netTotal.innerHTML = calculateNetCost();	
-	    comisionValue.innerHTML = calculateComision();
-	    totalCost.innerHTML = calculateTotalCost();
-    }
-  }
-  
-
-
-
+		  endDate.onchange = function() {
+		    var amountOfDays = document.getElementById('amountOfDays');
+		    var netTotal = document.getElementById('net-total-cost');
+		    var totalCost = document.getElementById('total-cost');
+		    if(Number.isNaN(getAmountOfDays())) {
+		    	amountOfDays.innerHTML = '--';
+		    	netTotal.innerHTML = '--';
+		    } else {
+			    amountOfDays.innerHTML = getAmountOfDays();
+			    netTotal.innerHTML = calculateNetCost();	
+			    comisionValue.innerHTML = calculateComision();
+			    totalCost.innerHTML = calculateTotalCost();
+		    }
+		}
+	}
 });

@@ -10,10 +10,11 @@
 		</div>
 		<button id="client-tutorial-btn">Quiero Arrendar!</button>	
 	</div>
-	<div class="overlay">
-		<div id="slider">
-			<span id="close-btn">X</span>
-			<div id="slider-wrapper">
+	<div class="overlay-renter">		
+			<div class="close">
+				<button id="close-btn-renter">Cerrar</button>		
+			</div>
+			<div id="slider-wrapper-renter">
 				<div class="slide">
 					<%= image_tag "slider-1.png" %>
 					<p class="caption">Sube tu articulo y ponle un precio por día</p>
@@ -27,65 +28,120 @@
 					<p class="caption">Recibe tu dinero</p>
 				</div>
 			</div>
-			<div id="slider-nav">
+			<!-- <div id="slider-nav">
 				<a href="" data-slide="0">1</a>
 				<a href="" data-slide="1">2</a>
 				<a href="" data-slide="2">3</a>
+			</div> -->		
+	</div>
+
+	<div class="overlay-client">	
+			<div class="close">
+				<button id="close-btn-client">Cerrar</button>		
 			</div>
-		</div>	
+			
+			<div id="slider-wrapper-client">
+				<div class="slide">
+					<%= image_tag "slider-client-1.png" %>
+					<p class="caption">Busca el producto que quieres arrendar</p>
+				</div>
+				<div class="slide">
+					<%= image_tag "slider-client-2.png" %>
+					<p class="caption">Espera la confirmacion de su dueño</p>
+				</div>
+				<div class="slide">
+					<%= image_tag "slider-client-3.png" %>
+					<p class="caption">Recibe el producto y disfruta!</p>
+				</div>
+			</div>	
 	</div>
 
 	<script>
-		var renterSlides =	'<div class="slide">' +
-								'<img src="/assets/slider-1.png" alt="" />' +
-								'<p class="caption visible">Sube tu articulo y ponle un precio por día</p>' +
-							'</div>' +
-							'<div class="slide">' +
-								'<img src="/assets/slider-2.png" alt="" />' +
-								'<p class="caption">Te llegará un SMS/Email para confirmar la solicitud</p>' +
-							'</div>' +
-							'<div class="slide">' +
-								'<img src="/assets/slider-3.png" alt="" />' +
-								'<p class="caption">Recibe tu dinero</p>' +
-							'</div>';
+		$('#slider-wrapper-renter').slick({
+			slidesToShow: 1,			
+			dots: true,			
+			fade: true					
+	    });
+
+	    $('#slider-wrapper-client').slick({
+			slidesToShow: 1,			
+			dots: true,			
+			fade: true					
+	    });
+
+	    $('#client-tutorial-btn')[0].onclick = function() {
+	    	$('.overlay-client')[0].style.display = 'block';
+	    	$('.slick-slide').style.display = 'block';
+	    	$(window).trigger('resize');
+	    }
+
+	    $('#close-btn-client')[0].onclick = function() {
+	    	$('.overlay-client')[0].style.display = 'none';
+	    	$(window).trigger('resize');
+	    }
+
+	   	$('#renter-tutorial-btn')[0].onclick = function() {
+	    	$('.overlay-renter')[0].style.display = 'block';
+	    	$(window).trigger('resize');
+	    }
+
+	    $('#close-btn-renter')[0].onclick = function() {
+	    	$('.overlay-renter')[0].style.display = 'none';
+	    	$(window).trigger('resize');
+	    }
+	</script>
+
+	<script>
+	// 	var renterSlides =	'<div class="slide">' +
+	// 							'<img src="/assets/slider-1.png" alt="" />' +
+	// 							'<p class="caption visible">Sube tu articulo y ponle un precio por día</p>' +
+	// 						'</div>' +
+	// 						'<div class="slide">' +
+	// 							'<img src="/assets/slider-2.png" alt="" />' +
+	// 							'<p class="caption">Te llegará un SMS/Email para confirmar la solicitud</p>' +
+	// 						'</div>' +
+	// 						'<div class="slide">' +
+	// 							'<img src="/assets/slider-3.png" alt="" />' +
+	// 							'<p class="caption">Recibe tu dinero</p>' +
+	// 						'</div>';
 						
 
-		var clientSlides = '<div class="slide">' +
-								'<img src="/assets/slider-1.png" alt="" />' +
-								'<p class="caption visible">Elige lo que andas buscando</p>' +
-							'</div>' +
-							'<div class="slide">' +
-								'<img src="/assets/slider-2.png" alt="" />' +
-								'<p class="caption">Confirma fechas y pagos</p>' +
-							'</div>' +
-							'<div class="slide">' +
-								'<img src="/assets/slider-1.png" alt="" />' +
-								'<p class="caption">Accede al producto!</p>' +
-							'</div>';
+	// 	var clientSlides = '<div class="slide">' +
+	// 							'<img src="/assets/slider-1.png" alt="" />' +
+	// 							'<p class="caption visible">Elige lo que andas buscando</p>' +
+	// 						'</div>' +
+	// 						'<div class="slide">' +
+	// 							'<img src="/assets/slider-2.png" alt="" />' +
+	// 							'<p class="caption">Confirma fechas y pagos</p>' +
+	// 						'</div>' +
+	// 						'<div class="slide">' +
+	// 							'<img src="/assets/slider-1.png" alt="" />' +
+	// 							'<p class="caption">Accede al producto!</p>' +
+	// 						'</div>';
 
-		var sliderWrapper = document.getElementById('slider-wrapper'); 
-		var renterButton = document.getElementById('renter-tutorial-btn');
-		var clientButton = document.getElementById('client-tutorial-btn');
-		var closeButton = document.getElementById('close-btn');
-		var overlay = document.getElementsByClassName('overlay')[0];
+	// 	var sliderWrapper = document.getElementById('slider-wrapper'); 
+	// 	var renterButton = document.getElementById('renter-tutorial-btn');
+	// 	var clientButton = document.getElementById('client-tutorial-btn');
+	// 	var closeButton = document.getElementById('close-btn');
+	// 	var overlay = document.getElementsByClassName('overlay')[0];
 
-		renterButton.addEventListener('click', function() {
-			sliderWrapper.insertAdjacentHTML('afterbegin', renterSlides);
-			sliderWrapper.style.left = '0';
-			overlay.style.display = 'block';	
-		});
+	// 	renterButton.addEventListener('click', function() {
+	// 		sliderWrapper.insertAdjacentHTML('afterbegin', renterSlides);
+	// 		sliderWrapper.style.left = '0';
+	// 		overlay.style.display = 'block';	
+	// 	});
 
-		clientButton.addEventListener('click', function() {
-			sliderWrapper.insertAdjacentHTML('afterbegin', clientSlides);
-			sliderWrapper.style.left = '0';
-			overlay.style.display = 'block';	
-		});
+	// 	clientButton.addEventListener('click', function() {
+	// 		sliderWrapper.insertAdjacentHTML('afterbegin', clientSlides);
+	// 		sliderWrapper.style.left = '0';
+	// 		overlay.style.display = 'block';	
+	// 	});
 
-		closeButton.onclick = function() {
-			while (sliderWrapper.firstChild) {
-			    sliderWrapper.removeChild(sliderWrapper.firstChild);
-			}
-			overlay.style.display = 'none';		
-		}
+	// 	closeButton.onclick = function() {
+	// 		while (sliderWrapper.firstChild) {
+	// 		    sliderWrapper.removeChild(sliderWrapper.firstChild);
+	// 		}
+	// 		overlay.style.display = 'none';		
+	// 	}
 	</script>
 </section>

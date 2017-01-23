@@ -4,8 +4,7 @@
 			<tr>
 				<th>Imagen Destacada</th>
 				<th>Titulo de Producto</th>
-				<th>Tarifa Diaria</th>
-				<th>Descripcion</th>
+				<th>Tarifa Diaria</th>				
 				<th>Acciones</th>	
 			</tr>
 		</thead>
@@ -14,13 +13,17 @@
 			<tr>
 				<td><%= link_to image_tag(listing.images[0]), listing %></td>
 				<td><%= listing.title %></td>
-				<td><%= listing.description %></td>
-				<td><%= listing.daily_rate %></td>
-				<td>Ver, Editar, Borrar</td>
+				<td>$ <%= listing.daily_rate %></td>							
+				<td>
+					<%= link_to "Ver", listing_path(listing) %> <br>
+					<%= link_to "Editar", edit_listing_path(listing) %> <br>
+					<%= link_to "Eliminar", listing_path(listing), method: :delete, data: {:confirm => "Seguro que deseas eliminar este producto?"} %>
+				</td>
 			</tr>
+			<tr class="spacer"><td></td><td></td><td></td><td></td></tr>
 			<% end %>
 		</tbody>
 	</table>
 
-	<%= link_to "Crear Nuevo Producto", new_listing_path %>
+	<%= link_to "Crear Nuevo Producto", new_listing_path, class: "new-product-button" %>
 </section>

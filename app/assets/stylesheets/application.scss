@@ -22,6 +22,7 @@ $light-blue: #00C0FF;
 $green: #00D16D;
 $white: white;
 $grey: rgba(235, 228, 228, 1);
+$light-grey: rgba(235, 228, 228, 0.4);
 $letters-grey: grey;
 $titles-grey: #636060;
 
@@ -61,6 +62,8 @@ body {
 
 			ul.user-nav {
 				padding-left: 0;
+				margin: 0;
+				padding-top: 30px;
 				li {
 					@include span-columns(2);
 					font-size: 1.5em;
@@ -94,10 +97,22 @@ body {
 	@import 'accounts/edit';
 	@import 'listings/new_listing';
 	@import 'listings/show';
+	@import 'listings/edit';
 	@import 'searches/show';
 	@import 'companies/login';
 	@import 'categories/index';
 	@import 'shopping-cart';
 	@import 'footer';
+}
+
+
+body.pages {
+	header {
+		background: $light-grey;
+	}
+
+	header.home {
+		background: $grey;
+	}
 }
 

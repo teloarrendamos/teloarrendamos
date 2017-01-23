@@ -12,17 +12,17 @@ section.user-dashboard {
 			tr {
 				th {
 					text-align: left;
-					border-bottom: 2px solid $letters-grey;
+					border-bottom: 2px solid $blue;
 					padding-bottom: 17px;
 				}
 			}
 		}
 		tbody {
+			font-family: $regular;
+			font-size: 1.3em;
 			tr {
-				td {
-					border-bottom: 1px solid $letters-grey;
-					vertical-align: top;
-					padding-bottom: 37px;
+				td {					
+					vertical-align: middle;					
 					width: 325px;
 					
 					img {
@@ -30,9 +30,31 @@ section.user-dashboard {
 						height: 200px;
 					    border: 1px solid $letters-grey;
     					padding: 5px;
+					}
+
+					a {
+						color: $light-blue;					
+						text-decoration: none;
 					}	
-				}
-			}			
+
+					a:hover {
+						color: $green;
+					}
+				}				
+			}	
+
+			tr.spacer {
+				height: 1px;
+				background: $blue;
+			}		
 		}
+	}
+
+	a.new-product-button {
+		text-decoration: none;
+	    background: $light-blue;
+	    padding: 10px;
+	    margin-left: 5%;
+	    color: white;
 	}
 }

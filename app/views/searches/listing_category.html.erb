@@ -1,7 +1,7 @@
 <section class="search-results">
 	<div class="header-container">
 		<div class="search-results-title">
-			<h2>Resultados de la Busqueda (22)</h2>
+			<h2>Resultados de la Busqueda (<%= @listing_category.count %>)</h2>
 		</div>
 		<div class="search-results-form">
 			<%= form_tag search_path, method: :get do %>
@@ -45,8 +45,45 @@
 				<% end %>
 			</div>
 			
-			<div class="result-map">
-				<%= image_tag "map-image.png" %>
-			</div>		
+			<div id="map"></div>		
 	</div>
 </section>
+
+<script>
+	var map;
+	var markersArray = [];
+	var markersPrices = [];
+	var resultsMarkersObj = {};
+
+	function initMap() {
+		var mapOptions = {
+			center: {lat: -33.4314207, lng: -70.61430530000001},
+			zoom: 5
+		}
+
+		map = new google.maps.Map(document.getElementById('map'), mapOptions);						
+		<% @listing_category.each do |listing| %>	
+			var listingInfo = [<%= listing.id %>, <%= listing.latitude.to_f %>, <%= listing.longitude.to_f %>, <%= listing.daily_rate %>]
+			markersArray.push(listingInfo);
+			//document.getElementById('markersArray').innerText = markersArray;
+		<% end %>
+
+		
+		for(var i = 0; i < markersArray.length; i++) {
+			resultsMarkersObj[i] = new google.maps.Marker({
+			    position: {lat: markersArray[i][1], lng: markersArray[i][2]},
+			    map: map,						
+			    title:"Hello World!",
+			    price: new google.maps.InfoWindow({
+					content: '<p>$ ' + markersArray[i][3] + '</p>'
+				})
+			});
+
+			resultsMarkersObj[i].addListener("click", function() {
+		        this.price.open(map, this);
+		    })
+		}							
+	}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places"
+    async defer></script>

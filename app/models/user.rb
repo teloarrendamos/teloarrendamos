@@ -24,6 +24,9 @@
 #  profile_picture        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  bank                   :string
+#  bank_account           :integer
+#  phone                  :integer
 #
 # Indexes
 #

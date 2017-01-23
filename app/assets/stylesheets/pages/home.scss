@@ -36,6 +36,14 @@ section.title-and-search {
 			input {
 				width: 100%;
 			}
+
+			div.tt-menu {
+				div.tt-dataset {
+					div.tt-suggestion {
+						text-align: left;
+					}
+				}
+			}
 		}
 
 		input[type="text"] {
@@ -139,9 +147,20 @@ section.highlight-products {
 
 	}
 
-	div.products-container {
+	div#highlight-slider {
 		@include outer-container;
 		margin-bottom: 30px;
+
+		ul.slick-dots {
+			position:relative;
+			margin-top: 10px;
+			li {
+				button:before {
+					font-size: 15px;
+					color: $blue;
+				}
+			}
+		}
 		div.product {
 			@include span-columns(4);
 			
@@ -211,7 +230,7 @@ section.activity {
 	}
 
 	div.stats {
-		@include span-columns(4);
+		@include span-columns(6);
 		padding: 0 47px; 
 
 		p.number {

@@ -1,6 +1,6 @@
 <section class="listing-show">
   <div class="cart-text">
-  <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
+  <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
   </div>
   
   <div class="inner-container">
@@ -50,36 +50,60 @@
       
       <div class="product-info">
         <h4><%= @listing.title %></h4>
-        <p>Description:</p>
-        <p><%= @listing.description %></p>
-        <br>
-        <p>Valor Diario:</p>  
-        <p class="product-rate"><%= @listing.daily_rate %></p>  
-      </div>
-      
-      <button class="rent-action">Arrendar</button>
+        <div class="left-wrap">          
+          <p>Description:</p>
+          <p><%= @listing.description %></p>  
+        </div>
+
+        <div class="right-wrap">
+          <p>Valor Diario:</p>  
+          <p class="product-rate"><%= @listing.daily_rate %></p>    
+        </div>            
+      </div>      
 
       <% if @listing.postable == current_person %>
-        <%= link_to "Edit Listing", edit_listing_path(@listing) %>
-
-        <h1>Add more images</h1>
-
-        <%= form_for @listing, url: listing_images_path(@listing), method: :post do |f| %>
-          <div class="field">
-            <%= f.file_field :images, multiple: true %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "Add More Images" %>
-          </div>
-        <% end %>
+        <div class="edit-listing">
+          <%= link_to "Editar Producto", edit_listing_path(@listing) %>
+        </div>        
       <% else %>
+
         <%= form_for @order_item, remote: true do |f| %>
+
           <div class="input-group">
             <p>Selecciona la fecha en que deseas arrendarlo y devolverlo</p>
             <%= f.date_field :start_date, class: "datepicker", placeholder: "Fecha de Inicio" %>
             <%= f.date_field :end_date, class: "datepicker", placeholder: "Fecha de Devolución" %>
           </div>
+
+          <div class="input-group-btn">
+            <%= f.hidden_field :listing_id, value: @listing.id %>
+            <%= f.submit "Añadir al carrito", id: "add-item-button" %>
+            <%= link_to cart_path do %>
+            <button class="checkout">Checkout</button>
+            <% end %>
+          </div>
+
+          <script>
+            document.getElementById('add-item-button').onclick = function() {              
+              if(document.getElementsByClassName('datepicker')[0].value == "" || document.getElementsByClassName('datepicker')[1].value == "") {
+                event.preventDefault();
+                alert('Debes llenar las fechas');
+              }
+            }
+          </script>
+
+          <div class="cart-text">
+            <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path %>
+            <%= link_to cart_path do %>
+              <div class="items-size">
+                <p class="items"><%= current_order.order_items.size %></p>
+                <p class="items-word">Items en el carro</p>   
+              </div>
+              <div class="cart">
+                <%= image_tag('cart.png') %>
+              </div>           
+            <% end %>
+          </div>      
           
           <div class="close-deal-details">
             <div class="details-text">
@@ -113,23 +137,7 @@
             </div>
           </div>
 
-          <div class="input-group-btn">
-            <%= f.hidden_field :listing_id, value: @listing.id %>
-            <%= f.submit "Añadir al carrito", id: "add-item-button" %>
-          </div>
 
-          <div class="cart-text">
-            <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path %>
-            <%= link_to cart_path do %>
-              <div class="items-size">
-                <p class="items"><%= current_order.order_items.size %></p>
-                <p class="items-word">Items en el carro</p>   
-              </div>
-              <div class="cart">
-                <%= image_tag('cart.png') %>
-              </div>           
-            <% end %>
-          </div>
           <div class="cart-notice">
             
           </div>
@@ -140,11 +148,9 @@
   
 
   <script>
-
-
     $('.datepicker').pickadate({
-      selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15, // Creates a dropdown of 15 years to control year"
+      selectMonths: true, 
+      selectYears: 15, 
       formatSubmit: 'yyyy-mm-dd',
       hiddenPrefix: '',
       hiddenSuffix: ''

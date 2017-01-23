@@ -32,13 +32,13 @@ Rails.application.routes.draw do
         get :upload_new_product
         get :history
         get :messages
-        get :valuation
+        get :valuation        
       end
     end
     resource :account, controller: 'users/accounts', only: [:edit, :update]
   end
 
-  resources :listings, only: [:new, :create, :show, :index, :edit, :update] do
+  resources :listings, only: [:new, :create, :show, :index, :edit, :update, :destroy] do
     resources :images, :only => [:create, :update, :destroy]
   end
 
@@ -57,5 +57,6 @@ Rails.application.routes.draw do
   get 'pages/faq' => 'pages#faq'
   get 'pages/what_is' => 'pages#what_is'
   get 'pages/how_it_works' => 'pages#how_it_works'
+
 
 end

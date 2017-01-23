@@ -5,7 +5,7 @@
 	}
 	input {
 		@include span-columns(12);
-		margin: 1em 0;
+		margin-bottom: 1em;
 		height: 3em;
 		border: 2px solid $letters-grey;
 	}
@@ -13,6 +13,7 @@
 		@include span-columns(12);
 		background-color: $blue;
 		border: 2px solid $letters-grey;
+		height: 3em;
 	}
 	textarea {
 		@include span-columns(12);
@@ -22,7 +23,7 @@
 }
 
 section.new-listing {
-	@include grey-gradient;
+	@include light-grey-gradient;
 	padding-top: 3em;
 
 	h4 {
@@ -35,57 +36,115 @@ section.new-listing {
 		div.first-row {
 			@include outer-container;
 			
-			div.title {
+			div.left-column {				
 				@include span-columns(6);
-				@include labels;
-			}
-
-			div.rate {
-				@include span-columns(6);
-				@include labels;
-			}
-		}
-
-		div.second-row {
-			@include outer-container;
-			div.description {
-				@include span-columns(6);
-				@include labels;
-			}
-			
-			div.dropdowns {
-				@include span-columns(6);
-				div.region {
+				div.title {				
+					@include span-columns(9);	
 					@include labels;
 				}
 
-				div.category {
+				div.rate {					
+					@include span-columns(3);
+					@include omega();
 					@include labels;
+				}
+
+				div.description {	
+				@include span-columns(12);			
+					@include labels;							
+
+				    textarea {
+				    	height: 100px;				    	
+				    	margin-bottom: 1em;
+				    }
+
+				}
+
+				div.wrapper {					
+					div.dropdowns {	
+						position: relative;
+									
+						div.region {
+							@include labels;
+						}
+
+						div.category {
+							@include labels;
+						}	
+					}
+
+					div.images {	
+						@include outer-container;
+						margin-top: 1em;		
+
+						label {
+							@include span-columns(12);
+						}							
+
+						input {
+							margin-top: 1em;
+						}					
+					}				
+
+					div.submit-listing {
+
+						input {
+							width: 100%;
+							background: $light-blue;
+							border: 0;
+							padding: 8px 30px;
+							color: $white;
+							font-size: 1.2em;
+						}					
+					}
+				}
+			}			
+
+			div.map-container {
+				@include span-columns(6);
+				@include labels;
+
+				div.map-inputs {				
+					input#pac-input {							
+						width: 100%;
+						margin-top: 0;
+					}
+				}			
+
+				div#map {				
+					height: 500px;				
+					width: 100%;
 				}	
 			}
 		}
 
+		div.second-row {
+			@include outer-container;			
+
+			div.edit-images-container {
+				@include outer-container;
+				margin: 60px 0;
+				div.wrapper {
+					@include span-columns(3);
+
+					div.image {
+						img {
+							width: 100%;
+						}
+					}
+					div.links {						
+						a {
+							@include span-columns(6);
+							text-decoration: none;
+							color: $light-blue;							
+						}
+					}
+				}
+			}
+		}
+
 		div.third-row {
-			@include outer-container;
-			div.images {
-				@include span-columns(12);
-				margin: 1em 0;
-			}
-		}
-
-		div.map-container {
-			@include outer-container;
-			input {
-				width: 100%
-			}
-			div#map {
-				height: 500px;
-				width: 100%;
-			}	
-		}
-
-		div.submit-listing {
-			@include outer-container;
-		}
+			@include outer-container;						
+		}		
 	}
 }

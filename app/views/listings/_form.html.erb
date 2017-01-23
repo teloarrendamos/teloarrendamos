@@ -10,62 +10,87 @@
 
   <div class="form-container">
     <div class="first-row">
-      <div class="title">
-        <%= f.label :title, "Titulo del Producto" %>
-        <%= f.text_field :title %>
-      </div>  
+      <div class="left-column">
+        <div class="title">
+          <%= f.label :title, "Titulo del Producto" %>
+          <%= f.text_field :title %>
+        </div>  
 
-      <div class="rate">
-        <%= f.label :daily_rate, "Tarifa Diaria" %>
-        <%= f.number_field :daily_rate %>
-      </div>  
-      
+        <div class="rate">
+          <%= f.label :daily_rate, "Tarifa Diaria" %>
+          <%= f.number_field :daily_rate %>
+        </div> 
+
+        <div class="description">
+          <%= f.label :description, "Descripción" %>
+          <%= f.text_area :description %>
+        </div> 
+
+        <div class="wrapper">
+          <div class="dropdowns">
+            <div class="region">
+              <%= f.label :region, "Region" %>
+              <%= f.select :region,  options_for_select(Listing::CHILE_REGIONS) %>
+            </div>
+
+            <div class="category">
+              <%= f.label :category_id, "Category" %>
+              <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
+            </div>  
+          </div>
+          <div class="images">
+            <%= f.label :Subir_fotos %>
+            <%= f.file_field :images, multiple: true %>
+
+            <p>Selecciona todas fotos que quieras subir, la primera sera considerada como la foto Principal, luego podras editarlas </p>          
+          </div>
+
+          <% if @listing.new_record? %>
+            <div class="submit-listing">
+              <%= f.submit "Subir Producto" %>
+            </div> 
+          <% else %>
+            <div class="submit-listing">
+              <%= f.submit "Actualizar Producto" %>
+            </div> 
+          <% end %>
+        </div>  
+      </div>      
+
+      <div class="map-container">
+        <div class="map-inputs">
+          <%= f.label :direccion %>
+          <%= f.text_field :address, id: "pac-input", class: "controls", placeholder: "Donde esta ubicado el producto?" %>
+          <%= f.hidden_field :latitude, id: "lat-input" %>
+          <%= f.hidden_field :longitude, id: "lng-input" %>  
+        </div>      
+        <div id="map"></div>    
+      </div>
+       
     </div>
     
-    <div class="second-row">
-      <div class="description">
-        <%= f.label :description, "Descripción" %>
-        <%= f.text_area :description %>
-      </div>
-
-      <div class="dropdowns">
-        <div class="region">
-          <%= f.label :region, "Region" %>
-          <%= f.select :region,  options_for_select(Listing::CHILE_REGIONS) %>
-        </div>
-
-        <div class="category">
-          <%= f.label :category_id, "Category" %>
-          <%= f.collection_select :category_id, Category.all, :id, :name, {} %>
-        </div>  
-      </div>
+    <div class="second-row">            
+      <div class="edit-images-container">
+        <h3>Imagenes del producto</h3>
+        <% @listing.images.each_with_index do |image, index| %>        
+            <div class="wrapper">
+              <div class="image">
+                <%= image_tag(image.thumb.url) %>  
+              </div>
+              <div class="links">
+                <%#= link_to "Eliminar", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+                <%#= link_to "Hacer Principal", listing_image_path(@listing, index), :method => :patch %>    
+              </div>      
+            </div>                  
+        <% end %> 
+      </div> 
     </div>
 
     <div class="third-row">
-      <div class="images">
-        <%= f.label :Subir_fotos %>
-        <%= f.file_field :images, multiple: true %>
-      </div>  
-    </div>
-
-    <div class="map-container">
-      <%= f.label :direccion %>
-      <%= f.text_field :address, id: "pac-input", class: "controls", placeholder: "Donde esta ubicado el producto?" %>
-      <%= f.hidden_field :latitude, id: "lat-input" %>
-      <%= f.hidden_field :longitude, id: "lng-input" %>
-      <div id="map"></div>    
-    </div>
-    
-
-    <div class="submit-listing">
-      <%= f.submit "Subir Producto" %>
+     
     </div>
   </div>
 <% end %>
 
-<% @listing.images.each_with_index do |image, index| %>
-  <%= image_tag(image.thumb.url) %>
-  <%= link_to "Delete", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
-  <%= link_to "Make Primary", listing_image_path(@listing, index), :method => :patch %>
-<% end %>  
+ 
 

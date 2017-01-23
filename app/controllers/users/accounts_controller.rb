@@ -3,8 +3,12 @@ class Users::AccountsController < ApplicationController
 
   def edit
     @user = current_user
+    @alert = params[:bank]
   end
-
+  
+  def update_account
+  end
+  
   def update
     @user = current_user
     if @user.update(user_params)
@@ -18,6 +22,6 @@ class Users::AccountsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :profile_picture)
+    params.require(:user).permit(:first_name, :last_name, :profile_picture, :bank, :bank_account, :phone)
   end
 end

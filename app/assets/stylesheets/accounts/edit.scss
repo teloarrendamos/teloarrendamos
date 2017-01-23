@@ -1,5 +1,36 @@
 section.accounts-edit {
-	@include grey-gradient;
+	@include light-grey-gradient;
+
+	div.fill-data-alert {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    background: rgba(0, 0, 0, 0.5);
+	    height: 100%;
+	    z-index: 1000;
+
+		div.text-box {
+			border-radius: 5px;
+			background: white;
+			margin: 20% 30%;
+			text-align:center;
+			padding: 15px 67px;
+
+			p {		   		    	
+		    	color: $grey;
+		    	font-family: $regular;
+				font-size: 2em;
+		    }
+
+			button {
+				background: $light-blue;
+				border: 0;
+			    padding: 9px 35px;
+    			margin-bottom: 17px;
+			}
+		}	    
+	}
 	div.wrapper {
 		@include outer-container;
 		padding-top: 90px;
@@ -34,6 +65,7 @@ section.accounts-edit {
 
 			div.edit-account {
 				display: none;
+				padding-right: 38%;
 
 				form {
 					div.row {
@@ -41,13 +73,14 @@ section.accounts-edit {
 							margin: 20px 0;
 
 							input {
-								width: 40%;
+								width: 100%;
     							border-radius: 5px;
 							}
 
 							input[type="submit"] {
 								background-color: $green;
 								border: 0;
+								height: 40px
 							}
 						}
 					}
@@ -66,6 +99,9 @@ section.accounts-edit {
 
 		div.map-column {
 			@include span-columns(5);
+			div#map {
+				height: 400px;
+			}
 		}	
 	}
 }

@@ -1,5 +1,5 @@
 section.how-it-works {
-	@include grey-gradient;
+	@include light-grey-gradient;
 	font-family: $regular;
 	
 	div.titles {
@@ -32,8 +32,103 @@ section.how-it-works {
 		}
 	}
 
-	div.overlay {
-		@include overlay;
+	div.overlay-renter {
+		display: none;	
+		padding: 7% 28%;
+		background-color: rgba(1, 1, 1, 0.5);
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+
+	    div.close {
+	    	text-align: right;
+
+	    	button#close-btn-renter {
+	    	    background: red;
+	    	    color: white;
+			    border: 0;
+			    border-radius: 5px;
+	    	}
+	    }
+
+	    div#slider-wrapper-renter {
+	    	div.slick-list {
+	    		div.slick-track {
+	    			div.slick-slide {
+						img {
+							width: 100%;
+							z-index: 1000;
+						}
+
+						p {
+							color: $light-blue;
+							text-align: center;
+							font-size: 1.5em;
+						}
+	    			}
+	    		}
+	    	}
+    	
+    		ul.slick-dots {
+    			li {
+    				button:before {
+						font-size: 18px;
+						color: $light-blue
+    				}
+    			}
+    		}	    	
+	    }
+	}
+
+	div.overlay-client {
+		display: none;	
+		padding: 7% 28%;
+		background-color: rgba(1, 1, 1, 0.5);
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+
+	    div.close {
+	    	text-align: right;
+
+	    	button#close-btn-client {
+	    	    background: red;
+	    	    color: white;
+			    border: 0;
+			    border-radius: 5px;
+	    	}
+	    }
+
+	    div#slider-wrapper-client {
+	    	div.slick-list {
+	    		div.slick-track {
+	    			div.slick-slide {
+						img {
+							width: 100%;
+						}
+
+						p {
+							color: $light-blue;
+							text-align: center;
+							font-size: 1.5em;
+						}
+	    			}
+	    		}
+	    	}
+    	
+    		ul.slick-dots {
+    			li {
+    				button:before {
+						font-size: 18px;
+						color: $light-blue
+    				}
+    			}
+    		}	    	
+	    }
 	}
 }
 

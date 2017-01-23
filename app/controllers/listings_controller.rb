@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_person!, only: [:new, :create, :edit, :update]
-  before_action :set_listing, only: [:show, :edit, :update]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def index
     @listing_category = Listing.where(category_id: params[:id])
@@ -47,6 +47,11 @@ class ListingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy 
+    @listing.destroy
+    redirect_to root_path
   end
 
   private

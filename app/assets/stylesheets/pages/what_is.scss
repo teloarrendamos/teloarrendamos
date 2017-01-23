@@ -1,5 +1,5 @@
 section.que-es {
-	@include grey-gradient;
+	@include light-grey-gradient;
 	font-family: $regular;
 
 	div.shake-hands {
@@ -65,7 +65,7 @@ section.que-es {
 				span.currency-sign {
 				    background: white;
 				    border-radius: 100%;
-				    padding: 8px 26px;
+				    padding: 12px 26px;
 				    font-size: 4em;
 				    margin: 0 25% 0 28%;
 				    color: #7cffc0;
