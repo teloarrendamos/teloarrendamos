@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Your listings has been booked!</h1>
+    <div>
+      <% @order_items.each do |order_item| %>
+        <p><%= order_item.listing.title %></p>
+        <p><%= order_item.total_price %></p>
+        <p>Contact - <%= order_item.listing.postable.email %></p>
+      <% end %>
+    </div>
+  </body>
+</html>
