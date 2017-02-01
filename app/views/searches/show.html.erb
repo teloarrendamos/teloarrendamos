@@ -56,8 +56,7 @@
 
 <script>
 	var map;
-	var markersArray = [];
-	var markersPrices = [];
+	var markersArray = [];	
 	var resultsMarkersObj = {};
 
 	function initMap() {
@@ -69,8 +68,7 @@
 		map = new google.maps.Map(document.getElementById('map'), mapOptions);						
 		<% @listings.each do |listing| %>	
 			var listingInfo = [<%= listing.id %>, <%= listing.latitude.to_f %>, <%= listing.longitude.to_f %>, <%= listing.daily_rate %>]
-			markersArray.push(listingInfo);
-			//document.getElementById('markersArray').innerText = markersArray;
+			markersArray.push(listingInfo);			
 		<% end %>
 
 		
