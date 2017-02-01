@@ -54,6 +54,10 @@ Rails.application.routes.draw do
   
   resource :search, only: :show
 
+  resources :orders, only: [:index] do
+    resource :confirmation, controller: 'orders/confirmation', only: [:create]
+  end
+
   get 'pages/faq' => 'pages#faq'
   get 'pages/what_is' => 'pages#what_is'
   get 'pages/how_it_works' => 'pages#how_it_works'

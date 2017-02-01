@@ -15,4 +15,5 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', listing: order_item.listing, order_item: order_item, show_total: true %>
   <% end %>
+  <%= button_to "Confirm Order", order_confirmation_path(@order), data: { confirm: "Are you sure?" } %>
 <% end %>
