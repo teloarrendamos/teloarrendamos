@@ -4,10 +4,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thanks your order has been confirmed!</h1>
-    <p>Total: <%= @order.total %></p>
+    <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/logos/logo-transparente.png" %>
+    <div style="background:#1191B9;">
+      <h1 style="color:white;">Thanks your order has been confirmed!</h1>
+      <p style="color:white;">Total: <%= @order.total %></p>  
+    </div>
+    
     <div>
-      <% @order_items.each do |order_item| %>
+      <% @order_items.each do |order_item| %>      
         <p><%= order_item.listing.title %></p>
         <p><%= order_item.total_price %></p>
         <p>Contact - <%= order_item.listing.postable.email %></p>

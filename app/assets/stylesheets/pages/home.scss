@@ -32,7 +32,7 @@ section.title-and-search {
 		span.twitter-typeahead {
 			@include span-columns(8);
 			width: 500px;
-			
+
 			input {
 				width: 100%;
 			}
@@ -103,13 +103,13 @@ section.target-customers {
 	}
 
 	div.client {
-		@include span-columns(6);	
+		@include span-columns(6);
 		padding: 50px;
 	}
 	div.renter {
 		@include span-columns(6);
 		padding: 50px;
-		border-left: 1.7px solid rgba(153, 153, 153, 0.4);	
+		border-left: 1.7px solid rgba(153, 153, 153, 0.4);
 	}
 }
 
@@ -163,7 +163,7 @@ section.highlight-products {
 		}
 		div.product {
 			@include span-columns(4);
-			
+
 			div.new-tag {
 				height: 30px;
 				width: 100px;
@@ -188,9 +188,9 @@ section.highlight-products {
 			    border-bottom: 10px solid transparent;
 			    -webkit-transform: rotate(-47deg);
 			    transform: rotate(-47deg);
-			    
+
 			}
-			
+
 			img {
 				width: 100%;
 				height: 280px;
@@ -231,7 +231,7 @@ section.activity {
 
 	div.stats {
 		@include span-columns(6);
-		padding: 0 47px; 
+		padding: 0 47px;
 
 		p.number {
 			color: $green;
@@ -247,5 +247,7 @@ section.activity {
 }
 
 div.footer-image {
-	margin: 70px 0 -14px 10%;
+	padding: 70px 0 0 10%;
+	margin-bottom: -14px;
+	background: $light-grey;
 }

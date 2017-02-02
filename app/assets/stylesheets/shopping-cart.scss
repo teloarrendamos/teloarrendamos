@@ -1,18 +1,53 @@
 section.shopping-cart {
-	@include grey-gradient;
+	background: $light-grey;
+
+	div.cart-title {
+		@include outer-container;
+		padding-top: 35px;
+		h1 {
+			margin-top: 0;
+		}
+	}
+
 	div.cart-row {
-		// border-bottom: 1px solid grey;
-		// padding: 5px 0;
+		border-bottom: 1px solid grey;
+		padding: 30px 0;
 		div.container {
-			padding: 0 50px;
+			@include outer-container;
 			div.cart-titles {
+				@include outer-container(100%);
 				h4 {
+					@include span-columns(4);
 					margin: 0 0;
+				}
+
+				button {
+					@include span-columns(1.5);
+					border-radius: 5px;
+					background: $green;
+					border: 0;
+					padding: 3px 10px;
+					color: $white;
+					font-size: 0.9em;
 				}
 			}
 
 			div.order-item-details {
-				// display: none;
+				display: none;
+			}
+		}
+	}
+
+	div.order-button {
+		@include  outer-container;
+		form {
+			margin-top: 35px;
+			input.submit-order {
+				background: $light-blue;
+				border: 0;
+				padding: 8px 30px;
+				color: $white;
+				font-size: 1.2em;
 			}
 		}
 	}

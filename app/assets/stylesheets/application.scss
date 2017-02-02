@@ -31,9 +31,9 @@ body {
 	height: 100%;
 
 	p {
-		color: $letters-grey;	
+		color: $letters-grey;
 	}
-	
+
 	h1 {
 		font-size: 2em;
 	}
@@ -47,12 +47,12 @@ body {
 	}
 
 	section.user-header {
-		background-color: $grey;
+		background-color: $light-grey;
 
 		div.user-header {
 			@include outer-container;
-			font-family: $regular;	
-			
+			font-family: $regular;
+
 			h3 {
 				color: $letters-grey;
 				margin: 0;
@@ -76,15 +76,15 @@ body {
 					a:hover {
 						color: $green;
 					}
-				}		
-			}	
-		}	
+				}
+			}
+		}
 	}
 
 	@import '_default.date.scss';
 	@import '_default.scss';
 	@import '_default.time.scss';
-	
+
 	@import 'header';
 	@import 'pages/home';
 	@import 'pages/what_is';

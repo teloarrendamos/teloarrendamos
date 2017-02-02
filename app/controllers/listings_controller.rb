@@ -57,7 +57,7 @@ class ListingsController < ApplicationController
   private
 
   def update_listing_params
-    params.require(:listing).permit(:title, :description, :region, :category_id, :daily_rate)
+    params.require(:listing).permit(:title, :description, :region, :category_id, :daily_rate, :address, :latitude, :longitude)
   end
 
   def listing_params

@@ -1,11 +1,12 @@
 <div class="cart-row">
   <div class="container">
     <div class="cart-titles">
-      <h4><%= listing.title %></h4>
+      <h4 class="product-titles"><%= listing.title %></h4>
+      <button class="view-details">Ver Detalles</button>
     </div>
     <div class="order-item-details">
       <%= form_for order_item, remote: true do |f| %>
-        <h4 class="">Unit Price: <span><%= number_to_currency order_item.unit_price %></span></h4>
+        <h4 class="">Tarifa Diaria: <span><%= number_to_currency order_item.unit_price %></span></h4>
         <div class="">
           <div class="">
             <%= f.date_field :start_date %>
@@ -14,8 +15,8 @@
           </div>
           <div class="">
             <div class="">
-              <%= f.submit "Update Quantity" %>
-              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the listing '#{order_item.listing.title}' from your cart?" }, method: :delete, remote: true } %>
+              <%= f.submit "Actualizar Datos" %>
+              <%= link_to "Eliminar", order_item, { data: { confirm: "Are you sure you wish to delete the listing '#{order_item.listing.title}' from your cart?" }, method: :delete, remote: true } %>
             </div>
           </div>
         </div>

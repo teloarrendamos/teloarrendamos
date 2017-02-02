@@ -4,12 +4,13 @@ class OrderConfirmationNotifierMailer < ApplicationMailer
   def send_confirmation_email(order)
     @order = order
     @order_items = @order.order_items.includes(listing: :postable)
-    mail(to: @order.orderable.email, subject: "Order confirmed!")
+    mail(to: @order.orderable.email, subject: "Orden Confirmada!")
   end
 
-  def send_confirmation_email_to_poster(poster, order_items)
+  def send_confirmation_email_to_poster(poster, order_items, order)
+    @order = order
     @poster = poster
     @order_items = order_items
-    mail(to: poster.email, subject: "Your item has been ordered!")
+    mail(to: poster.email, subject: "Tu articulo ha sido arrendado!")
   end
 end

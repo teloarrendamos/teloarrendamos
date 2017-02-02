@@ -1,14 +1,24 @@
 <section class="shopping-cart">
+  <div class="cart-title">
+    <h1>Carrito de Arriendo</h1>
+  </div>
   <%= render "shopping_cart" %>
 </section>
 
 <script>
-  var cartTitles = document.getElementsByClassName('cart-titles');
+  var viewButtons = document.getElementsByClassName('view-details');
 
-  Array.prototype.forEach.call(cartTitles, function(title) {
+  var titles = $('.product-titles');
+  var count = 1;
 
-    title.addEventListener('click', function() {
-      var orderDetails = this.nextElementSibling;
+  Array.prototype.forEach.call(titles, function(title) {
+    title.prepend(count + '.-   ');
+    count++;
+  });
+
+  Array.prototype.forEach.call(viewButtons, function(button) {
+    button.addEventListener('click', function() {
+      var orderDetails = this.parentElement.nextElementSibling;
 
       if(orderDetails.style.display === "") {
         orderDetails.style.display = "block"

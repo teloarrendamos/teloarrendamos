@@ -12,12 +12,13 @@ class Orders::ConfirmationController < ApplicationController
     OrderConfirmationNotifierMailer.send_confirmation_email(@order).deliver
 
     @order_items = @order.order_items.includes(listing: :postable)
-    
+
     # Send email to each poster
     @groups = @order_items.group_by {|oi| oi.listing.postable}
     @posters = @groups.keys
+
     @posters.each do |poster|
-      OrderConfirmationNotifierMailer.send_confirmation_email_to_poster(poster, @groups[poster]).deliver
+      OrderConfirmationNotifierMailer.send_confirmation_email_to_poster(poster, @groups[poster], @order).deliver
     end
 
     redirect_to orders_path

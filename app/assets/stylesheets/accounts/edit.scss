@@ -17,19 +17,20 @@ section.accounts-edit {
 			text-align:center;
 			padding: 15px 67px;
 
-			p {		   		    	
-		    	color: $grey;
-		    	font-family: $regular;
+			p {
+		    color: $letters-grey;
+		   	font-family: $regular;
 				font-size: 2em;
 		    }
 
 			button {
 				background: $light-blue;
 				border: 0;
-			    padding: 9px 35px;
-    			margin-bottom: 17px;
+		    padding: 9px 35px;
+  			margin-bottom: 17px;
+  			color: white;
 			}
-		}	    
+		}
 	}
 	div.wrapper {
 		@include outer-container;
@@ -102,6 +103,6 @@ section.accounts-edit {
 			div#map {
 				height: 400px;
 			}
-		}	
+		}
 	}
 }
