@@ -13,34 +13,34 @@
 
 @font-face {
   font-family: 'NeoSansPro-Regular';
-  src: 	url(asset_url('NeoSansPro-Regular.TTF')) format('truetype');
+  src: 	font-url('NeoSansPro-Regular.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NeoSansPro-Light';
-  src: 	url(asset_url('NeoSansPro-Regular.TTF')) format('truetype');
+  src: 	font-url('NeoSansPro-Regular.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansPro-Ultra';
-  src: 	url(asset_url('NeoSansPro-Ultra')) format('truetype');
+  src: 	font-url('NeoSansPro-Ultra') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansStd-Light';
-  src: 	url(asset_url('NeoSansStd-Light.otf')) format('opentype');
+  src: 	font-url('NeoSansStd-Light.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansStd-Medium';
-  src: 	url(asset_url('NeoSansStd-Medium.otf')) format('opentype');
+  src: 	font-url('NeoSansStd-Medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
