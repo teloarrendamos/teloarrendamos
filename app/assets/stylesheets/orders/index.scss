@@ -1,0 +1,6 @@
+section.orders-index {
+  @include grey-gradient;
+  table {
+    @include table;
+  }
+}

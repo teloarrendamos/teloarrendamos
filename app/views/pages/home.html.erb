@@ -3,7 +3,7 @@
     <%= flash_messages %>
     <div class="callout">
     <h2>Deja que tus cosas trabajen por ti</h2>
-    <h3>En arriendalo podrás arrendar productos y también ponerlos en arriendo en forma simple y segura.</h3>
+    <h3>En <span style="color:#00C0FF;">Teloarrendamos.cl</span> podrás arrendar productos y también ponerlos en arriendo en forma simple y segura.</h3>
     </div>
     <%= form_tag search_path, method: :get do %>
       <%= text_field_tag :query, params[:query], class: 'form-control typeahead', id: "article_search", placeholder: "Ej. Bicicleta, moto, tabla de surf" %>
@@ -26,7 +26,7 @@
 </section>
 
 <section class="categories">
-  <h2>Categorías</h2>  
+  <h2>Categorías</h2>
   <div class="products-container">
     <% @categories.each do |category| %>
     <div class="product bicycles">
@@ -71,10 +71,43 @@
 <script>
   $('#highlight-slider').slick ({
     dots: true,
-    autoplay: true,
-    autoplaySpeed: 2000, 
+    //autoplay: true,
+    autoplaySpeed: 2000,
     infinite: true,
     speed: 300,
-    slidesToShow: 3    
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
+  });
+
+  $('.products-container').slick ({
+    dots: true,
+    //autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
   });
 </script>

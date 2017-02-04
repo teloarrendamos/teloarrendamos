@@ -1,14 +1,16 @@
-<table>
-  <tr>
-    <th>Order Id</th>
-    <th>Order Items</th>
-    <th>Order Total</th>
-  </tr>
-  <% @orders.each do |order| %>
-  <tr>
-    <th><%= order.id %></th>
-    <th><%= order.order_items.map(&:listing).map(&:title).join(", ") %></th>
-    <th><%= order.total %></th>
-  </tr>
-  <% end %>
-</table>
+<section class="orders-index">
+  <table>
+    <tr>
+      <th>Numero de Orden</th>
+      <th>Titulo del Producto</th>
+      <th>Total</th>
+    </tr>
+    <% @orders.each do |order| %>
+    <tr>
+      <th><%= order.id %></th>
+      <th><%= order.order_items.map(&:listing).map(&:title).join(", ") %></th>
+      <th><%= order.total %></th>
+    </tr>
+    <% end %>
+  </table>
+</section>

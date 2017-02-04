@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&libraries=places"
     async defer></script>
   </head>
@@ -14,11 +15,11 @@
     <% unless controller_name == "pages" || controller_name == "searches" %>
       <% if current_person %>
         <section class="user-header">
-          <div class="user-header">            
+          <div class="user-header">
             <ul class="user-nav">
               <li><%= link_to "Perfil", edit_account_path %></li>
               <li><%= link_to "Mis Productos", user_dashboard_path %></li>
-              <li><%= link_to "My Orders", orders_path %></li>
+              <li><%= link_to "Mis Arriendos", orders_path %></li>
               <% if current_user.bank === nil %>
               <li><%= link_to "Subir Producto", edit_account_path(bank: "Debe Completar los datos antes de Publicar") %></li>
               <% else %>
@@ -33,7 +34,7 @@
       <% end %>
     <% end %>
      <%= yield %>
-    
+
     <div class="footer-image">
       <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" %>
     </div>

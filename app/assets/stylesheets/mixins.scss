@@ -6,15 +6,23 @@
 	p {
 		margin: 25px 0;
 	}
-	
+
 	button {
 		background: $blue;
 		border: 0;
 		padding: 8px 19px;
-	}	
+	}
 }
 
 @mixin grey-gradient {
+	background: rgb(35,83,138); /* Old browsers */
+	background: -moz-linear-gradient(top,  $light-grey 20%, transparent 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  $light-grey 20%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  $light-grey 20%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23538a', endColorstr=transparent,GradientType=0 ); /* IE6-9 */
+}
+
+@mixin cover-gradient {
 	background: rgb(35,83,138); /* Old browsers */
 	background: -moz-linear-gradient(top,  $grey 20%, transparent 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  $grey 20%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
@@ -90,7 +98,7 @@
 		height: 383px;
 		position: relative;
 		overflow: hidden;
-		
+
 		img {
 			position: absolute;
 			top: 0;
@@ -117,14 +125,14 @@
 		font-size: 2em;
 
 		&.visible {
-			bottom: 0;	
+			bottom: 0;
 		}
 	}
 
 	#slider-nav {
 		margin: 1em 0;
 		text-align: center;
-		
+
 		a {
 			width: 2em;
 			height: 2em;
@@ -138,7 +146,7 @@
 			border-radius: 100%;
 			background: $light-blue;
 			font-size: 1.5em;
-		
+
 			&.current {
 				border-color: #000;
 			}
@@ -188,7 +196,7 @@
 			text-align: center;
 			margin-top: 0;
 		}
-		
+
 		form {
 			input {
 				height: 35px;
@@ -206,7 +214,7 @@
 					width: 100%;
 					background: $light-blue;
 					border: 0;
-				}	
+				}
 			}
 		}
 
@@ -221,7 +229,7 @@
 					color: $light-blue;
 				}
 			}
-			
+
 			a {
 				div.facebook-login {
 					background: #3b5998;
@@ -231,9 +239,9 @@
 					p {
 						color: $white;
 					}
-				}	
+				}
 			}
-		}	
+		}
 	}
 }
 
@@ -256,7 +264,7 @@
 				color: $white;
 				text-decoration: none;
 			}
-		}	
+		}
 	}
 
 	ul {
@@ -294,8 +302,8 @@
 // 	  <div class="cart-line-2"></div>
 // 	  <div class="cart-line-3"></div>
 // 	  <div class="cart-wheel"></div>
-// 	</div>  
-// </div>   
+// 	</div>
+// </div>
 
 @mixin shopping-cart {
 	width: 48px;
@@ -314,7 +322,7 @@
 		-webkit-transform: rotate(5deg);
 		-moz-transform: rotate(5deg);
 		-ms-transform: rotate(5deg);
-		transform: rotate(5deg); 
+		transform: rotate(5deg);
 		background-color: $light-blue;
 		border-bottom-left-radius: 35%;
 	}
@@ -328,7 +336,7 @@
 		-webkit-transform: rotate(80deg);
 		-moz-transform: rotate(80deg);
 		-ms-transform: rotate(80deg);
-		transform: rotate(80deg); 
+		transform: rotate(80deg);
 		background-color: $light-blue;
 	}
 
@@ -342,7 +350,7 @@
 		-webkit-transform: rotate(-80deg);
 		-moz-transform: rotate(-80deg);
 		-ms-transform: rotate(-80deg);
-		transform: rotate(-80deg); 
+		transform: rotate(-80deg);
 		background-color: inherit;
 	}
 
@@ -357,7 +365,7 @@
 		-webkit-transform: rotate(40deg);
 		-moz-transform: rotate(40deg);
 		-ms-transform: rotate(40deg);
-		transform: rotate(40deg); 
+		transform: rotate(40deg);
 		border-top-left-radius: 50%;
 		border-bottom-left-radius: 25%;
 	}
@@ -403,3 +411,52 @@
 	}
 }
 
+
+@mixin table {
+	@include outer-container;
+	width: 100%;
+	border-collapse:separate;
+	border-spacing: 0 3em;
+
+	thead {
+
+		tr {
+			th {
+				text-align: left;
+				border-bottom: 2px solid $blue;
+				padding-bottom: 17px;
+			}
+		}
+	}
+	tbody {
+		font-family: $regular;
+		font-size: 1.3em;
+		tr {
+			td {
+				vertical-align: middle;
+				width: 325px;
+
+				img {
+					width: 300px;
+					height: 200px;
+				    border: 1px solid $letters-grey;
+  					padding: 5px;
+				}
+
+				a {
+					color: $light-blue;
+					text-decoration: none;
+				}
+
+				a:hover {
+					color: $green;
+				}
+			}
+		}
+
+		tr.spacer {
+			height: 1px;
+			background: $blue;
+		}
+	}
+}

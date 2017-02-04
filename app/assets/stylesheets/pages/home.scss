@@ -2,21 +2,16 @@ section.title-and-search {
 	background-image: url('https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/backgrounds/imagen-retocada-final-aprobada.jpg');
 	background-size: 100% 100%;
 	text-align: center;
-	/* Set the height to match that of the viewport. */
-    height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 0 0 0;
 
-    /* Set the width to match that of the viewport. */
-    width: 100vw;
-
-    /* Remove any browser-default margins. */
-    margin: 0 0 0 0;
-
-    div.overlay {
-    	@include grey-gradient;
-	   	position: absolute;
-	    width: 100%;
-	    height: 100%;
-    }
+  div.overlay {
+  	@include cover-gradient;
+   	position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 
 	div.callout {
 		padding: 2% 20% 3% 20%;
@@ -249,5 +244,76 @@ section.activity {
 div.footer-image {
 	padding: 70px 0 0 10%;
 	margin-bottom: -14px;
-	background: $light-grey;
+	background: transparent;
+}
+
+
+
+@include media(max-width 740px) {
+	section.title-and-search {
+		div.callout {
+	    padding: 2% 2% 3% 2%;
+	    font-size: 1.3em;
+
+	    h2 {
+	    	margin-top: 0;
+	    }
+		}
+
+		form {
+			span.twitter-typeahead {
+				@include span-columns(8);
+
+				input {
+			    width: 152%;
+			    margin-bottom: 10px;
+				}
+			}
+
+			input[type="text"] {
+				@include span-columns(12);
+				margin-left: 0;
+			}
+
+			input[type='submit'] {
+				@include span-columns(12);
+			}
+		}
+	}
+
+	section.target-customers {
+		div {
+			p {
+				padding:0;
+			}
+		}
+
+		div.client {
+			@include span-columns(12);
+		}
+		div.renter {
+			@include span-columns(12);
+		}
+	}
+
+	section.categories {
+		div.products-container {
+			div.product {
+				@include span-columns(12);
+			}
+		}
+	}
+
+	section.highlight-products {
+		div#highlight-slider {
+			div.product {
+				@include span-columns(12);
+				margin-right: 0;
+
+				p {
+					text-align: center;
+				}
+			}
+		}
+	}
 }

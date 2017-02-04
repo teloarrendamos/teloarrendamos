@@ -1,5 +1,6 @@
 section.shopping-cart {
-	background: $light-grey;
+	//background: $light-grey;
+	@include grey-gradient;
 
 	div.cart-title {
 		@include outer-container;
