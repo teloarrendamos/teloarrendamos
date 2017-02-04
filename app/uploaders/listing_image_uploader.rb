@@ -1,5 +1,5 @@
 class ListingImageUploader < CarrierWave::Uploader::Base
-
+  after :remove, :delete_empty_upstream_dirs
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -9,8 +9,11 @@ class ListingImageUploader < CarrierWave::Uploader::Base
     process resize_and_pad: [200,200]
   end
 
-  storage :file
-  # storage :fog
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -32,6 +35,14 @@ class ListingImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+
+  def delete_empty_upstream_dirs
+    path = ::File.expand_path(store_dir, root)
+    Dir.delete(path) # fails if path not empty dir
+
+  rescue SystemCallError
+    true # nothing, the dir is not empty
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do

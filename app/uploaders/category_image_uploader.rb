@@ -1,12 +1,15 @@
 class CategoryImageUploader < CarrierWave::Uploader::Base
-
+  after :remove, :delete_empty_upstream_dirs
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   def default_url(*args)
     ActionController::Base.helpers.asset_path("empty.png")
@@ -32,6 +35,14 @@ class CategoryImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+
+  def delete_empty_upstream_dirs
+    path = ::File.expand_path(store_dir, root)
+    Dir.delete(path) # fails if path not empty dir
+
+  rescue SystemCallError
+    true # nothing, the dir is not empty
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do
