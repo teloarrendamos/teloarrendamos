@@ -74,6 +74,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.1.1)
     elasticsearch (5.0.0)
       elasticsearch-api (= 5.0.0)
       elasticsearch-transport (= 5.0.0)
@@ -393,6 +394,7 @@ DEPENDENCIES
   carrierwave!
   coffee-rails (~> 4.2)
   devise
+  devise-i18n
   faker
   figaro
   fog
@@ -426,4 +428,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.13.6
+   1.14.2

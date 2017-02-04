@@ -13,41 +13,41 @@
 
 @font-face {
   font-family: 'NeoSansPro-Regular';
-  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  src: 	url(asset_url('NeoSansPro-Regular.TTF')) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NeoSansPro-Light';
-  src: 	url('/assets/NeoSansPro-Regular.TTF') format('truetype');
+  src: 	url(asset_url('NeoSansPro-Regular.TTF')) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansPro-Ultra';
-  src: 	url('/assets/NeoSansPro-Ultra') format('truetype');
+  src: 	url(asset_url('NeoSansPro-Ultra')) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansStd-Light';
-  src: 	url('/assets/NeoSansStd-Light.otf') format('opentype');
+  src: 	url(asset_url('NeoSansStd-Light.otf')) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansStd-Medium';
-  src: 	url('/assets/NeoSansStd-Medium.otf') format('opentype');
+  src: 	url(asset_url('NeoSansStd-Medium.otf')) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NeoSansStd-Regular';
-  src: 	url('/assets/NeoSansStd-Regular.otf') format('opentype');
+  src: 	url(asset_url('NeoSansStd-Regular.otf')) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
