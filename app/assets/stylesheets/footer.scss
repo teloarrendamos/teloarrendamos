@@ -68,7 +68,7 @@ footer {
 				li {
 					margin: 15px 0;
 				}
-			}	
+			}
 		}
 		div.contact-info {
 			padding-top: 32px;
@@ -77,6 +77,68 @@ footer {
 				margin-bottom: 0;
 				margin: 0;
 				font-family: $std-light;
+			}
+		}
+	}
+}
+
+@include media(max-width 740px) {
+	footer {
+		p {
+
+		}
+
+		div.column {
+			@include span-columns(12);
+		}
+
+		div.logo-and-social {
+			div.logo {
+				img {
+
+				}
+			}
+
+			div.slogan {
+
+			}
+
+			div.social-icons {
+				img {
+
+				}
+			}
+		}
+
+		div.nav-list {
+			padding: 0;
+			ul {
+				li {
+					text-align: center;
+				 	a {
+
+				 	}
+
+				 	a:hover {
+
+				 	}
+				}
+			}
+		}
+
+		div.contact {
+			padding-left: 0;
+			div.politics {
+				ul {
+					li {
+						text-align: center;
+					}
+				}
+			}
+			div.contact-info {
+				p {
+
+				}
 			}
 		}
 	}

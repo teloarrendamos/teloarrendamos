@@ -1,4 +1,4 @@
-header {	
+header {
 	div.upper-blue-margin {
 		height: 10px;
 		background: $blue;
@@ -13,7 +13,7 @@ header {
 
 			div.inner-container {
 				@include outer-container(100%);
-				
+
 				div.login {
 					@include span-columns(6);
 					@include login-nav;
@@ -24,15 +24,15 @@ header {
 					@include span-columns(6);
 					@include login-nav;
 					div.p-container {
-						p {					
+						p {
 							border-left: 2px solid white;
-						}	
+						}
 					}
 				}
 			}
 		}
 	}
-	
+
 	div.login-nav-user {
 		@include outer-container;
 		div.container {
@@ -41,7 +41,7 @@ header {
 
 			div.inner-container {
 				@include outer-container(100%);
-				
+
 				div.hello-user {
 					@include span-columns(4);
 					@include login-nav;
@@ -81,7 +81,7 @@ header {
 				@include outer-container(100%);
 				padding-left: 0;
 				margin-top: 30px;
-				font-family: $light;				
+				font-family: $light;
 
 				li {
 					@include span-columns(3);
@@ -100,3 +100,19 @@ header {
 	}
 }
 
+
+
+@include media(max-width 740px) {
+	header {
+		nav {
+			div.logo {
+				@include span-columns(12);
+				text-align: center;
+			}
+
+			div.nav-div {
+				display: none;
+			}
+		}
+	}
+}

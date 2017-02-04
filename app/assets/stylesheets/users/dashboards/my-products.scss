@@ -2,52 +2,7 @@ section.user-dashboard {
 	@include grey-gradient;
 
 	table {
-		@include outer-container;
-		width: 100%;
-		border-collapse:separate; 
-		border-spacing: 0 3em;
-
-		thead {
-
-			tr {
-				th {
-					text-align: left;
-					border-bottom: 2px solid $blue;
-					padding-bottom: 17px;
-				}
-			}
-		}
-		tbody {
-			font-family: $regular;
-			font-size: 1.3em;
-			tr {
-				td {					
-					vertical-align: middle;					
-					width: 325px;
-					
-					img {
-						width: 300px;
-						height: 200px;
-					    border: 1px solid $letters-grey;
-    					padding: 5px;
-					}
-
-					a {
-						color: $light-blue;					
-						text-decoration: none;
-					}	
-
-					a:hover {
-						color: $green;
-					}
-				}				
-			}	
-
-			tr.spacer {
-				height: 1px;
-				background: $blue;
-			}		
-		}
+		@include table;
 	}
 
 	a.new-product-button {
