@@ -1,4 +1,4 @@
-section.user-sign-up {
+section.user-sign-up, section.company-sign-up {
 	@include session-registration-layout;
 	font-family: $light;
 }

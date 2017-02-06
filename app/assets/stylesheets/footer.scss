@@ -82,64 +82,64 @@ footer {
 	}
 }
 
-@include media(max-width 740px) {
-	footer {
-		p {
+// @include media(max-width 740px) {
+// 	footer {
+// 		p {
 
-		}
+// 		}
 
-		div.column {
-			@include span-columns(12);
-		}
+// 		div.column {
+// 			@include span-columns(12);
+// 		}
 
-		div.logo-and-social {
-			div.logo {
-				img {
+// 		div.logo-and-social {
+// 			div.logo {
+// 				img {
 
-				}
-			}
+// 				}
+// 			}
 
-			div.slogan {
+// 			div.slogan {
 
-			}
+// 			}
 
-			div.social-icons {
-				img {
+// 			div.social-icons {
+// 				img {
 
-				}
-			}
-		}
+// 				}
+// 			}
+// 		}
 
-		div.nav-list {
-			padding: 0;
-			ul {
-				li {
-					text-align: center;
-				 	a {
+// 		div.nav-list {
+// 			padding: 0;
+// 			ul {
+// 				li {
+// 					text-align: center;
+// 				 	a {
 
-				 	}
+// 				 	}
 
-				 	a:hover {
+// 				 	a:hover {
 
-				 	}
-				}
-			}
-		}
+// 				 	}
+// 				}
+// 			}
+// 		}
 
-		div.contact {
-			padding-left: 0;
-			div.politics {
-				ul {
-					li {
-						text-align: center;
-					}
-				}
-			}
-			div.contact-info {
-				p {
+// 		div.contact {
+// 			padding-left: 0;
+// 			div.politics {
+// 				ul {
+// 					li {
+// 						text-align: center;
+// 					}
+// 				}
+// 			}
+// 			div.contact-info {
+// 				p {
 
-				}
-			}
-		}
-	}
-}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

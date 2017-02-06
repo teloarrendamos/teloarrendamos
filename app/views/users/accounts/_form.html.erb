@@ -16,17 +16,17 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :bank %>
+              <%= f.label :banco %>
               <%= f.text_field :bank, class: "form-control" %>
             </div>
 
             <div class="form-group">
-              <%= f.label :bank_account %>
+              <%= f.label :numero_de_cuenta %>
               <%= f.text_field :bank_account, class: "form-control" %>
             </div>
 
             <div class="form-group">
-              <%= f.label :phone %>
+              <%= f.label :telefono %>
               <%= f.text_field :phone, class: "form-control" %>
             </div>
 
@@ -36,4 +36,4 @@
           </div>
         <% end %>
 
-        <%= link_to button_tag("Cambiar Contraseña", class: "btn btn-default"), edit_user_registration_path %>  
+        <%= link_to button_tag("Cambiar Contraseña", class: "btn btn-default"), edit_user_registration_path %>

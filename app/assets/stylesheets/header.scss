@@ -84,7 +84,7 @@ header {
 				font-family: $light;
 
 				li {
-					@include span-columns(3);
+					@include span-columns(4);
 					text-align: center;
 					a {
 						text-decoration: none;
@@ -102,17 +102,17 @@ header {
 
 
 
-@include media(max-width 740px) {
-	header {
-		nav {
-			div.logo {
-				@include span-columns(12);
-				text-align: center;
-			}
+// @include media(max-width 740px) {
+// 	header {
+// 		nav {
+// 			div.logo {
+// 				@include span-columns(12);
+// 				text-align: center;
+// 			}
 
-			div.nav-div {
-				display: none;
-			}
-		}
-	}
-}
+// 			div.nav-div {
+// 				display: none;
+// 			}
+// 		}
+// 	}
+// }

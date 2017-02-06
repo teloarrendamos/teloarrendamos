@@ -84,7 +84,7 @@ section.target-customers {
 		p {
 			margin: 40px 0;
 			padding: 0 95px;
-    		font-size: 1.2em;
+    	font-size: 1.2em;
 
 		}
 
@@ -93,7 +93,7 @@ section.target-customers {
 			border: 0;
 			padding: 8px 30px;
 			color: $white;
-			font-size: 1.2em;
+			font-size: 1em;
 		}
 	}
 
@@ -249,71 +249,71 @@ div.footer-image {
 
 
 
-@include media(max-width 740px) {
-	section.title-and-search {
-		div.callout {
-	    padding: 2% 2% 3% 2%;
-	    font-size: 1.3em;
+// @include media(max-width 740px) {
+// 	section.title-and-search {
+// 		div.callout {
+// 	    padding: 2% 2% 3% 2%;
+// 	    font-size: 1.3em;
 
-	    h2 {
-	    	margin-top: 0;
-	    }
-		}
+// 	    h2 {
+// 	    	margin-top: 0;
+// 	    }
+// 		}
 
-		form {
-			span.twitter-typeahead {
-				@include span-columns(8);
+// 		form {
+// 			span.twitter-typeahead {
+// 				@include span-columns(8);
 
-				input {
-			    width: 152%;
-			    margin-bottom: 10px;
-				}
-			}
+// 				input {
+// 			    width: 152%;
+// 			    margin-bottom: 10px;
+// 				}
+// 			}
 
-			input[type="text"] {
-				@include span-columns(12);
-				margin-left: 0;
-			}
+// 			input[type="text"] {
+// 				@include span-columns(12);
+// 				margin-left: 0;
+// 			}
 
-			input[type='submit'] {
-				@include span-columns(12);
-			}
-		}
-	}
+// 			input[type='submit'] {
+// 				@include span-columns(12);
+// 			}
+// 		}
+// 	}
 
-	section.target-customers {
-		div {
-			p {
-				padding:0;
-			}
-		}
+// 	section.target-customers {
+// 		div {
+// 			p {
+// 				padding:0;
+// 			}
+// 		}
 
-		div.client {
-			@include span-columns(12);
-		}
-		div.renter {
-			@include span-columns(12);
-		}
-	}
+// 		div.client {
+// 			@include span-columns(12);
+// 		}
+// 		div.renter {
+// 			@include span-columns(12);
+// 		}
+// 	}
 
-	section.categories {
-		div.products-container {
-			div.product {
-				@include span-columns(12);
-			}
-		}
-	}
+// 	section.categories {
+// 		div.products-container {
+// 			div.product {
+// 				@include span-columns(12);
+// 			}
+// 		}
+// 	}
 
-	section.highlight-products {
-		div#highlight-slider {
-			div.product {
-				@include span-columns(12);
-				margin-right: 0;
+// 	section.highlight-products {
+// 		div#highlight-slider {
+// 			div.product {
+// 				@include span-columns(12);
+// 				margin-right: 0;
 
-				p {
-					text-align: center;
-				}
-			}
-		}
-	}
-}
+// 				p {
+// 					text-align: center;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
