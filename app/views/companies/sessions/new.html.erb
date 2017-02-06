@@ -1,39 +1,42 @@
 <section class="company-login">
-  <h2>Iniciar Sesión</h2>
-  <p>(Empresa)</p>
+  <div class="inner-container">
+    <h2>Iniciar Sesión</h2>
+    <p>(Empresa)</p>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
       </div>
-    <% end -%>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <%# if devise_mapping.rememberable? -%>
+        <!-- <div class="field">
+          <%#= f.check_box :remember_me %>
+          <%#= f.label :remember_me %>
+        </div> -->
+      <%# end -%>
+
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+
+    <div class="sign-up-callout">
+      <h4>¿Aun no tienes cuenta?</h4>
+      <p>En teloarrendamos.cl podrás arrendar productos y también ponerlos al arriendo de forma rápida y segura!</p>
+
+      <p>Solo con tu mail y en dos simples pasos podrás comenzar a hacer que tus cosas trabajen por ti</p>
+
+      <%= link_to new_company_registration_path do %>
+      <button>Crear cuenta</button>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="sign-up-callout">
-    <%= render "companies/shared/links" %>    
-  </div>
-  
-  <div class="sign-up-callout">
-    <h4>¿Aun no tienes cuenta?</h4>
-    <p>En teloarrendamos.cl podrás arrendar productos y también ponerlos al arriendo de forma rápida y segura!</p>
-
-    <p>Solo con tu mail y en dos simples pasos podrás comenzar a hacer que tus cosas trabajen por ti</p>  
-    <button>Crear cuenta</button>
   </div>
 </section>
+

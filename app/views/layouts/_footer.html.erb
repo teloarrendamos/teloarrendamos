@@ -7,7 +7,9 @@
       <p>Deja que tus cosas trabajen por ti.</p>
     </div>
     <div class="social-icons">
-      <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/facebook-logo.png" %> 
+      <%= link_to "https://www.facebook.com/Teloarrendamos.cl/?fref=ts" do %>
+        <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/facebook-logo.png" %>
+      <% end %>
       <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/twitter-logo.png" %>
       <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/instagram-logo.png" %>
       <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/social-icons/youtube-logo.png" %>
@@ -22,7 +24,7 @@
       <li><%= link_to "GARANTÍA" %></li>
       <li><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
       <li><%= link_to "CONTACTO" %></li>
-    </ul>  
+    </ul>
   </div>
 
   <div class="column contact">
@@ -33,9 +35,7 @@
       </ul>
     </div>
     <div class="contact-info">
-      <p>Mail: contacto@arriendalo.cl</p>
-      <p>Tel. 2 24567890</p>
-      <p>Cel: +56 8 9876 7663</p>
+      <p>Mail: contacto@teloarrendamos.cl</p>
     </div>
   </div>
 

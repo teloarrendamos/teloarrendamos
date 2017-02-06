@@ -8,12 +8,16 @@
           <% if current_person %>
             <div class="hello-user">
               <div class="p-container">
+                <% if current_person.first_name != nil %>
+                <p>Hola <%= current_person.first_name %> !</p>
+                <% else %>
                 <p>Hola <%= current_person.email %>!</p>
+                <% end %>
               </div>
             </div>
             <div class="account" id="login-dropdown-button">
               <div class="p-container">
-                <p><%= link_to "Mi Cuenta", edit_account_path %></p>  
+                <p><%= link_to "Mi Cuenta", edit_account_path %></p>
               </div>
             </div>
             <div class="sign-out" id="sign-up-dropdown-button">
@@ -36,7 +40,7 @@
           </div>
           <div class="account" id="login-dropdown-button">
             <div class="p-container">
-              <p><%= link_to "Dashboard", admin_dashboard_path %></p>  
+              <p><%= link_to "Dashboard", admin_dashboard_path %></p>
             </div>
           </div>
           <div class="sign-out" id="sign-up-dropdown-button">
@@ -53,14 +57,14 @@
         <div class="inner-container">
           <div class="login" id="login-dropdown-button">
             <div class="p-container">
-              <p>INICIAR SESIÓN</p>  
+              <p>INICIAR SESIÓN</p>
             </div>
             <ul id="login-dropdown">
               <%= link_to new_company_session_path do %>
-                <li>Company</li>
+                <li>Empresa</li>
               <% end %>
               <%= link_to new_user_session_path do %>
-                <li>User</li>  
+                <li>Persona</li>
               <% end %>
             </ul>
           </div>
@@ -68,16 +72,16 @@
             <div class="p-container">
               <p>REGISTRARSE</p>
             </div>
-            
+
             <ul id="sign-up-dropdown">
               <%= link_to new_company_registration_path do %>
-                <li>Company</li>
+                <li>Empresa</li>
               <% end %>
               <%= link_to new_user_registration_path do %>
-                <li>User</li>  
+                <li>Persona</li>
               <% end %>
             </ul>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -95,7 +99,7 @@
         <li class="como-funciona"><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
         <li class="garantia"><%= link_to "GARANTÍA" %></li>
         <li class="preguntas"><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
-      </ul>  
+      </ul>
     </div>
   </nav>
 </header>

@@ -1,12 +1,12 @@
 <section class="accounts-edit">
-  
+
   <% if @alert.present? %>
-  <div class="fill-data-alert">  
+  <div class="fill-data-alert">
     <div class="text-box">
-      <p><%= @alert %></p>  
+      <p><%= @alert %></p>
       <button id="get-it">Entendido</button>
     </div>
-    
+
     <script>
       $('#get-it')[0].onclick = function() {
         $('.fill-data-alert')[0].style.display = 'none';
@@ -25,11 +25,11 @@
           <h3><%= @user.first_name %> <%= @user.last_name %></h3>
           <p>+56 9 95773432</p>
           <p><%= @user.email %></p>
-          <p>Miembro desde el 2016</p>    
+          <p>Miembro desde el <%= @user.created_at.year %>.</p>
         </div>
       </div>
-      
-      <button id="show-edit-form">Editar Perfil</button>  
+
+      <button id="show-edit-form">Editar Perfil</button>
 
       <div class="edit-account">
         <%= render 'form' %>
@@ -38,7 +38,7 @@
 
     <div class="map-column">
       <div id="map"></div>
-    </div>  
+    </div>
   </div>
 
   <script>
@@ -60,18 +60,18 @@
         zoom: 5
       }
 
-      map = new google.maps.Map(document.getElementById('map'), mapOptions);            
-      <% @user.listings.each do |listing| %> 
+      map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      <% @user.listings.each do |listing| %>
         var listingInfo = [<%= listing.id %>, <%= listing.latitude.to_f %>, <%= listing.longitude.to_f %>, <%= listing.daily_rate %>]
         markersArray.push(listingInfo);
         //document.getElementById('markersArray').innerText = markersArray;
       <% end %>
 
-      
+
       for(var i = 0; i < markersArray.length; i++) {
         resultsMarkersObj[i] = new google.maps.Marker({
             position: {lat: markersArray[i][1], lng: markersArray[i][2]},
-            map: map,           
+            map: map,
             title:"Hello World!",
             price: new google.maps.InfoWindow({
             content: '<p>$ ' + markersArray[i][3] + '</p>'
@@ -81,7 +81,7 @@
         resultsMarkersObj[i].addListener("click", function() {
               this.price.open(map, this);
           })
-      }             
+      }
     }
   </script>
 
