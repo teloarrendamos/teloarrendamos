@@ -30,7 +30,7 @@
           <div class="dropdowns">
             <div class="region">
               <%= f.label :region, "Region" %>
-              <%= f.select :region,  options_for_select(Listing::CHILE_REGIONS) %>
+              <%= f.select :region, Listing::CHILE_REGIONS %>
             </div>
 
             <div class="category">
