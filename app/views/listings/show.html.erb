@@ -2,22 +2,22 @@
   <div class="cart-text">
   <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
   </div>
-  
+
   <div class="inner-container">
     <div class="listing-product-column">
       <div class="slider slider-for">
         <%= image_tag(@listing.images[0]) %>
-        <% @secondary_images.each do |image| %>  
+        <% @secondary_images.each do |image| %>
           <%= image_tag(image.url) %>
-        <% end %>   
+        <% end %>
       </div>
-      
+
       <div class="slider slider-nav">
       <%= image_tag(@listing.images[0]) %>
       <% @secondary_images.each do |image| %>
           <%= image_tag(image.url) %>
-      <% end %>        
-      </div> 
+      <% end %>
+      </div>
 
 
       <div class="other-postable-products">
@@ -26,12 +26,12 @@
         <% @other_user_products.each do |product| %>
         <div class="product-container">
           <div class="image">
-            <%= image_tag(product.images[0]) %>    
+            <%= image_tag(product.images[0]) %>
           </div>
           <div class="info">
             <p class="title"><%= product.title %></p>
             <p class="rate"><%= product.daily_rate %></p>
-            <p class="user-name"><%= product.postable.first_name %></p>    
+            <p class="user-name"><%= product.postable.first_name %></p>
           </div>
         </div>
         <% end %>
@@ -40,31 +40,31 @@
 
     <div class="listing-deal-column">
       <div class="postable-profile">
-        <%= image_tag(@listing.postable.profile_picture) %>  
+        <%= image_tag(@listing.postable.profile_picture) %>
         <div class="postable-info">
-          <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - V Region</p>
-          <p class="postable-phone">+56 9 9392 8382</p>
-          <p>Miembro desde 2006</p>  
+          <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - <%= @listing.region %></p>
+          <p class="postable-phone">Fono: <%= @listing.postable.phone %></p>
+          <p>Miembro desde <%= @listing.postable.created_at.year %></p>
         </div>
       </div>
-      
+
       <div class="product-info">
         <h4><%= @listing.title %></h4>
-        <div class="left-wrap">          
-          <p>Description:</p>
-          <p><%= @listing.description %></p>  
+        <div class="left-wrap">
+          <p>Descripción:</p>
+          <p><%= @listing.description %></p>
         </div>
 
         <div class="right-wrap">
-          <p>Valor Diario:</p>  
-          <p class="product-rate"><%= @listing.daily_rate %></p>    
-        </div>            
-      </div>      
+          <p>Valor Diario:</p>
+          <p class="product-rate"><%= @listing.daily_rate %></p>
+        </div>
+      </div>
 
       <% if @listing.postable == current_person %>
         <div class="edit-listing">
           <%= link_to "Editar Producto", edit_listing_path(@listing) %>
-        </div>        
+        </div>
       <% else %>
 
         <%= form_for @order_item, remote: true do |f| %>
@@ -84,7 +84,7 @@
           </div>
 
           <script>
-            document.getElementById('add-item-button').onclick = function() {              
+            document.getElementById('add-item-button').onclick = function() {
               if(document.getElementsByClassName('datepicker')[0].value == "" || document.getElementsByClassName('datepicker')[1].value == "") {
                 event.preventDefault();
                 alert('Debes llenar las fechas');
@@ -97,35 +97,35 @@
             <%= link_to cart_path do %>
               <div class="items-size">
                 <p class="items"><%= current_order.order_items.size %></p>
-                <p class="items-word">Items en el carro</p>   
+                <p class="items-word">Items en el carro</p>
               </div>
               <div class="cart">
                 <%= image_tag('cart.png') %>
-              </div>           
+              </div>
             <% end %>
-          </div>      
-          
+          </div>
+
           <div class="close-deal-details">
             <div class="details-text">
               <p>Valor del Arriendo: </p>
               <p>Valor diario <span class="values">$</span>
                               <span class="values" id="daily-rate-value"><%= @listing.daily_rate %></span>
                               <span class="values">x</span>
-                              <span class="values" id="amountOfDays"></span> 
+                              <span class="values" id="amountOfDays"></span>
                               <span class="values">dias = $</span>
                               <span class="values" id="net-total-cost"></span></p>
-              <p>Comision por servicio: 
+              <p>Comision por servicio:
                 <span class="values">$</span>
                 <span class="values" id="comisionValue"></span></p>
 
-              <p class="total-cost">Valor Total: 
+              <p class="total-cost">Valor Total:
                 <span class="values">$</span>
-                <span class="values" id="total-cost"></span></p>  
+                <span class="values" id="total-cost"></span></p>
             </div>
-            
+
             <div class="delivery-picker">
               <div class="checkbox">
-                <input type="checkbox"> 
+                <input type="checkbox">
               </div>
               <div class="delivery-text">
                 <p>Desapacho a Domicilio</p>
@@ -139,22 +139,22 @@
 
 
           <div class="cart-notice">
-            
+
           </div>
         <% end %>
-      <% end %>  
+      <% end %>
     </div>
   </div>
-  
+
 
   <script>
     $('.datepicker').pickadate({
-      selectMonths: true, 
-      selectYears: 15, 
+      selectMonths: true,
+      selectYears: 15,
       formatSubmit: 'yyyy-mm-dd',
       hiddenPrefix: '',
       hiddenSuffix: ''
-    });  
+    });
 
     $('.slider-for').slick({
       slidesToShow: 1,
