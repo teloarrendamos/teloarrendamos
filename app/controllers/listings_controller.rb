@@ -39,7 +39,7 @@ class ListingsController < ApplicationController
   def update
     @listing.update(update_listing_params)
     images = @listing.images # copy the old images 
-    images += params[:listing][:images] # concat old images with new ones
+    images += params[:listing][:images] if  params[:listing][:images]# concat old images with new ones
     @listing.images = images # assign back
     if @listing.save
       flash[:notice] = "Listing updated"
