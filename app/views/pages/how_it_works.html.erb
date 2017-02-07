@@ -2,17 +2,17 @@
 	<div class="titles">
 		<h2 class="renter">EL QUE ARRIENDA</h2>
 		<h2 class="client">EL QUE QUIERE ARRENDAR</h2>
-	</div>	
+	</div>
 	<div class="explain-users-plan">
 		<button id="renter-tutorial-btn">Quiero Ganar Dinero!</button>
 		<div class="shake-hands-how-it-works">
 			<%= image_tag "ilustracion-arriendalo.png" %>
 		</div>
-		<button id="client-tutorial-btn">Quiero Arrendar!</button>	
+		<button id="client-tutorial-btn">Quiero Arrendar!</button>
 	</div>
-	<div class="overlay-renter">		
+	<div class="overlay-renter">
 			<div class="close">
-				<button id="close-btn-renter">Cerrar</button>		
+				<button id="close-btn-renter">Cerrar</button>
 			</div>
 			<div id="slider-wrapper-renter">
 				<div class="slide">
@@ -28,18 +28,13 @@
 					<p class="caption">Recibe tu dinero</p>
 				</div>
 			</div>
-			<!-- <div id="slider-nav">
-				<a href="" data-slide="0">1</a>
-				<a href="" data-slide="1">2</a>
-				<a href="" data-slide="2">3</a>
-			</div> -->		
 	</div>
 
-	<div class="overlay-client">	
+	<div class="overlay-client">
 			<div class="close">
-				<button id="close-btn-client">Cerrar</button>		
+				<button id="close-btn-client">Cerrar</button>
 			</div>
-			
+
 			<div id="slider-wrapper-client">
 				<div class="slide">
 					<%= image_tag "slider-client-1.png" %>
@@ -53,20 +48,20 @@
 					<%= image_tag "slider-client-3.png" %>
 					<p class="caption">Recibe el producto y disfruta!</p>
 				</div>
-			</div>	
+			</div>
 	</div>
 
 	<script>
 		$('#slider-wrapper-renter').slick({
-			slidesToShow: 1,			
-			dots: true,			
-			fade: true					
+			slidesToShow: 1,
+			dots: true,
+			fade: true
 	    });
 
 	    $('#slider-wrapper-client').slick({
-			slidesToShow: 1,			
-			dots: true,			
-			fade: true					
+			slidesToShow: 1,
+			dots: true,
+			fade: true
 	    });
 
 	    $('#client-tutorial-btn')[0].onclick = function() {
@@ -104,7 +99,7 @@
 	// 							'<img src="/assets/slider-3.png" alt="" />' +
 	// 							'<p class="caption">Recibe tu dinero</p>' +
 	// 						'</div>';
-						
+
 
 	// 	var clientSlides = '<div class="slide">' +
 	// 							'<img src="/assets/slider-1.png" alt="" />' +
@@ -119,7 +114,7 @@
 	// 							'<p class="caption">Accede al producto!</p>' +
 	// 						'</div>';
 
-	// 	var sliderWrapper = document.getElementById('slider-wrapper'); 
+	// 	var sliderWrapper = document.getElementById('slider-wrapper');
 	// 	var renterButton = document.getElementById('renter-tutorial-btn');
 	// 	var clientButton = document.getElementById('client-tutorial-btn');
 	// 	var closeButton = document.getElementById('close-btn');
@@ -128,20 +123,20 @@
 	// 	renterButton.addEventListener('click', function() {
 	// 		sliderWrapper.insertAdjacentHTML('afterbegin', renterSlides);
 	// 		sliderWrapper.style.left = '0';
-	// 		overlay.style.display = 'block';	
+	// 		overlay.style.display = 'block';
 	// 	});
 
 	// 	clientButton.addEventListener('click', function() {
 	// 		sliderWrapper.insertAdjacentHTML('afterbegin', clientSlides);
 	// 		sliderWrapper.style.left = '0';
-	// 		overlay.style.display = 'block';	
+	// 		overlay.style.display = 'block';
 	// 	});
 
 	// 	closeButton.onclick = function() {
 	// 		while (sliderWrapper.firstChild) {
 	// 		    sliderWrapper.removeChild(sliderWrapper.firstChild);
 	// 		}
-	// 		overlay.style.display = 'none';		
+	// 		overlay.style.display = 'none';
 	// 	}
 	</script>
 </section>
