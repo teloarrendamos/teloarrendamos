@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
 	var loginDropdown = document.getElementById("login-dropdown");
 	var signUpDropdownButton = document.getElementById("sign-up-dropdown-button");
 	var signUpDropdown = document.getElementById("sign-up-dropdown");
-		
+
 	loginDropdownButton.addEventListener('mouseover', function (event) {
 	    loginDropdown.style.display = "block";
 	});
@@ -82,7 +82,7 @@ $(document).on('turbolinks:load', function(){
 // 	function Slider( element ) {
 // 		this.el = document.querySelector( element );
 // 		this.init();
-// 	}	
+// 	}
 
 // 	Slider.prototype = {
 // 		init: function() {
@@ -91,13 +91,13 @@ $(document).on('turbolinks:load', function(){
 // 			this.navigate();
 // 		},
 // 		navigate: function() {
-		
+
 // 			for( var i = 0; i < this.links.length; ++i ) {
 // 				var link = this.links[i];
-// 				this.slide( link );	
+// 				this.slide( link );
 // 			}
 // 		},
-		
+
 // 		animate: function( slide ) {
 // 			var parent = slide.parentNode;
 // 			var caption = slide.querySelector( ".caption" );
@@ -108,9 +108,9 @@ $(document).on('turbolinks:load', function(){
 // 					cap.classList.remove( "visible" );
 // 				}
 // 			}
-// 			caption.classList.add( "visible" );	
+// 			caption.classList.add( "visible" );
 // 		},
-		
+
 // 		slide: function( element ) {
 // 			var self = this;
 // 			element.addEventListener( "click", function( e ) {
@@ -119,33 +119,33 @@ $(document).on('turbolinks:load', function(){
 // 				self.setCurrentLink( a );
 // 				var index = parseInt( a.getAttribute( "data-slide" ), 10 ) + 1;
 // 				var currentSlide = self.el.querySelector( ".slide:nth-child(" + index + ")" );
-				
+
 // 				self.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
 // 				self.animate( currentSlide );
-				
+
 // 			}, false);
 // 		},
 
 // 		setCurrentLink: function( link ) {
 // 			var parent = link.parentNode;
 // 			var a = parent.querySelectorAll( "a" );
-			
+
 // 			link.className = "current";
-			
+
 // 			for( var j = 0; j < a.length; ++j ) {
 // 				var cur = a[j];
 // 				if( cur !== link ) {
 // 					cur.className = "";
 // 				}
 // 			}
-// 		}	
+// 		}
 // 	};
 
 // 	if (true) {}$("")
 // 		if($(".pages.how_it_works").length > 0) {
-// 			var aSlider = new Slider( "#slider" );		
+// 			var aSlider = new Slider( "#slider" );
 // 		}
-		
+
 // });
 
 
@@ -212,7 +212,7 @@ $(document).on('turbolinks:load', function(){
 		      return wordsArray.join(" ");
 		    }
 		  }
-		  
+
 		  function getAmountOfDays() {
 		    var endDate = document.getElementById('order_item_end_date');
 		    var startDate = document.getElementById('order_item_start_date');
@@ -221,7 +221,7 @@ $(document).on('turbolinks:load', function(){
 		  }
 
 		  var endDate = document.getElementById('order_item_end_date');
-		  var startDate = document.getElementById('order_item_start_date'); 
+		  var startDate = document.getElementById('order_item_start_date');
 
 		  function calculateNetCost() {
 		  	var dailyRate = parseInt(document.getElementById('daily-rate-value').innerText);
@@ -250,7 +250,7 @@ $(document).on('turbolinks:load', function(){
 		    	netTotal.innerHTML = '--';
 		    } else {
 			    amountOfDays.innerHTML = getAmountOfDays();
-			    netTotal.innerHTML = calculateNetCost();	
+			    netTotal.innerHTML = calculateNetCost();
 			    comisionValue.innerHTML = calculateComision();
 			    totalCost.innerHTML = calculateTotalCost();
 		    }
@@ -265,10 +265,13 @@ $(document).on('turbolinks:load', function(){
 		    	netTotal.innerHTML = '--';
 		    } else {
 			    amountOfDays.innerHTML = getAmountOfDays();
-			    netTotal.innerHTML = calculateNetCost();	
+			    netTotal.innerHTML = calculateNetCost();
 			    comisionValue.innerHTML = calculateComision();
 			    totalCost.innerHTML = calculateTotalCost();
 		    }
 		}
 	}
 });
+
+
+

@@ -14,7 +14,7 @@
 			<div class="close">
 				<button id="close-btn-renter">Cerrar</button>
 			</div>
-			<div id="slider-wrapper-renter">
+			<div id="slider-wrapper-renter" class="overlay-slider">
 				<div class="slide">
 					<%= image_tag "slider-1.png" %>
 					<p class="caption">Sube tu articulo y ponle un precio por día</p>
@@ -35,7 +35,7 @@
 				<button id="close-btn-client">Cerrar</button>
 			</div>
 
-			<div id="slider-wrapper-client">
+			<div id="slider-wrapper-client" class="overlay-slider">
 				<div class="slide">
 					<%= image_tag "slider-client-1.png" %>
 					<p class="caption">Busca el producto que quieres arrendar</p>
@@ -52,21 +52,29 @@
 	</div>
 
 	<script>
-		$('#slider-wrapper-renter').slick({
-			slidesToShow: 1,
-			dots: true,
-			fade: true
-	    });
+		// $('#slider-wrapper-renter').slick({
+		// 	slidesToShow: 1,
+		// 	dots: true,
+		// 	fade: true
+	 //    });
 
-	    $('#slider-wrapper-client').slick({
-			slidesToShow: 1,
-			dots: true,
-			fade: true
-	    });
+	 //    $('#slider-wrapper-client').slick({
+		// 	slidesToShow: 1,
+		// 	dots: true,
+		// 	fade: true
+	 //    });
+
+			// $('.overlay-slider').each(function (idx, item) {
+			//     var carouselId = "carousel" + idx;
+			//     console.log(this);
+			//     this.id = carouselId;
+			//     $(this).slick({
+
+			//     });
+			// });
 
 	    $('#client-tutorial-btn')[0].onclick = function() {
 	    	$('.overlay-client')[0].style.display = 'block';
-	    	$('.slick-slide').style.display = 'block';
 	    	$(window).trigger('resize');
 	    }
 
