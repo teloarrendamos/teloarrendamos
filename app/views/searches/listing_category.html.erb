@@ -10,7 +10,7 @@
 			  	<span class="region">Region</span>
 			  	<%= select_tag :region, options_for_select(Listing::CHILE_REGIONS, params[:region]) %>
 			  	<%= submit_tag 'Search' %>
-			<% end %>	
+			<% end %>
 		</div>
 		<div class="result-line">
 			<p class="result-span">Resultados 1-22</p>
@@ -28,24 +28,24 @@
 					  	</div>
 					  	<div class="frame-second-row">
 					  		<div class="frame-title-desc">
-						  		<p><%= listing.title %></p>	
-						  		<p><%= listing.description %></p>	
+						  		<p><%= listing.title %></p>
+						  		<p><%= listing.description %></p>
 					  		</div>
 					  		<div class="frame-postable-img">
-					  			<%= image_tag(listing.postable.profile_picture) %>	
+					  			<%= image_tag(listing.postable.profile_picture) %>
 					  		</div>
 					  	</div>
 					  	<div class="frame-third-row">
-						  	<p class="frame-rate">$ <%= listing.daily_rate %></p>
-						    <p class="frame-location">Iquique, V Region</p>	
+						  	<p class="frame-rate">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %></p>
+						    <p class="frame-location">Iquique, V Region</p>
 					  	</div>
 					  </div>
-					<% end %>	
+					<% end %>
 				</div>
 				<% end %>
 			</div>
-			
-			<div id="map"></div>		
+
+			<div id="map"></div>
 	</div>
 </section>
 
@@ -61,18 +61,18 @@
 			zoom: 5
 		}
 
-		map = new google.maps.Map(document.getElementById('map'), mapOptions);						
-		<% @listing_category.each do |listing| %>	
+		map = new google.maps.Map(document.getElementById('map'), mapOptions);
+		<% @listing_category.each do |listing| %>
 			var listingInfo = [<%= listing.id %>, <%= listing.latitude.to_f %>, <%= listing.longitude.to_f %>, <%= listing.daily_rate %>]
 			markersArray.push(listingInfo);
 			//document.getElementById('markersArray').innerText = markersArray;
 		<% end %>
 
-		
+
 		for(var i = 0; i < markersArray.length; i++) {
 			resultsMarkersObj[i] = new google.maps.Marker({
 			    position: {lat: markersArray[i][1], lng: markersArray[i][2]},
-			    map: map,						
+			    map: map,
 			    title:"Hello World!",
 			    price: new google.maps.InfoWindow({
 					content: '<p>$ ' + markersArray[i][3] + '</p>'
@@ -82,7 +82,7 @@
 			resultsMarkersObj[i].addListener("click", function() {
 		        this.price.open(map, this);
 		    })
-		}							
+		}
 	}
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places"

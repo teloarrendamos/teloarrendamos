@@ -11,6 +11,13 @@ section.title-and-search {
    	position: absolute;
     width: 100%;
     height: 100%;
+
+    .alert-info {
+			background: $green;
+	    margin: 0 39%;
+	    padding: 10px 0;
+	    color: white;
+    }
   }
 
 	div.callout {
@@ -225,7 +232,7 @@ section.activity {
 	}
 
 	div.stats {
-		@include span-columns(6);
+		@include span-columns(4);
 		padding: 0 47px;
 
 		p.number {

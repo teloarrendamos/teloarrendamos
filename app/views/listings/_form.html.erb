@@ -78,8 +78,8 @@
                 <%= image_tag(image.thumb.url) %>
               </div>
               <div class="links">
-                <%#= link_to "Eliminar", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
-                <%#= link_to "Hacer Principal", listing_image_path(@listing, index), :method => :patch %>
+                <%= link_to "Eliminar", listing_image_path(@listing, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+                <%= link_to "Hacer Principal", listing_image_path(@listing, index), :method => :patch %>
               </div>
             </div>
         <% end %>
@@ -91,6 +91,19 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $('textarea').bind('keypress', function(e) {
+      if ((e.keyCode || e.which) == 13) {
+          e.preventDefault();
+
+          //Just add this line to your code
+          $(this).val($(this).val()+'\n');
+
+          return false;
+      }
+  });
+</script>
 
 
 
