@@ -23,7 +23,7 @@
         <%= image_tag(@user.profile_picture) %>
         <div class="info-text">
           <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-          <p>+56 9 95773432</p>
+          <p><%= @user.phone %></p>
           <p><%= @user.email %></p>
           <p>Miembro desde el <%= @user.created_at.year %>.</p>
         </div>

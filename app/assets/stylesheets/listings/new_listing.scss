@@ -35,56 +35,56 @@ section.new-listing {
 		font-family: $regular;
 		div.first-row {
 			@include outer-container;
-			
-			div.left-column {				
+
+			div.left-column {
 				@include span-columns(6);
-				div.title {				
-					@include span-columns(9);	
+				div.title {
+					@include span-columns(9);
 					@include labels;
 				}
 
-				div.rate {					
+				div.rate {
 					@include span-columns(3);
 					@include omega();
 					@include labels;
 				}
 
-				div.description {	
-				@include span-columns(12);			
-					@include labels;							
+				div.description {
+				@include span-columns(12);
+					@include labels;
 
 				    textarea {
-				    	height: 100px;				    	
+				    	height: 100px;
 				    	margin-bottom: 1em;
 				    }
 
 				}
 
-				div.wrapper {					
-					div.dropdowns {	
+				div.wrapper {
+					div.dropdowns {
 						position: relative;
-									
+
 						div.region {
 							@include labels;
 						}
 
 						div.category {
 							@include labels;
-						}	
+						}
 					}
 
-					div.images {	
+					div.images {
 						@include outer-container;
-						margin-top: 1em;		
+						margin-top: 1em;
 
 						label {
 							@include span-columns(12);
-						}							
+						}
 
 						input {
 							margin-top: 1em;
-						}					
-					}				
+						}
+					}
 
 					div.submit-listing {
 
@@ -95,48 +95,64 @@ section.new-listing {
 							padding: 8px 30px;
 							color: $white;
 							font-size: 1.2em;
-						}					
+						}
 					}
 				}
-			}			
+			}
 
 			div.map-container {
 				@include span-columns(6);
 				@include labels;
 
-				div.map-inputs {				
-					input#pac-input {							
+				div.map-inputs {
+					input#pac-input {
 						width: 100%;
 						margin-top: 0;
 					}
-				}			
+				}
 
-				div#map {				
-					height: 500px;				
+				div#map {
+					height: 500px;
 					width: 100%;
-				}	
+				}
 			}
 		}
 
 		div.second-row {
-			@include outer-container;			
+			@include outer-container;
 
 			div.edit-images-container {
 				@include outer-container;
 				margin: 60px 0;
 				div.wrapper {
 					@include span-columns(3);
+					  border: 1px solid grey;
+    				padding: 10px;
 
 					div.image {
 						img {
 							width: 100%;
 						}
 					}
-					div.links {						
+					div.links {
 						a {
 							@include span-columns(6);
 							text-decoration: none;
-							color: $light-blue;							
+							color: $light-blue;
+						}
+
+						a:first-child {
+							background: red;
+					    padding: 8px;
+					    text-align: center;
+					    color: white;
+						}
+
+						a:last-child {
+							background: $green;
+					    padding: 8px;
+					    text-align: center;
+					    color: white;
 						}
 					}
 				}
@@ -144,7 +160,7 @@ section.new-listing {
 		}
 
 		div.third-row {
-			@include outer-container;						
-		}		
+			@include outer-container;
+		}
 	}
 }

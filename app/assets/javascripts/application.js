@@ -236,14 +236,14 @@ $(document).on('turbolinks:load', function(){
 
 		  function calculateTotalCost() {
 		  	var netTotal = parseInt(document.getElementById('net-total-cost').innerText);
-		  	var comisionValue = parseInt(document.getElementById('comisionValue').innerText);
-		  	return netTotal + comisionValue;
+		  	//var comisionValue = parseInt(document.getElementById('comisionValue').innerText);
+		  	return netTotal;
 		  }
 
 		  startDate.onchange = function() {
 		    var amountOfDays = document.getElementById('amountOfDays');
 		    var netTotal = document.getElementById('net-total-cost');
-		    var comisionValue = document.getElementById('comisionValue');
+		    //var comisionValue = document.getElementById('comisionValue');
 		    var totalCost = document.getElementById('total-cost');
 		    if(Number.isNaN(getAmountOfDays())) {
 		    	amountOfDays.innerHTML = '--';
@@ -251,7 +251,7 @@ $(document).on('turbolinks:load', function(){
 		    } else {
 			    amountOfDays.innerHTML = getAmountOfDays();
 			    netTotal.innerHTML = calculateNetCost();
-			    comisionValue.innerHTML = calculateComision();
+			    //comisionValue.innerHTML = calculateComision();
 			    totalCost.innerHTML = calculateTotalCost();
 		    }
 		  }
@@ -266,7 +266,7 @@ $(document).on('turbolinks:load', function(){
 		    } else {
 			    amountOfDays.innerHTML = getAmountOfDays();
 			    netTotal.innerHTML = calculateNetCost();
-			    comisionValue.innerHTML = calculateComision();
+			    //comisionValue.innerHTML = calculateComision();
 			    totalCost.innerHTML = calculateTotalCost();
 		    }
 		}

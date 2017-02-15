@@ -24,16 +24,18 @@
         <h2>Otros productos de <%= @listing.postable.first_name %></h2>
 
         <% @other_user_products.each do |product| %>
-        <div class="product-container">
-          <div class="image">
-            <%= image_tag(product.images[0]) %>
+          <%= link_to listing_path(product.id) do  %>
+          <div class="product-container">
+            <div class="image">
+              <%= image_tag(product.images[0]) %>
+            </div>
+            <div class="info">
+              <p class="title"><%= product.title %></p>
+              <p class="rate">$ <%= product.daily_rate %></p>
+              <p class="user-name"><%= product.postable.first_name %></p>
+            </div>
           </div>
-          <div class="info">
-            <p class="title"><%= product.title %></p>
-            <p class="rate"><%= product.daily_rate %></p>
-            <p class="user-name"><%= product.postable.first_name %></p>
-          </div>
-        </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -57,7 +59,7 @@
 
         <div class="right-wrap">
           <p>Valor Diario:</p>
-          <p class="product-rate"><%= @listing.daily_rate %></p>
+          <p class="product-rate">$ <%= number_with_delimiter(@listing.daily_rate.to_i, :delimiter => '.') %></p>
         </div>
       </div>
 
@@ -109,32 +111,32 @@
             <div class="details-text">
               <p>Valor del Arriendo: </p>
               <p>Valor diario <span class="values">$</span>
-                              <span class="values" id="daily-rate-value"><%= @listing.daily_rate %></span>
+                              <span class="values" id="daily-rate-value"><%= @listing.daily_rate.to_i %></span>
                               <span class="values">x</span>
                               <span class="values" id="amountOfDays"></span>
                               <span class="values">dias = $</span>
                               <span class="values" id="net-total-cost"></span></p>
-              <p>Comision por servicio:
+              <!-- <p>Comision por servicio:
                 <span class="values">$</span>
-                <span class="values" id="comisionValue"></span></p>
+                <span class="values" id="comisionValue"></span></p> -->
 
               <p class="total-cost">Valor Total:
                 <span class="values">$</span>
                 <span class="values" id="total-cost"></span></p>
             </div>
 
-            <div class="delivery-picker">
+<!--             <div class="delivery-picker">
               <div class="checkbox">
                 <input type="checkbox">
               </div>
               <div class="delivery-text">
                 <p>Desapacho a Domicilio</p>
-                <p>Quirese que llegue a otra dirección?</p>
-                <p>Haz Click <%= link_to "Aqui", "#" %></p>
+                <p>Quieres que llegue a otra dirección?</p>
+                <p>Haz Click <%#= link_to "Aqui", "#" %></p>
                 <p>Envio Express(1 dia): <span class="values">$4000</span></p>
                 <p>Envio Normal: <span class="values">$2360</span></p>
               </div>
-            </div>
+            </div> -->
           </div>
 
 

@@ -1,4 +1,15 @@
 section.user-sign-up, section.company-sign-up {
 	@include session-registration-layout;
 	font-family: $light;
+
+  div.company-sign {
+    text-align:center;
+    height:100vh;
+    padding-top:150px;
+    line-height: 27px;
+  }
+
+  span.mail-sign-in {
+    color: $light-blue;
+  }
 }

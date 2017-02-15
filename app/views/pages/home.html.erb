@@ -45,7 +45,7 @@
       <%= link_to image_tag(listing.images[0].url), listing_path(listing) %>
       <p class="title"><%= listing.title %></p>
       <p class="description"><%= listing.description %></p>
-      <p class="price">$ <%= listing.daily_rate %> diarios</p>
+      <p class="price">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %> diarios</p>
       <p class="renter-name"><%= listing.postable.email %> - <%= listing.region %></p>
     </div>
     <% end %>
@@ -53,7 +53,7 @@
 </section>
 
 <section class="activity">
-  <h2>Actividad en Arriendalo y Punto</h2>
+  <h2>Actividad en Teloarrendamos.cl</h2>
   <div class="stats users-per-week">
     <p class="number"><%= User.all.count %></p>
     <p class="text">Usuarios creados la semana pasada</p>
@@ -62,15 +62,16 @@
     <p class="number">3</p>
     <p class="text">productos arrendados el mes pasado</p>
   </div>
-<!--   <div class="stats transactions">
-    <p class="number">$3M</p>
-    <p class="text">en transacciones realizadas el mes de Octubre</p>
-  </div> -->
+  <div class="stats total-listings">
+    <p class="number"><%= @total_listings %></p>
+    <p class="text">Total de productos en arriendo</p>
+  </div>
 </section>
 
 <script>
+
   setTimeout(function() {
-    $('.alert')[0].remove()
+    $('.alert')[0].remove();
   }, 2000);
 
   $('#highlight-slider').slick ({
