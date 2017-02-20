@@ -9,7 +9,7 @@
 <% end %>
 <% if @order_items.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
+    No has añadido productos en tu carrito de arriendos, vuelve a <%= link_to "buscar productos", root_path %> y añade al carrito lo que quieras arrendar.
   </p>
 <% else %>
   <% @order_items.each do |order_item| %>
@@ -17,6 +17,6 @@
   <% end %>
 
   <div class="order-button">
-    <%= button_to "Confirmar la Orden", order_confirmation_path(@order), data: { confirm: "Are you sure?" }, class: "submit-order" %>
+    <%= button_to "Confirmar la Orden", order_confirmation_path(@order), data: { confirm: "Estas seguro?" }, class: "submit-order" %>
   </div>
 <% end %>

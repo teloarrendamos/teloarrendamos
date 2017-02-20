@@ -59,7 +59,7 @@
 	                map: map,
 	                icon: icon,
 	                title: place.name,
-	                position: place.geometry.location	            
+	                position: place.geometry.location
 	            }));
 
 	            if (place.geometry.viewport) {
@@ -69,7 +69,7 @@
 	                bounds.extend(place.geometry.location);
 	            }
 	        });
-	        
+
 	        map.fitBounds(bounds);
 	    });
 
@@ -86,7 +86,7 @@
 			var location = new google.maps.Geocoder();
 			location.geocode( { 'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());					
+					callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 				} else {
 					alert(status + ", Hay un problema con la direccion, favor intentar denuevo")
 				}
@@ -100,5 +100,3 @@
 		})
 	}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places,geometry"
-    async defer></script>
