@@ -5,7 +5,7 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
   after :remove, :delete_empty_upstream_dirs
 
   def default_url(*args)
-    ActionController::Base.helpers.asset_path("user_profile_placeholder.png")
+    ActionController::Base.helpers.asset_path("/assets/anonimus.jpg")
   end
 
   process :auto_orient
@@ -14,7 +14,7 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_and_pad: [150, nil]
   end
-  
+
   if Rails.env.production?
     storage :fog
   else

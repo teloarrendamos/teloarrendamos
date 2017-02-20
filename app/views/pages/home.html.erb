@@ -44,7 +44,7 @@
     <div class="product">
       <%= link_to image_tag(listing.images[0].url), listing_path(listing) %>
       <p class="title"><%= listing.title %></p>
-      <p class="description"><%= listing.description %></p>
+      <p class="description"><%= truncate(listing.description,  length: 80) %></p>
       <p class="price">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %> diarios</p>
       <p class="renter-name"><%= listing.postable.email %> - <%= listing.region %></p>
     </div>

@@ -33,7 +33,7 @@
 						  	<div class="frame-second-row">
 						  		<div class="frame-title-desc">
 							  		<p><%= listing.title %></p>
-							  		<p><%= listing.description %></p>
+							  		<p><%= truncate(listing.description, length: 80) %></p>
 						  		</div>
 						  		<div class="frame-postable-img">
 						  			<%= image_tag(listing.postable.profile_picture) %>
@@ -92,6 +92,8 @@
 		initMap();
 	});
 </script>
+
+
 
 
 

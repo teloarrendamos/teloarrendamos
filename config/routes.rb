@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   get 'order_items/destroy'
 
-  devise_for :users, controllers: { sessions: 'users/sessions', 
+  devise_for :users, controllers: { sessions: 'users/sessions',
                                     registrations: 'users/registrations',
                                     omniauth_callbacks: "users/omniauth_callbacks" }
-  devise_for :companies, controllers: { sessions: 'companies/sessions', 
+  devise_for :companies, controllers: { sessions: 'companies/sessions',
                                         registrations: 'companies/registrations'}
   root 'pages#home'
 
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
         get :upload_new_product
         get :history
         get :messages
-        get :valuation        
+        get :valuation
       end
     end
     resource :account, controller: 'users/accounts', only: [:edit, :update]
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   end
 
   get 'searches/listing_category/:id' => 'searches#listing_category', as: :listing_category
-  
+
   resources :categories, only: [:index, :show]
 
   resource :cart, only: [:show]
@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
 
   resource :autocomplete, only: :show
-  
+
   resource :search, only: :show
 
   resources :orders, only: [:index] do
@@ -61,6 +61,7 @@ Rails.application.routes.draw do
   get 'pages/faq' => 'pages#faq'
   get 'pages/what_is' => 'pages#what_is'
   get 'pages/how_it_works' => 'pages#how_it_works'
+  get 'pages/policy' => 'pages#policy'
 
 
 end

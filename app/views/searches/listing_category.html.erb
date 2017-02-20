@@ -37,7 +37,7 @@
 					  	</div>
 					  	<div class="frame-third-row">
 						  	<p class="frame-rate">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %></p>
-						    <p class="frame-location">Iquique, V Region</p>
+						    <p class="frame-location"><%= listing.region %>, Chile</p>
 					  	</div>
 					  </div>
 					<% end %>
@@ -85,5 +85,3 @@
 		}
 	}
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places"
-    async defer></script>

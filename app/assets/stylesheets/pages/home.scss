@@ -169,6 +169,7 @@ section.highlight-products {
 		}
 		div.product {
 			@include span-columns(4);
+			height: 400px;
 
 			div.new-tag {
 				height: 30px;
