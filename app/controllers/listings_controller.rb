@@ -26,9 +26,9 @@ class ListingsController < ApplicationController
     @order_item = current_order.order_items.new
     @secondary_images = []
     i = 1
-    while i < @listing.images.length do 
+    while i < @listing.images.length do
       @secondary_images.push(@listing.images[i])
-      i += 1 
+      i += 1
     end
     @other_user_products = @listing.postable.listings.includes(:postable)
   end
@@ -38,18 +38,18 @@ class ListingsController < ApplicationController
 
   def update
     @listing.update(update_listing_params)
-    images = @listing.images # copy the old images 
+    images = @listing.images # copy the old images
     images += params[:listing][:images] # concat old images with new ones
     @listing.images = images # assign back
     if @listing.save
-      flash[:notice] = "Listing updated"
+      flash[:notice] = "Producto Actualizado!"
       redirect_to @listing
     else
       render :edit
     end
   end
 
-  def destroy 
+  def destroy
     @listing.destroy
     redirect_to root_path
   end

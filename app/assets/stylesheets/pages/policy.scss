@@ -1,0 +1,16 @@
+section.policy {
+
+  @include outer-container;
+  text-align: center;
+  font-family: $regular;
+  height: 100vh;
+  padding-top: 200px;
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    padding: 0 20%;
+  }
+}
