@@ -25,6 +25,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'jquery-turbolinks'
 
+
 gem 'twitter-typeahead-rails'
 group :development, :test do
   gem 'byebug', platform: :mri

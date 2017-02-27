@@ -21,38 +21,50 @@
 		</div>
 	</div>
 
-	<div class="results-and-map">
-			<div class="products-column">
-				<% @listings.each do |listing| %>
-					<div class="frame-container">
-						<%= link_to listing do %>
-						  <div class="product-frame">
-						  	<div class="frame-image">
-						  		<%= image_tag(listing.images[0]) %>
-						  	</div>
-						  	<div class="frame-second-row">
-						  		<div class="frame-title-desc">
-							  		<p><%= listing.title %></p>
-							  		<p><%= truncate(listing.description, length: 80) %></p>
-						  		</div>
+	<div class="results-and-map">			
+		<div class="products-column">
+			<% @listings.each do |listing| %>
+				<div class="frame-container">
+					<%= link_to listing do %>
+					  <div class="product-frame">
+					  	<div class="frame-image">
+					  		<%= image_tag(listing.images[0]) %>
+					  	</div>
+					  	<div class="frame-second-row">
+					  		<div class="frame-title-desc">
+						  		<p><%= listing.title %></p>
+						  		<p><%= truncate(listing.description, length: 80) %></p>
+					  		</div>						  	
+					  		<% if listing.postable_type == 'User' %>	
 						  		<div class="frame-postable-img">
-						  			<%= image_tag(listing.postable.profile_picture) %>
-						  		</div>
-						  	</div>
-						  	<div class="frame-third-row">
-							  	<p class="frame-rate">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %></p>
-							    <p class="frame-location"><%= listing.region %> - Chile</p>
-						  	</div>
-						  </div>
-						<% end %>
-					</div>
-				<% end %>
-			</div>
+							  		<%= image_tag(listing.postable.profile_picture) %>
+							  	</div>
+						  	<% end %>							  	
+					  	</div>
+					  	<div class="frame-third-row">
+						  	<p class="frame-rate">$ <%= number_with_delimiter(listing.daily_rate.to_i, :delimiter => '.') %></p>
+						    <p class="frame-location"><%= listing.region %> - Chile</p>
+					  	</div>
+					  </div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
 
-			<div id="map"></div>
+		<div id="map"></div>
 	</div>
-	<div><%= paginate @listings %></div>
+	<div>
+		<%= paginate @listings, param_name: 'Précédent' %>		
+	</div>
+
+	<script>
+		$('.next')[0].children[0].innerText = 'Siguiente';
+		// $('.prev')[0].children[0].innerText = 'Anterior';
+		// $('.first')[0].children[0].innerText = 'Primera';
+		$('.last')[0].children[0].innerText = 'Ultima'
+	</script>
 </section>
+
 
 <script>
 	var map;
@@ -92,6 +104,12 @@
 		initMap();
 	});
 </script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places,geometry"
+async defer></script>
+
+
 
 
 

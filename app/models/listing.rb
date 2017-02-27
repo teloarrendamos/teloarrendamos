@@ -29,7 +29,7 @@
 
 class Listing < ApplicationRecord
   CHILE_REGIONS = %w(Tarapacá Antofagasta Atacama Coquimbo Valparaíso O'Higgins Maule Bío\ Bío Araucanía
-                    Los\ Lagos Aisén Magallanes Los\ Ríos Arica\ and\ Parinacota Santiago)
+                    Los\ Lagos Aisén Magallanes Los\ Ríos Arica\ y\ Parinacota Region Metropolitana)
 
   belongs_to :category
   belongs_to :postable, polymorphic: true

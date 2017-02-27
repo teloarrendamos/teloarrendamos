@@ -19,36 +19,64 @@
       <% end %>
       </div>
 
-
-      <div class="other-postable-products">
-        <h2>Otros productos de <%= @listing.postable.first_name %></h2>
-
-        <% @other_user_products.each do |product| %>
-          <%= link_to listing_path(product.id) do  %>
-          <div class="product-container">
-            <div class="image">
-              <%= image_tag(product.images[0]) %>
+      <% if @listing.postable_type == 'User' %>  
+        <div class="other-postable-products">
+          <h2>Otros productos de <%= @listing.postable.first_name %></h2>
+          <% @other_user_products.each do |product| %>
+            <%= link_to listing_path(product.id) do  %>
+            <div class="product-container">
+              <div class="image">
+                <%= image_tag(product.images[0]) %>
+              </div>
+              <div class="info">
+                <p class="title"><%= product.title %></p>
+                <p class="rate">$ <%= product.daily_rate %></p>
+                <p class="user-name"><%= product.postable.first_name %></p>
+              </div>
             </div>
-            <div class="info">
-              <p class="title"><%= product.title %></p>
-              <p class="rate">$ <%= product.daily_rate %></p>
-              <p class="user-name"><%= product.postable.first_name %></p>
-            </div>
-          </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% elsif @listing.postable_type == 'Company' %>
+        <div class="other-postable-products">
+          <h2>Otros productos de <%= @listing.postable.company_name %></h2>
+          <% @other_user_products.each do |product| %>
+            <%= link_to listing_path(product.id) do  %>
+            <div class="product-container">
+              <div class="image">
+                <%= image_tag(product.images[0]) %>
+              </div>
+              <div class="info">
+                <p class="title"><%= product.title %></p>
+                <p class="rate">$ <%= product.daily_rate %></p>
+                <p class="user-name"><%= product.postable.company_name %></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="listing-deal-column">
-      <div class="postable-profile">
-        <%= image_tag(@listing.postable.profile_picture) %>
-        <div class="postable-info">
-          <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - <%= @listing.region %></p>
-          <p class="postable-phone">Fono: <%= @listing.postable.phone %></p>
-          <p>Miembro desde <%= @listing.postable.created_at.year %></p>
+      <% if @listing.postable_type == 'User' %>  
+        <div class="postable-profile">
+          <%= image_tag(@listing.postable.profile_picture) %>
+          <div class="postable-info">    
+            <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - <%= @listing.region %></p>
+            <p class="postable-phone">Fono: <%= @listing.postable.phone %></p>
+            <p>Miembro desde <%= @listing.postable.created_at.year %></p>      
+          </div>
         </div>
-      </div>
+      <% elsif @listing.postable_type == 'Company' %>
+        <div class="postable-profile">
+          <%#= image_tag(@listing.postable.profile_picture) %>
+          <div class="postable-info">    
+            <p><%= @listing.postable.company_name %></p>            
+            <p>Miembro desde <%= @listing.postable.created_at.year %></p>      
+          </div>
+        </div>
+      <% end %>
 
       <div class="product-info">
         <h4><%= @listing.title %></h4>

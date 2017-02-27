@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class PagesController < ApplicationController	
   #layout 'pages'
   def home
   	@listings = Listing.order('created_at DESC').limit(5)
