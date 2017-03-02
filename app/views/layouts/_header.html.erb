@@ -22,6 +22,34 @@
             </div>
             <div class="sign-out" id="sign-up-dropdown-button">
               <div class="p-container">
+                <p><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% elsif current_company %>
+    <div class="login-nav-user">
+      <div class="container">
+        <div class="inner-container">
+          <% if current_person %>
+            <div class="hello-user">
+              <div class="p-container">
+                <% if current_person.company_name != nil %>
+                <p>Hola <%= current_person.company_name %> !</p>
+                <% else %>
+                <p>Hola <%= current_person.email %>!</p>
+                <% end %>
+              </div>
+            </div>
+            <div class="account" id="login-dropdown-button">
+              <div class="p-container">
+                <p><%= link_to "Mi Cuenta", company_dashboard_path %></p>
+              </div>
+            </div>
+            <div class="sign-out" id="sign-up-dropdown-button">
+              <div class="p-container">
                 <p><%= link_to "Cerrar Sesión", destroy_company_session_path, method: :delete %></p>
               </div>
             </div>
@@ -97,7 +125,7 @@
       <ul>
         <li class="que-es"><%= link_to "QUÉ ES", pages_what_is_path %></li>
         <li class="como-funciona"><%= link_to "CÓMO FUNCIONA", pages_how_it_works_path %></li>
-        <li class="garantia"><%= link_to "GARANTÍA", pages_policy_path %></li>
+        <li class="garantia"><%= link_to "POLÍTICAS", pages_policy_path %></li>
         <li class="preguntas"><%= link_to "PREGUNTAS FRECUENTES", pages_faq_path %></li>
       </ul>
     </div>

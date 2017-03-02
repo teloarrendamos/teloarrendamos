@@ -7,7 +7,7 @@ class ListingImageUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   version :thumb do
     process resize_and_pad: [200,200]
-  end
+  end  
 
   if Rails.env.production?
     storage :fog
@@ -19,6 +19,12 @@ class ListingImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def auto_orient
+    manipulate! do |img|
+      img = img.auto_orient
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

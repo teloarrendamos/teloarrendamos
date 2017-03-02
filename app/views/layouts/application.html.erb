@@ -8,29 +8,37 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'layouts/header' %>
     <% unless controller_name == "pages" || controller_name == "searches" %>
       <% if current_person %>
-        <section class="user-header">
-          <div class="user-header">
-            <ul class="user-nav">
-              <li><%= link_to "Perfil", edit_account_path %></li>
-              <li><%= link_to "Mis Productos", user_dashboard_path %></li>
-              <li><%= link_to "Mis Arriendos", orders_path %></li>
-              <% if current_user.bank === nil %>
-              <li><%= link_to "Subir Producto", edit_account_path(bank: "Debe Completar los datos antes de Publicar") %></li>
-              <% else %>
-              <li><%= link_to "Subir Producto", new_listing_path %></li>
-              <% end %>
-<!--               <li><%#= link_to "Historial", history_user_dashboard_path %></li>
-              <li><%#= link_to "Mensajes", messages_user_dashboard_path %></li>
-              <li><%#= link_to "Valoraciones", valuation_user_dashboard_path %></li> -->
-            </ul>
-          </div>
-        </section>
+        <% if user_signed_in? %>
+          <section class="user-header">
+            <div class="user-header">
+              <ul class="user-nav">
+                <li><%= link_to "Perfil", edit_account_path %></li>
+                <li><%= link_to "Mis Productos", user_dashboard_path %></li>
+                <li><%= link_to "Mis Arriendos", orders_path %></li>                
+                <% if current_user.bank === nil %>
+                  <li><%= link_to "Subir Producto", edit_account_path(bank: "Debe Completar los datos antes de Publicar") %></li>
+                <% else %>
+                  <li><%= link_to "Subir Producto", new_listing_path %></li>
+                <% end %>                                                        
+              </ul>
+            </div>
+          </section>
+        <% elsif company_signed_in? %>
+          <section class="user-header">
+            <div class="user-header">
+              <ul class="user-nav">                
+                <li><%= link_to "Mis Productos", company_dashboard_path %></li>
+                <li><%= link_to "Mis Arriendos", orders_path %></li>                                
+                  <li><%= link_to "Subir Producto", new_listing_path %></li>                      
+              </ul>
+            </div>
+          </section>
+        <% end  %>                
       <% end %>
     <% end %>
      <%= yield %>
@@ -40,7 +48,6 @@
     </div>
 
     <%= render 'layouts/footer' %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtTZhCmgESR5Vhnpwyqyn1_FpLs9O57d8&callback=initMap&libraries=places,geometry"
-        async defer></script>
+
   </body>
 </html>

@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   def show
     search = params[:query].present? ? params[:query] : "*"
-    @per_page = 5
+    @per_page = 4
     if region = params[:region]
       @listings = Listing.search(search, where: {region: region}, page: params[:page], per_page: @per_page)
     else

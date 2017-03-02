@@ -1,9 +1,29 @@
-<h4>Listings</h4>
+<section class="user-dashboard">
+	<table>
+		<thead>
+			<tr>
+				<th>Imagen Destacada</th>
+				<th>Titulo de Producto</th>
+				<th>Tarifa Diaria</th>				
+				<th>Acciones</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<% @listings.each do |listing| %>
+			<tr>
+				<td><%= link_to image_tag(listing.images[0]), listing %></td>
+				<td><%= listing.title %></td>
+				<td>$ <%= listing.daily_rate %></td>							
+				<td>
+					<%= link_to "Ver", listing_path(listing) %> <br>
+					<%= link_to "Editar", edit_listing_path(listing) %> <br>
+					<%= link_to "Eliminar", listing_path(listing), method: :delete, data: {:confirm => "Seguro que deseas eliminar este producto?"} %>
+				</td>
+			</tr>
+			<tr class="spacer"><td></td><td></td><td></td><td></td></tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<ul>
-  <% @listings.each do |listing| %>
-    <li><%= link_to listing.description, listing %></li>
-  <% end %>
-</ul>
-
-<%= link_to "New Listing", new_listing_path %>
+	<%= link_to "Crear Nuevo Producto", new_listing_path, class: "new-product-button" %>
+</section>
