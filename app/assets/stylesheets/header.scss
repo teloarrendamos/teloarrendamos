@@ -102,17 +102,46 @@ header {
 
 
 
-// @include media(max-width 740px) {
-// 	header {
-// 		nav {
-// 			div.logo {
-// 				@include span-columns(12);
-// 				text-align: center;
-// 			}
+@include media(max-width 740px) {
+	header {
+		
+		div.login-nav {
+			@include outer-container;
+			div.container {
+				@include shift(0);
+				@include span-columns(12);
 
-// 			div.nav-div {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-// }
+				div.inner-container {
+					@include outer-container(100%);
+
+					div.login {
+						@include span-columns(6);
+						@include login-nav;
+						margin-right: 0;
+					}
+
+					div.sign-up {
+						@include span-columns(6);
+						@include login-nav;
+						div.p-container {
+							p {
+								border-left: 2px solid white;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		nav {
+			div.logo {
+				@include span-columns(12);
+				text-align: center;
+			}
+
+			div.nav-div {
+				display: none;
+			}
+		}
+	}
+}

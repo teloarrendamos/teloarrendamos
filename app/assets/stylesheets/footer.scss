@@ -82,64 +82,71 @@ footer {
 	}
 }
 
-// @include media(max-width 740px) {
-// 	footer {
-// 		p {
 
-// 		}
 
-// 		div.column {
-// 			@include span-columns(12);
-// 		}
+// Mobile - Responsive
+@include media(max-width 740px) {
+	footer {
+		p {
 
-// 		div.logo-and-social {
-// 			div.logo {
-// 				img {
+		}
 
-// 				}
-// 			}
+		div.column {
+			@include span-columns(12);
+		}
 
-// 			div.slogan {
+		div.logo-and-social {			
+			div.logo {
+				img {
 
-// 			}
+				}
+			}
 
-// 			div.social-icons {
-// 				img {
+			div.slogan {
 
-// 				}
-// 			}
-// 		}
+			}
 
-// 		div.nav-list {
-// 			padding: 0;
-// 			ul {
-// 				li {
-// 					text-align: center;
-// 				 	a {
+			div.social-icons {
+				@include outer-container;
+				a {
+					@include span-columns(2.4);
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
 
-// 				 	}
+		div.nav-list {
+			padding: 0;
+			ul {
+				li {
+					text-align: center;
+				 	a {
 
-// 				 	a:hover {
+				 	}
 
-// 				 	}
-// 				}
-// 			}
-// 		}
+				 	a:hover {
 
-// 		div.contact {
-// 			padding-left: 0;
-// 			div.politics {
-// 				ul {
-// 					li {
-// 						text-align: center;
-// 					}
-// 				}
-// 			}
-// 			div.contact-info {
-// 				p {
+				 	}
+				}
+			}
+		}
 
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+		div.contact {
+			padding-left: 0;
+			div.politics {
+				ul {
+					li {
+						text-align: center;
+					}
+				}
+			}
+			div.contact-info {
+				p {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
