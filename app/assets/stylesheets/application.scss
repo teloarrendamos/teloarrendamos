@@ -27,97 +27,101 @@ $letters-grey: grey;
 $titles-grey: #636060;
 
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100vw;	
-	overflow-x: hidden;
+	div.body-wrapper {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		width: 100vw;	
+		overflow-x: hidden;
 
-	p {
-		color: $letters-grey;
-	}
+		p {
+			color: $letters-grey;
+		}
 
-	h1 {
-		font-size: 2em;
-	}
+		h1 {
+			font-size: 2em;
+		}
 
-	h2 {
-		font-size: 1.8em;
-	}
+		h2 {
+			font-size: 1.8em;
+		}
 
-	h2, h3 {
-		color: $titles-grey;
-	}
+		h2, h3 {
+			color: $titles-grey;
+		}
 
-	section.user-header {
-		background-color: $light-grey;
+		section.user-header {
+			background-color: $light-grey;
 
-		div.user-header {
-			@include outer-container;
-			font-family: $regular;
+			div.user-header {
+				@include outer-container;
+				font-family: $regular;
 
-			h3 {
-				color: $letters-grey;
-				margin: 0;
-				padding: 1em 0;
-				font-size: 2em;
-			}
+				h3 {
+					color: $letters-grey;
+					margin: 0;
+					padding: 1em 0;
+					font-size: 2em;
+				}
 
-			ul.user-nav {
-				padding-left: 0;
-				margin: 0;
-				padding-top: 30px;
-				li {
-					@include span-columns(2);
-					font-size: 1.5em;
+				ul.user-nav {
+					padding-left: 0;
+					margin: 0;
+					padding-top: 30px;
+					li {
+						@include span-columns(2);
+						font-size: 1.5em;
 
-					a {
-						text-decoration: none;
-						color: $blue;
-					}
+						a {
+							text-decoration: none;
+							color: $blue;
+						}
 
-					a:hover {
-						color: $green;
+						a:hover {
+							color: $green;
+						}
 					}
 				}
 			}
 		}
-	}
 
-	@import '_default.date.scss';
-	@import '_default.scss';
-	@import '_default.time.scss';
+		@import '_default.date.scss';
+		@import '_default.scss';
+		@import '_default.time.scss';
 
-	@import 'header';
-	@import 'pages/home';
-	@import 'pages/what_is';
-	@import 'pages/how_it_works';
-	@import 'pages/faq';
-	@import 'pages/policy';
-	@import 'users/login';
-	@import 'users/sign-up';
-	@import 'users/dashboards/profile';
-	@import 'users/dashboards/my-products';
-	@import 'accounts/edit';
-	@import 'listings/new_listing';
-	@import 'listings/show';
-	@import 'listings/edit';
-	@import 'searches/show';
-	@import 'companies/login';
-	@import 'categories/index';
-	@import 'shopping-cart';
-	@import 'orders/index';
-	@import 'footer';
+		@import 'header';
+		@import 'pages/home';
+		@import 'pages/what_is';
+		@import 'pages/how_it_works';
+		@import 'pages/faq';
+		@import 'pages/policy';
+		@import 'users/login';
+		@import 'users/sign-up';
+		@import 'users/dashboards/profile';
+		@import 'users/dashboards/my-products';
+		@import 'accounts/edit';
+		@import 'listings/new_listing';
+		@import 'listings/show';
+		@import 'listings/edit';
+		@import 'searches/show';
+		@import 'companies/login';
+		@import 'categories/index';
+		@import 'shopping-cart';
+		@import 'orders/index';
+		@import 'footer';
+	}	
 }
 
 
 body.pages {
-	header {
-		background: $light-grey;
-	}
+	div.body-wrapper {
+		header {
+			background: $light-grey;
+		}
 
-	header.home {
-		background: $grey;
+		header.home {
+			background: $grey;
+		}		
 	}
 }
 

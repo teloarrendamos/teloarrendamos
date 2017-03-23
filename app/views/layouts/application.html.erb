@@ -10,44 +10,46 @@
 
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <%= render 'layouts/header' %>
-    <% unless controller_name == "pages" || controller_name == "searches" %>
-      <% if current_person %>
-        <% if user_signed_in? %>
-          <section class="user-header">
-            <div class="user-header">
-              <ul class="user-nav">
-                <li><%= link_to "Perfil", edit_account_path %></li>
-                <li><%= link_to "Mis Productos", user_dashboard_path %></li>
-                <li><%= link_to "Mis Arriendos", orders_path %></li>                
-                <% if current_user.bank === nil %>
-                  <li><%= link_to "Subir Producto", edit_account_path(bank: "Debe Completar los datos antes de Publicar") %></li>
-                <% else %>
-                  <li><%= link_to "Subir Producto", new_listing_path %></li>
-                <% end %>                                                        
-              </ul>
-            </div>
-          </section>
-        <% elsif company_signed_in? %>
-          <section class="user-header">
-            <div class="user-header">
-              <ul class="user-nav">                
-                <li><%= link_to "Mis Productos", company_dashboard_path %></li>
-                <li><%= link_to "Mis Arriendos", orders_path %></li>                                
-                  <li><%= link_to "Subir Producto", new_listing_path %></li>                      
-              </ul>
-            </div>
-          </section>
-        <% end  %>                
+    <div class="body-wrapper">
+      <%= render 'layouts/header' %>
+      <% unless controller_name == "pages" || controller_name == "searches" %>
+        <% if current_person %>
+          <% if user_signed_in? %>
+            <section class="user-header">
+              <div class="user-header">
+                <ul class="user-nav">
+                  <li><%= link_to "Perfil", edit_account_path %></li>
+                  <li><%= link_to "Mis Productos", user_dashboard_path %></li>
+                  <li><%= link_to "Mis Arriendos", orders_path %></li>                
+                  <% if current_user.bank === nil %>
+                    <li><%= link_to "Subir Producto", edit_account_path(bank: "Debe Completar los datos antes de Publicar") %></li>
+                  <% else %>
+                    <li><%= link_to "Subir Producto", new_listing_path %></li>
+                  <% end %>                                                        
+                </ul>
+              </div>
+            </section>
+          <% elsif company_signed_in? %>
+            <section class="user-header">
+              <div class="user-header">
+                <ul class="user-nav">                
+                  <li><%= link_to "Mis Productos", company_dashboard_path %></li>
+                  <li><%= link_to "Mis Arriendos", orders_path %></li>                                
+                    <li><%= link_to "Subir Producto", new_listing_path %></li>                      
+                </ul>
+              </div>
+            </section>
+          <% end  %>                
+        <% end %>
       <% end %>
-    <% end %>
-     <%= yield %>
+       <%= yield %>
 
-    <div class="footer-image">
-      <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" %>
-    </div>
+      <div class="footer-image">
+        <%= image_tag "https://s3-us-west-2.amazonaws.com/teloarrendamos-static-assets/icons/productos-celestes.png" %>
+      </div>
 
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
 
+    </div>    
   </body>
 </html>
