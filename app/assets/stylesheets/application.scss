@@ -28,7 +28,9 @@ $titles-grey: #636060;
 
 body {
 	margin: 0;
+	padding: 0;
 	height: 100%;
+	//overflow: hidden;
 
 	p {
 		color: $letters-grey;
