@@ -272,13 +272,22 @@ div.footer-image {
 // Mobile - Responsive
 @include media(max-width 740px) {
 	section.title-and-search {
+		height: 80vh;
+		
 		div.callout {
 	    padding: 2% 2% 3% 2%;
 	    font-size: 1.3em;
 
-	    h2 {
-	    	margin-top: 0;
-	    }
+		    h2 {
+		    	margin-top: 0;
+		    	font-size: 1.3em;
+		    	color: #413f3f;
+		    }
+
+		    h3 {
+				font-size: 1em;
+				color: #413f3f;
+		    }
 		}
 
 		form {
