@@ -220,7 +220,7 @@ section.search-results {
 
 					a {
 						div.product-frame {	
-							height: 450px;						
+							height: 480px;						
 							div.frame-image {
 								img {
 									
@@ -229,7 +229,7 @@ section.search-results {
 
 							div.frame-second-row {
 								@include outer-container(100%);
-								height: 150px;
+								height: 180px;
 								
 								div.frame-title-desc {
 									@include span-columns(8.5);
