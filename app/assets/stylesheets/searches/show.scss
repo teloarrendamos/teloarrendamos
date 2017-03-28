@@ -232,14 +232,14 @@ section.search-results {
 								height: 150px;
 								
 								div.frame-title-desc {
-									@include span-columns(8);
+									@include span-columns(8.5);
 
 									p {
 								
 									}
 								}
 								div.frame-postable-img {
-									@include span-columns(4);
+									@include span-columns(3.5);
 									img {
 										
 									}
