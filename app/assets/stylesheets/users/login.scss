@@ -27,3 +27,9 @@ section.user-login, section.company-login {
 		}
 	}
 }
+
+@include media(max-width 740px) {	
+	section.user-login, section.company-login {
+		@include mobile-session-registration-layout;		
+	}
+}

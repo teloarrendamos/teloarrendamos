@@ -13,3 +13,10 @@ section.user-sign-up, section.company-sign-up {
     color: $light-blue;
   }
 }
+
+
+@include media(max-width 740px) { 
+  section.user-sign-up, section.company-sign-up {
+    @include mobile-session-registration-layout;    
+  }
+}

@@ -24,3 +24,17 @@ section.categories-index {
 		}	
 	}
 }
+
+
+// MOBILE - RESPONSIVE
+@include media(max-width 740px) {	
+	section.categories-index {
+		@include grey-gradient;
+		div.wrapper {			
+			@include outer-container;
+			div.category-frame {
+				@include span-columns(12);	
+			}	
+		}		
+	}
+}

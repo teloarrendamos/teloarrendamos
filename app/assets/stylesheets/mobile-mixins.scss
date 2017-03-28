@@ -1,0 +1,27 @@
+@mixin mobile-session-registration-layout {	
+	div.inner-container {				
+		margin: 0;		
+
+		form {
+			div.field {
+				margin: 20px 10%;
+			}
+
+			div.actions {
+				margin: 0 10%;
+			}
+		}
+
+		div.login-options {
+			padding: 20px 10%;
+		}
+
+		div.sign-up-callout {			
+			padding: 20px 10%;
+		}
+	}
+
+	div.company-sign {
+		padding: 55px 37px;
+	}
+}
