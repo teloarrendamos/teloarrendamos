@@ -1,9 +1,5 @@
-<section class="listing-show">
-  <div class="cart-text">
-  <%#= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
-  </div>
-
-  <div class="inner-container">
+<section class="listing-show">  
+  <div class="inner-container-show">
     <div class="listing-product-column">
       <div class="slider slider-for">
         <%= image_tag(@listing.images[0]) %>
@@ -100,7 +96,7 @@
         <%= form_for @order_item, remote: true do |f| %>
 
           <div class="input-group">
-            <p>Selecciona la fecha en que deseas arrendarlo y devolverlo</p>
+            <p class="select-date-paragraph">Selecciona la fecha en que deseas arrendarlo y devolverlo</p>
             <%= f.date_field :start_date, class: "datepicker", placeholder: "Fecha de Inicio" %>
             <%= f.date_field :end_date, class: "datepicker", placeholder: "Fecha de Devolución" %>
           </div>
@@ -178,6 +174,12 @@
 
 
   <script>
+    if ($(window).width() < 740 ){
+      $('.inner-container-show').prepend($('.listing-deal-column'));
+      $('.listing-deal-column').append($('.product-info'));
+      $('.listing-deal-column').append($('.postable-profile'));
+    }
+
     $('.datepicker').pickadate({
       selectMonths: true,
       selectYears: 15,

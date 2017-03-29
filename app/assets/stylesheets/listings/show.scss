@@ -1,6 +1,6 @@
 section.listing-show {
 	@include light-grey-gradient;
-	div.inner-container {
+	div.inner-container-show {
 		@include outer-container;
 		padding-top: 20px;
 
@@ -288,4 +288,218 @@ section.listing-show {
 			}
 		}
 	}
+}
+
+
+// Mobile - Responsive
+@include media(max-width 740px) {
+	section.listing-show {
+		div.inner-container-show {			
+			div.listing-product-column {								
+				@include span-columns(12);
+				div.slider-for {					
+					div.slick-list {
+						div.slick-track {
+							img {
+								
+							}
+						}
+					}
+				}
+
+				div.slider-nav {					
+					div.slick-list {
+						div.slick-track {
+							img {
+								
+							}
+						}
+					}
+				}
+
+				div.other-postable-products {					
+					h2 {
+						
+					}
+
+					div.product-container {						
+						h2 {
+							
+						}
+
+						div.image {							
+							img {
+								
+							}
+						}
+
+						div.info {
+							
+							p.title {
+								
+							}
+
+							p.rate {
+								
+							}
+
+							p.user-name {
+								
+							}
+						}
+					}
+				}
+			}
+
+			div.listing-deal-column {	
+				@include span-columns(12);		
+				padding-right: 0;
+				div.postable-profile {					
+					img {
+						
+					}	
+
+					div.postable-info {						
+						p {
+							
+						}
+
+						p.postable-phone {
+							
+						}
+					}
+				}
+
+				div.product-info {							
+					margin: 0 6%;
+					word-wrap: break-word;
+
+					h4 {
+						margin-top: 0;
+					}	
+
+					div.left-wrap {	
+						@include span-columns(12);		
+						p {
+							
+						}
+					}	
+					
+					div.right-wrap {						
+						@include span-columns(12);
+						p {
+						
+						}
+						p.product-rate {
+						
+						}
+					}										
+				}
+
+				div.edit-listing {
+					a {
+						
+					}			    
+				}
+
+				button.rent-action {
+					
+				}
+
+				form {
+					margin: 0 6%;
+					div.input-group {							
+						p.select-date-paragraph {
+							margin: 0;
+						}
+
+						input.datepicker {
+							
+						}
+
+						input.datepicker:hover {
+						
+						}
+
+						input.datepicker::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+						  
+						}
+						input.datepicker::-moz-placeholder { /* Firefox 19+ */
+						  
+						}
+						input.datepicker:-ms-input-placeholder { /* IE 10+ */
+						  
+						}
+						input.datepicker:-moz-placeholder { /* Firefox 18- */
+						  
+						}
+					}
+
+					div.close-deal-details {	
+					    text-align: center;
+    					margin-top: 20px;					
+						div.details-text {
+							p {								
+								span.values {
+									
+								}
+							}
+
+							p.total-cost {
+								
+							}
+						}
+						div.delivery-picker {							
+							div.checkbox {
+								
+							}
+
+							div.delivery-text {
+								
+								p {
+									
+									span.values {
+										
+									}
+								}
+							}
+						}
+					}
+
+					div.input-group-btn {						
+						input[type="submit"] {							
+
+						}
+
+						a {
+							button.checkout {
+								
+							}	
+						}					
+					}
+
+					div.cart-text {
+						@include outer-container;						    
+					    a {
+							div.items-size {
+								p.items {
+								    
+								}
+
+								p.items-word {
+									
+								}
+							}
+
+							div.cart {
+								img {
+								
+								}								
+							}
+					    }							
+					}
+				}
+			}
+		}
+	}	
 }
