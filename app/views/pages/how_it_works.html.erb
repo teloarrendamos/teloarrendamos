@@ -52,26 +52,7 @@
 	</div>
 
 	<script>
-		// $('#slider-wrapper-renter').slick({
-		// 	slidesToShow: 1,
-		// 	dots: true,
-		// 	fade: true
-	 //    });
-
-	 //    $('#slider-wrapper-client').slick({
-		// 	slidesToShow: 1,
-		// 	dots: true,
-		// 	fade: true
-	 //    });
-
-			// $('.overlay-slider').each(function (idx, item) {
-			//     var carouselId = "carousel" + idx;
-			//     console.log(this);
-			//     this.id = carouselId;
-			//     $(this).slick({
-
-			//     });
-			// });
+	$('.explain-users-plan').append($('.shake-hands-how-it-works'));
 
 	    $('#client-tutorial-btn')[0].onclick = function() {
 	    	$('.overlay-client')[0].style.display = 'block';
@@ -92,59 +73,5 @@
 	    	$('.overlay-renter')[0].style.display = 'none';
 	    	$(window).trigger('resize');
 	    }
-	</script>
-
-	<script>
-	// 	var renterSlides =	'<div class="slide">' +
-	// 							'<img src="/assets/slider-1.png" alt="" />' +
-	// 							'<p class="caption visible">Sube tu articulo y ponle un precio por día</p>' +
-	// 						'</div>' +
-	// 						'<div class="slide">' +
-	// 							'<img src="/assets/slider-2.png" alt="" />' +
-	// 							'<p class="caption">Te llegará un SMS/Email para confirmar la solicitud</p>' +
-	// 						'</div>' +
-	// 						'<div class="slide">' +
-	// 							'<img src="/assets/slider-3.png" alt="" />' +
-	// 							'<p class="caption">Recibe tu dinero</p>' +
-	// 						'</div>';
-
-
-	// 	var clientSlides = '<div class="slide">' +
-	// 							'<img src="/assets/slider-1.png" alt="" />' +
-	// 							'<p class="caption visible">Elige lo que andas buscando</p>' +
-	// 						'</div>' +
-	// 						'<div class="slide">' +
-	// 							'<img src="/assets/slider-2.png" alt="" />' +
-	// 							'<p class="caption">Confirma fechas y pagos</p>' +
-	// 						'</div>' +
-	// 						'<div class="slide">' +
-	// 							'<img src="/assets/slider-1.png" alt="" />' +
-	// 							'<p class="caption">Accede al producto!</p>' +
-	// 						'</div>';
-
-	// 	var sliderWrapper = document.getElementById('slider-wrapper');
-	// 	var renterButton = document.getElementById('renter-tutorial-btn');
-	// 	var clientButton = document.getElementById('client-tutorial-btn');
-	// 	var closeButton = document.getElementById('close-btn');
-	// 	var overlay = document.getElementsByClassName('overlay')[0];
-
-	// 	renterButton.addEventListener('click', function() {
-	// 		sliderWrapper.insertAdjacentHTML('afterbegin', renterSlides);
-	// 		sliderWrapper.style.left = '0';
-	// 		overlay.style.display = 'block';
-	// 	});
-
-	// 	clientButton.addEventListener('click', function() {
-	// 		sliderWrapper.insertAdjacentHTML('afterbegin', clientSlides);
-	// 		sliderWrapper.style.left = '0';
-	// 		overlay.style.display = 'block';
-	// 	});
-
-	// 	closeButton.onclick = function() {
-	// 		while (sliderWrapper.firstChild) {
-	// 		    sliderWrapper.removeChild(sliderWrapper.firstChild);
-	// 		}
-	// 		overlay.style.display = 'none';
-	// 	}
 	</script>
 </section>

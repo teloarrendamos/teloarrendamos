@@ -132,3 +132,83 @@ section.que-es {
 	}
 }
 
+
+
+//RESPONSIVE 
+
+@include media(max-width 740px) {
+	section.que-es {
+		div.shake-hands {
+			@include outer-container;
+			padding-top: 15px;
+			h1 {
+				margin-bottom: 0;
+			}
+			
+			div.que-es-texto {
+				text-align: center;
+				@include span-columns(12);
+				p {
+					span.brand-name {
+
+					}
+				}
+			}
+
+			div.que-es-img {
+				@include span-columns(12);
+
+			}
+		}
+
+		div.payment-explained {
+			@include outer-container;
+
+			h1 {
+
+			}
+			div.payment-text {
+				height: 400px;
+				@include span-columns(12);
+				p {
+					
+				}
+			}
+
+			div.payment-img {
+				@include span-columns(12);
+				display: none;
+				div.bill {
+					span.currency-sign {
+
+					}
+
+					div.payment-rectangle {
+					    div.triangle {
+						}
+						
+						.featureList {
+							font-size: 1em;
+							ul {
+			
+							}
+
+							li {
+					
+								&:before {
+				
+								}
+								&.tick:before {
+		
+								}
+								&.cross:before {
+					
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

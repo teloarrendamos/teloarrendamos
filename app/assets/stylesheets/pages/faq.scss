@@ -43,3 +43,41 @@ section.faq {
 		}	
 	}
 }
+
+
+
+
+// RESPONSIVE MOBILE
+@include media(max-width 740px) {
+	section.faq {
+		h1 {
+
+		}
+
+		div.faq-chat {
+			text-align: center;
+			margin-top: 40px;
+			p.question {
+				span:hover {
+
+				}
+
+				span.span-question {
+
+				}
+
+				span.plus {
+
+				}
+
+				span.minus {
+
+				}
+			}
+
+			p.answer {
+
+			}	
+		}
+	}
+}

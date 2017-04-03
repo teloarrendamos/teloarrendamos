@@ -165,8 +165,91 @@ section.how-it-works {
 }
 
 
+// RESPONSIVE MOBILE
+@include media(max-width 740px) {
+    section.how-it-works {
+        div.titles {
+            h2.renter {
+                font-size: 1.2em;
+            }
+            h2.client {
+                font-size: 1.2em;
+            }
+        }
+
+        div.explain-users-plan {
+            button#renter-tutorial-btn {
+                @include span-columns(6);
+                font-size: 1em;
+                margin-top: 0;
+            }
+            
+            button#client-tutorial-btn {
+                @include span-columns(6);
+                @include omega();
+                font-size: 1em;
+                margin-top: 0;
+            }
+
+            div.shake-hands-how-it-works {
+                @include span-columns(12);
+                margin-top: 30px;
+
+                img {
+                    width: 60%;
+                }
+            }
+        }
+
+        div.overlay-renter {
+            div.close {
+                button#close-btn-renter {
+
+                }
+            }
+
+            div#slider-wrapper-renter {
+                @include outer-container;
+
+                div.slide {
+                    width: 100%;
+                    img {
+                        height: 220px;
 
 
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }        
+            }        
+        }
+
+
+        div.overlay-client {
+            div.close {
+                button#close-btn-client {
+
+                }
+            }
+
+            div#slider-wrapper-client {
+                @include outer-container;
+                div.slide {
+                    width: 100%;
+                    img {
+                        height: 220px;
+                    }
+
+                    p {
+                        text-align: center;                    }
+                }
+            }        
+        }
+
+    }
+}
 
 
 
