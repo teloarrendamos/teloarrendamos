@@ -86,16 +86,18 @@ section.listing-show {
 			padding-right: 80px;
 			div.postable-profile {
 				@include outer-container;
-				img {
-					@include span-columns(5);
-					background-color: white;
-					margin-right: 20px;
-					width: 70px;
-					height: 70px;
-					border-radius: 100%;
-					border: 1px solid $letters-grey;
-					padding: 5px;
-				}	
+				div.postable-img-wrapper {
+					img {
+						@include span-columns(5);
+						background-color: white;
+						margin-right: 20px;
+						width: 70px;
+						height: 70px;
+						border-radius: 100%;
+						border: 1px solid $letters-grey;
+						padding: 5px;
+					}						
+				}
 
 				div.postable-info {
 					@include span-columns(7);
@@ -232,6 +234,7 @@ section.listing-show {
 						padding: 8px 30px;
 						color: $white;
 						font-size: 1.2em;	
+						height: 38px;
 
 					}
 
@@ -301,7 +304,18 @@ section.listing-show {
 					div.slick-list {
 						div.slick-track {
 							img {
-								
+								width: 280px;
+								height: 300px;
+							}
+						}
+					}
+				}
+				div.slider-nav {					
+					div.slick-list {
+						div.slick-track {
+							img {
+								width: 52px;
+								height: 57px;
 							}
 						}
 					}
@@ -319,7 +333,7 @@ section.listing-show {
 
 				div.other-postable-products {					
 					h2 {
-						
+						text-align: center;
 					}
 
 					div.product-container {						
@@ -327,14 +341,16 @@ section.listing-show {
 							
 						}
 
-						div.image {							
+						div.image {		
+							width: 100%;					
 							img {
 								
 							}
 						}
 
 						div.info {
-							
+							text-align: center;
+							width: 100%;
 							p.title {
 								
 							}
@@ -351,15 +367,24 @@ section.listing-show {
 				}
 			}
 
-			div.listing-deal-column {	
+			div.listing-deal-column {					
 				@include span-columns(12);		
 				padding-right: 0;
-				div.postable-profile {					
-					img {
-						
-					}	
+				div.postable-profile {		
+					@include outer-container();	
+					margin: 45px 0;
+					div.postable-img-wrapper {
+						@include span-columns(12);						
+						text-align: center;
+						img {
+							display: inline;
+							float: none;
+						}							
+					}		
 
-					div.postable-info {						
+					div.postable-info {		
+						@include span-columns(12);							
+						text-align: center;			
 						p {
 							
 						}
@@ -373,6 +398,7 @@ section.listing-show {
 				div.product-info {							
 					margin: 0 6%;
 					word-wrap: break-word;
+					text-align: center;
 
 					h4 {
 						margin-top: 0;
@@ -414,7 +440,7 @@ section.listing-show {
 						}
 
 						input.datepicker {
-							
+							font-size: 14px;
 						}
 
 						input.datepicker:hover {
@@ -468,12 +494,12 @@ section.listing-show {
 
 					div.input-group-btn {						
 						input[type="submit"] {							
-
+							font-size: 1em;
 						}
 
 						a {
 							button.checkout {
-								
+								font-size: 1em;
 							}	
 						}					
 					}

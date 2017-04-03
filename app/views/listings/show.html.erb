@@ -57,7 +57,9 @@
     <div class="listing-deal-column">
       <% if @listing.postable_type == 'User' %>  
         <div class="postable-profile">
-          <%= image_tag(@listing.postable.profile_picture) %>
+          <div class="postable-img-wrapper">
+            <%= image_tag(@listing.postable.profile_picture) %>            
+          </div>
           <div class="postable-info">    
             <p><%= @listing.postable.first_name %> <%= @listing.postable.last_name %> - <%= @listing.region %></p>
             <p class="postable-phone">Fono: <%= @listing.postable.phone %></p>
