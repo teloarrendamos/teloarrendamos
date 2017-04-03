@@ -52,10 +52,11 @@
 	</div>
 
 	<script>
-	$('.explain-users-plan').append($('.shake-hands-how-it-works'));
+		$('.explain-users-plan').append($('.shake-hands-how-it-works'));
 
 	    $('#client-tutorial-btn')[0].onclick = function() {
-	    	$('.overlay-client')[0].style.display = 'block';
+	    	$('.overlay-client')[0].style.display = 'block';	    	
+			$('.overlay-client').height($(document).height());
 	    	$(window).trigger('resize');
 	    }
 
@@ -66,6 +67,7 @@
 
 	   	$('#renter-tutorial-btn')[0].onclick = function() {
 	    	$('.overlay-renter')[0].style.display = 'block';
+	    	$('.overlay-renter').height($(document).height());
 	    	$(window).trigger('resize');
 	    }
 

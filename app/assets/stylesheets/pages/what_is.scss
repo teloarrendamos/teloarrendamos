@@ -157,7 +157,11 @@ section.que-es {
 
 			div.que-es-img {
 				@include span-columns(12);
+				margin-top: 30px;
 
+				img {
+					width: 60%;
+				}
 			}
 		}
 
@@ -168,8 +172,9 @@ section.que-es {
 
 			}
 			div.payment-text {
-				height: 400px;
 				@include span-columns(12);
+				height: 400px;
+				text-align: center;
 				p {
 					
 				}
