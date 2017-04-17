@@ -26,9 +26,9 @@ section.accounts-edit {
 			button {
 				background: $light-blue;
 				border: 0;
-		    padding: 9px 35px;
-  			margin-bottom: 17px;
-  			color: white;
+			    padding: 9px 35px;
+	  			margin-bottom: 17px;
+	  			color: white;
 			}
 		}
 	}
@@ -41,16 +41,18 @@ section.accounts-edit {
 			div.account-info {
 				@include outer-container;
 				margin-bottom: 40px;
-				img {
+				div.profile-image-wrapper {
 					@include span-columns(3);
-					background-color: white;
-					margin-top: 8px;
-    				margin-right: 65px;
-					width: 90px;
-					height: 90px;
-					border-radius: 100%;
-					border: 1px solid $letters-grey;
-					padding: 5px;
+					img {
+						background-color: white;
+						margin-top: 8px;
+	    				margin-right: 65px;
+						width: 90px;
+						height: 90px;
+						border-radius: 100%;
+						border: 1px solid $letters-grey;
+						padding: 5px;
+					}					
 				}
 
 				div.info-text {
@@ -62,6 +64,17 @@ section.accounts-edit {
 						margin: 0;
 					}
 				}
+			}
+
+			div.edit-profile-button {
+				button {
+					background: $light-blue;
+					border: 0;
+					padding: 8px 30px;
+					color: $white;
+					font-size: 1.2em;
+					width: 60%;
+				}			
 			}
 
 			div.edit-account {
@@ -87,16 +100,7 @@ section.accounts-edit {
 					}
 				}
 			}
-		}
-
-		button {
-			background: $light-blue;
-			border: 0;
-			padding: 8px 30px;
-			color: $white;
-			font-size: 1.2em;
-			width: 60%;
-		}
+		}		
 
 		div.map-column {
 			@include span-columns(5);
@@ -105,4 +109,77 @@ section.accounts-edit {
 			}
 		}
 	}
+}
+
+@include media(max-width 740px) {
+	section.accounts-edit {
+		@include light-grey-gradient;
+
+		div.fill-data-alert {			
+			div.text-box {				
+				p {
+			    
+			    }
+
+				button {
+					
+				}
+			}
+		}
+		div.wrapper {
+			@include outer-container;
+			padding-top: 35px;
+
+			div.info-column {
+				@include span-columns(12);
+				div.account-info {
+					@include outer-container;
+					
+					div.profile-image-wrapper {
+						@include span-columns(0);	
+						width: 100%;
+						text-align: center;					
+						img {
+							margin-right: 0;
+						}						
+					}
+
+					div.info-text {
+						@include span-columns(12);	
+						text-align: center;					
+					}
+				}
+
+				div.edit-profile-button {
+					margin: 0 15%;
+					button {
+						width: 100%;
+					}				
+				}
+
+				div.edit-account {					
+					padding-right: 0;
+
+					form {
+						margin: 0 15%;						
+					}
+
+					div.change-pass {
+						margin: 0 15%;
+						a {
+							button {
+								width: 100%;
+								border: 0;
+								border-radius: 5px;
+							}
+						}						
+					}
+				}
+			}			
+
+			div.map-column {
+				display: none;				
+			}
+		}
+	}	
 }

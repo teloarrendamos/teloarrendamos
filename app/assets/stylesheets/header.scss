@@ -133,6 +133,34 @@ header {
 			}
 		}
 
+		div.login-nav-user {
+			@include outer-container;
+			div.container {
+				@include shift(0);
+				@include span-columns(12);
+
+				div.inner-container {
+					@include outer-container();
+
+
+					div.hello-user {
+						@include span-columns(4);
+						@include login-nav;
+					}
+
+					div.account {
+						@include span-columns(4);
+						@include login-nav;
+					}
+
+					div.sign-out {
+						@include span-columns(4);
+						@include login-nav;
+					}
+				}
+			}
+		}
+
 		nav {
 			div.logo {
 				@include span-columns(12);

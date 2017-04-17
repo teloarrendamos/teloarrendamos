@@ -36,4 +36,8 @@
           </div>
         <% end %>
 
-        <%= link_to button_tag("Cambiar Contraseña", class: "btn btn-default"), edit_user_registration_path %>
+        <div class="change-pass">
+          <%= link_to edit_user_registration_path do %>
+            <button>Cambiar Contraseña</button>
+          <% end %>          
+        </div>

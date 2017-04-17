@@ -1,0 +1,51 @@
+section.user-header {
+	background-color: $light-grey;
+
+	div.user-header {
+		@include outer-container;
+		font-family: $regular;
+
+		h3 {
+			color: $letters-grey;
+			margin: 0;
+			padding: 1em 0;
+			font-size: 2em;
+		}
+
+		ul.user-nav {
+			padding-left: 0;
+			margin: 0;
+			padding-top: 30px;
+			li {
+				@include span-columns(2);
+				font-size: 1.5em;
+
+				a {
+					text-decoration: none;
+					color: $blue;
+				}
+
+				a:hover {
+					color: $green;
+				}
+			}
+		}
+	}
+}
+
+@include media(max-width 740px) { 
+ 	section.user-header {	
+		div.user-header {
+			@include outer-container;
+
+			ul.user-nav {
+				padding-top: 15px;
+				li {
+					@include span-columns(12);
+					text-align: center;		
+					margin-top: 10px;		
+				}
+			}
+		}
+	}
+}

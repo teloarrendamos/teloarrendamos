@@ -273,42 +273,45 @@ div.footer-image {
 @include media(max-width 740px) {
 	section.title-and-search {
 		height: 80vh;
-		
-		div.callout {
-	    padding: 2% 2% 3% 2%;
-	    font-size: 1.3em;
 
-		    h2 {
-		    	margin-top: 0;
-		    	font-size: 1.3em;
-		    	color: #413f3f;
-		    }
+		div.overlay {
+			width: 100%;
+			div.callout {
+		    padding: 2% 2% 3% 2%;
+		    font-size: 1.3em;
 
-		    h3 {
-				font-size: 1em;
-				color: #413f3f;
-		    }
-		}
+			    h2 {
+			    	margin-top: 0;
+			    	font-size: 1.3em;
+			    	color: #413f3f;
+			    }
 
-		form {
-			span.twitter-typeahead {
-				@include span-columns(8);
+			    h3 {
+					font-size: 1em;
+					color: #413f3f;
+			    }
+			}
 
-				input {
-			    width: 152%;
-			    margin-bottom: 10px;
+			form {
+				span.twitter-typeahead {
+					@include span-columns(8);
+
+					input {
+				    width: 152%;
+				    margin-bottom: 10px;
+					}
+				}
+
+				input[type="text"] {
+					@include span-columns(12);
+					margin-left: 0;
+				}
+
+				input[type='submit'] {
+					@include span-columns(12);
 				}
 			}
-
-			input[type="text"] {
-				@include span-columns(12);
-				margin-left: 0;
-			}
-
-			input[type='submit'] {
-				@include span-columns(12);
-			}
-		}
+		}			
 	}
 
 	section.target-customers {

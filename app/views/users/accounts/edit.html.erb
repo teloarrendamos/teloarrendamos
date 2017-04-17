@@ -20,7 +20,9 @@
   <div class="wrapper">
     <div class="info-column">
       <div class="account-info">
-        <%= image_tag(@user.profile_picture) %>
+        <div class="profile-image-wrapper">
+          <%= image_tag(@user.profile_picture) %>          
+        </div>
         <div class="info-text">
           <h3><%= @user.first_name %> <%= @user.last_name %></h3>
           <p><%= @user.phone %></p>
@@ -29,7 +31,9 @@
         </div>
       </div>
 
-      <button id="show-edit-form">Editar Perfil</button>
+      <div class="edit-profile-button">
+        <button id="show-edit-form">Editar Perfil</button>        
+      </div>
 
       <div class="edit-account">
         <%= render 'form' %>
