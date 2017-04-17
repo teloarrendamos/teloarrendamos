@@ -1,15 +1,46 @@
 section.user-dashboard {
 	@include grey-gradient;
 
-	table {
-		@include table;
+	div.table-container {
+		table {
+			@include table;
+		}		
 	}
-
-	a.new-product-button {
-		text-decoration: none;
-	    background: $light-blue;
-	    padding: 10px;
-	    margin-left: 5%;
-	    color: white;
+	
+	div.new-product-wrapper {		
+		a {
+			button.new-product-button {
+				text-decoration: none;
+			    background: $light-blue;
+			    padding: 10px;
+			    margin-left: 5%;
+			    color: white;
+			    border: 0;				
+			}
+		}		
 	}
 }
+
+@include media(max-width 740px) {
+	section.user-dashboard {
+		div.table-container {
+			table,tr, td, tbody, td p table div, table table{
+		        width:100%!important;
+		        float:left;
+		        clear:both;
+		        //display:block;
+		        text-align:center;
+		    }			
+		}
+
+		div.new-product-wrapper {		
+			margin: 0 10%;
+			a {
+				button.new-product-button {
+					margin-left: 0;
+					width: 100%;
+				}
+			}		
+		}
+	}	
+} 

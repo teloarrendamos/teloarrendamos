@@ -4,3 +4,14 @@ section.orders-index {
     @include table;
   }
 }
+
+
+@include media(max-width 740px) {
+	table,tr, td, tbody, td p table div, table table{
+        width:100%!important;
+        float:left;
+        clear:both;
+        //display:block;
+        text-align:center;
+    }	
+}

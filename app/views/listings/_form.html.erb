@@ -92,7 +92,11 @@
   </div>
 <% end %>
 
-<script>
+<script>  
+  if ($(window).width() <= 740) {  
+    $('.description').append($('.map-container'))
+  }     
+
   $('textarea').bind('keypress', function(e) {
       if ((e.keyCode || e.which) == 13) {
           e.preventDefault();
